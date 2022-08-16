@@ -61,7 +61,6 @@
                                             <th>Banner Image</th>
                                             <th>Title</th>
                                             <th>Slug</th>
-                                            <th>Call action in use</th>
                                             <th class="text-right">Action</th>
                                         </tr>
                                         </thead>
@@ -77,7 +76,6 @@
                                                     </td><td >
                                                         {{ @$service->slug}}
                                                     </td>
-                                                    <td>{{ucfirst(@$service->callAction->title)}}</td>
                                                     <td >
                                                         <div class="row">
 

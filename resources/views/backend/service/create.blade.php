@@ -124,24 +124,24 @@
                 </div>
                 <!-- end col -->
                 <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Footer Action</h5>
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <label for="choices-privacy-status-input" class="form-label">Call Action</label>
-                                <select class="form-select" data-choices data-choices-search-false
-                                        id="choices-privacy-status-input" name="call_action_id">
-                                    <option value disabled selected>Select Call Action</option>
-                                    @foreach(@$callaction as $ca)
-                                        <option value="{{$ca->id}}">{{@$ca->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <!-- end card body -->
-                    </div>
+{{--                    <div class="card">--}}
+{{--                        <div class="card-header">--}}
+{{--                            <h5 class="card-title mb-0">Footer Action</h5>--}}
+{{--                        </div>--}}
+{{--                        <div class="card-body">--}}
+{{--                            <div>--}}
+{{--                                <label for="choices-privacy-status-input" class="form-label">Call Action</label>--}}
+{{--                                <select class="form-select" data-choices data-choices-search-false--}}
+{{--                                        id="choices-privacy-status-input" name="call_action_id">--}}
+{{--                                    <option value disabled selected>Select Call Action</option>--}}
+{{--                                    @foreach(@$callaction as $ca)--}}
+{{--                                        <option value="{{$ca->id}}">{{@$ca->name}}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- end card body -->--}}
+{{--                    </div>--}}
                     <!-- end card -->
 
                     <div class="card">

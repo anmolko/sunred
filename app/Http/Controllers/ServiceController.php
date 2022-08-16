@@ -25,8 +25,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services   = Service::with('callAction')->get();
-        $callaction = CallAction::all();
-        return view('backend.service.index',compact('services','callaction'));
+        return view('backend.service.index',compact('services'));
     }
 
     /**
@@ -36,8 +35,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $callaction = CallAction::orderBy('name', 'asc')->get();
-        return view('backend.service.create',compact('callaction'));
+        return view('backend.service.create');
     }
 
     /**
@@ -57,7 +55,6 @@ class ServiceController extends Controller
             'meta_title'        => $request->input('meta_title'),
             'meta_tags'         => $request->input('meta_tags'),
             'meta_description'  => $request->input('meta_description'),
-            'call_action_id'    => $request->input('call_action_id'),
             'created_by'        => Auth::user()->id,
         ];
 
@@ -123,8 +120,7 @@ class ServiceController extends Controller
     public function edit($id)
     {
         $edit       = Service::find($id);
-        $callaction = CallAction::orderBy('name', 'asc')->get();
-        return view('backend.service.edit',compact('edit','callaction'));
+        return view('backend.service.edit',compact('edit'));
     }
 
     /**
@@ -141,7 +137,6 @@ class ServiceController extends Controller
         $service->slug                =  $request->input('slug');
         $service->description         =  $request->input('description');
         $service->sub_description     =  $request->input('sub_description');
-        $service->call_action_id      =  $request->input('call_action_id');
         $service->meta_title          =  $request->input('meta_title');
         $service->meta_tags           =  $request->input('meta_tags');
         $service->meta_description    =  $request->input('meta_description');
