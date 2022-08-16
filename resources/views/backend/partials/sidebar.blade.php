@@ -91,12 +91,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link menu-link @if(\Request::route()->getName() == 'settings.index') active @endif" href="{{route('settings.index')}}">
-                        <i class="ri-refund-2-line"></i> <span data-key="t-widgets">Settings</span>
-                    </a>
-                </li>
-
 
 
             </ul>
