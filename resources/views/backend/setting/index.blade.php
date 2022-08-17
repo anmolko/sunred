@@ -86,19 +86,6 @@
                                         </a>
                                     </li>
                                     @if($settings !== null)
-
-                                    <li class="nav-item">
-                                        <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#privacy-overview"
-                                           role="tab">
-                                            Privacy Policy
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#terms-overview"
-                                           role="tab">
-                                            Terms Conditions
-                                        </a>
-                                    </li>
                                         <li class="nav-item">
                                             <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#status-overview"
                                                role="tab">
@@ -380,60 +367,6 @@
 
                         </div>
                         @if($settings !== null)
-
-                            <div class="tab-pane fade" id="privacy-overview" role="tabpanel">
-
-                                {!! Form::open(['url'=>route('settings.privacy', @$settings->id),'id'=>'settings-privacy-form','class'=>'needs-validation','novalidate'=>'','method'=>'PUT']) !!}
-                                <div class="row  mb-4">
-                                    <div class="col-lg-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="position-relative">
-                                                    <label>Privacy Policy</label>
-                                                    <textarea class="form-control" id="ckeditor-classic-privacy" name="privacy_policy" placeholder="Enter Privacy Policy" rows="4" required>{{@$settings->privacy_policy}}</textarea>
-                                                    <div class="invalid-tooltip">
-                                                        Please enter the Privacy Policy.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-end mb-3">
-                                            <button type="submit" class="btn btn-success w-sm">{{(@$settings->privacy_policy !== null) ? "Update Policy":"Save Policy"}}</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                {!! Form::close() !!}
-
-
-                            </div>
-
-                            <div class="tab-pane fade" id="terms-overview" role="tabpanel">
-
-                                {!! Form::open(['url'=>route('settings.terms', @$settings->id),'id'=>'settings-terms-form','class'=>'needs-validation','novalidate'=>'','method'=>'PUT']) !!}
-                                <div class="row  mb-4">
-                                    <div class="col-lg-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="position-relative">
-                                                    <label>Terms and Conditions</label>
-                                                    <textarea class="form-control" id="ckeditor-classic-terms" name="terms_conditions" placeholder="Enter terms and conditions" rows="4" required>{{@$settings->terms_conditions}}</textarea>
-                                                    <div class="invalid-tooltip">
-                                                        Please enter the terms and conditions.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-end mb-3">
-                                            <button type="submit" class="btn btn-success w-sm">{{(@$settings->terms_conditions !== null) ? "Update Terms":"Save Terms"}}</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                {!! Form::close() !!}
-
-
-                            </div>
 
                             <div class="tab-pane fade" id="status-overview" role="tabpanel">
 
