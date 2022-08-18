@@ -143,7 +143,7 @@
                                                         @if(!empty($settings->logo))
                                                             <img src="{{asset('images/settings/'.@$settings->logo)}}" class="img-thumbnail" width="300" alt="One Slide">
                                                         @endif
-                                                        <p class="text-muted">Add the logo (410 * 100 px) for frontend and backend display.</p>
+                                                        <p class="text-muted">Add the logo (350 * 80 px) for frontend and backend display.</p>
                                                         <input class="form-control" name="logo" id="main-logo-input" type="file" accept="image/png, image/jpeg">
                                                     </div>
                                                     <div class="mb-4">
@@ -151,7 +151,7 @@
                                                         @if(!empty($settings->logo_white))
                                                             <img src="{{asset('images/settings/'.@$settings->logo_white)}}" class="img-thumbnail" width="300" alt="Two Slide">
                                                         @endif
-                                                        <p class="text-muted">Add the white logo (410 * 100 px) for frontend display.</p>
+                                                        <p class="text-muted">Add the white logo (350 * 80 px) for frontend display.</p>
 
                                                         <input class="form-control" name="logo_white" id="white-logo-input" type="file" accept="image/png, image/jpeg">
                                                     </div>
