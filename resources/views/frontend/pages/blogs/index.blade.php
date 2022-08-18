@@ -19,46 +19,7 @@
             </div>
 
 
-            <!-- FEATURED POST -->
-            <div class="rel blog-post-wide featured-post">
-                <div class="row d-flex align-items-center">
-
-                    <!-- Featured Badge -->
-                    <div class="featured-badge ico-25 bg-whitesmoke yellow-color">
-                        <span class="flaticon-star-1"></span>
-                    </div>
-                                                                
-                    <!-- BLOG POST IMAGE -->
-                    <div class="col-lg-7 blog-post-img">
-                        <div class="hover-overlay"> 
-                            <img class="img-fluid" src="<?php if(@$latestPost->image){?>{{asset('/images/blog/'.@$latestPost->image)}}<?php }?>" alt="{{@$latestPost->slug}}" />	
-                            <div class="item-overlay"></div>
-                        </div>
-                    </div>
-
-                    <!-- BLOG POST TEXT -->
-                    <div class="col-lg-5 blog-post-txt">
-
-                        <!-- Post Tag -->
-                        <p class="p-md post-tag">{{ucwords(@$latestPost->category->name)}} &ensp;|&ensp; {{date('M j, Y',strtotime(@$latestPostv->created_at))}}</p>
-
-                        <!-- Post Link -->
-                        <h5 class="h5-xl">
-                            <a href="{{route('blog.single',$latestPost->slug)}}">{{ucwords($latestPost->title)}}</a>
-                        </h5>
-
-                        <!-- Text -->
-                        <p class="p-lg">  {!! ucfirst(Str::limit(@$latestPost->description, 100)) !!}...
-
-                        </p>
-
-                       
-
-                    </div>	<!-- END BLOG POST TEXT -->
-
-                </div>   <!-- End row -->
-            </div>	<!-- END FEATURED POST -->
-
+       
 
             <!-- POSTS WRAPPER -->
             <div class="posts-wrapper">
@@ -79,7 +40,7 @@
                       
                             <!-- BLOG POST #1 -->
                             @if(count($allPosts) > 0)
-                                @foreach($allPosts->skip(1) as $post)
+                                @foreach($allPosts as $post)
                                 <div class="blog-3-post masonry-image">
 
                                     <!-- BLOG POST IMAGE -->
