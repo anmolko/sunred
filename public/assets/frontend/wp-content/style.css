@@ -1,0 +1,12 @@
+.widget-area .widget_categories ul li a.active {
+    color: #ff3e55;
+}
+
+.single-post-template article .article-inner> .top-meta:nth-child(2){
+    
+    margin-bottom: 20px
+}
+
+.single-post .elementor-top-section {
+    padding: 0;
+}

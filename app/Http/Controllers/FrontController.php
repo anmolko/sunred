@@ -87,8 +87,8 @@ class FrontController extends Controller
     public function blogs(){
         $bcategories = $this->bcategory->get();
         $allPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->paginate(6);
-        $latestPost = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->first();
-        return view('frontend.pages.blogs.index',compact('allPosts','latestPost','bcategories'));
+        $latestPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->take(3)->get();
+        return view('frontend.pages.blogs.index',compact('allPosts','latestPosts','bcategories'));
     }
 
 
@@ -99,10 +99,9 @@ class FrontController extends Controller
             return abort(404);
         }
         $catid = $singleBlog->blog_category_id;
-        $relatedBlogs = Blog::where('blog_category_id', '=', $catid)->where('status','publish')->take(2)->get();
         $bcategories = $this->bcategory->get();
         $latestPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->take(3)->get();
-        return view('frontend.pages.blogs.single',compact('singleBlog','relatedBlogs','bcategories','latestPosts'));
+        return view('frontend.pages.blogs.single',compact('singleBlog','bcategories','latestPosts'));
     }
 
     public function service(){

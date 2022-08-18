@@ -85,10 +85,10 @@ body .elementor-section.elementor-section-boxed > .elementor-container {
 .corpkit-content > .corpkit-content-inner {
 }
 .header-inner .main-logo img {
-    max-height: 55px;
+    max-height: 75px;
 }
 .header-inner .sticky-logo img {
-    max-height: 50px;
+    max-height: 70px;
 }
 .mobile-header-inner .mobile-logo img {
     max-height: 45px;
@@ -2345,10 +2345,10 @@ span.ct-quote,
 }
 body {
 }
-.corpkit-content > .corpkit-content-inner {
+/* .corpkit-content > .corpkit-content-inner {
     padding-top: 0;
     padding-bottom: 0;
-}
+} */
 .navbar {
     color: #ffffff;
     background: rgba(58, 58, 58, 0);

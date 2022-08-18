@@ -27,11 +27,10 @@
 
 		<!-- FAVICON AND TOUCH ICONS -->
 
+		<link rel="shortcut icon" type="image/x-icon" href="<?php if(@$setting_data->favicon){?>{{asset('/images/uploads/settings/'.@$setting_data->favicon)}}<?php }?>">
 
-		<link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/frontend/images/apple-touch-icon.png')}}">
-		<link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/frontend/images/favicon-32x32.png')}}">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/frontend/images/favicon-16x16.png')}}">
-		<link rel="manifest" href="{{asset('assets/frontend/images/site.webmanifest')}}">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/apple-touch-icon.png')}}">
+		<link rel="manifest" href="{{asset('images/site.webmanifest')}}">
 
 
 
@@ -70,6 +69,7 @@
     <link rel='stylesheet' id='elementor-icons-fa-brands-css'  href="{{asset('assets/frontend/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min52d5.css?ver=5.15.3')}}" type='text/css' media='all' />
     <script type='text/javascript' src="{{asset('assets/frontend/wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0')}}" id='jquery-core-js'></script>
     <script type='text/javascript' src="{{asset('assets/frontend/wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2')}}" id='jquery-migrate-js'></script>
+    <link rel='stylesheet'   href="{{asset('assets/frontend/wp-content/style.css')}}" type='text/css' media='all' />
 
    
     <script>function setREVStartSize(e){
@@ -136,7 +136,7 @@
 	</head>
 
 
-	<body class="page-template-default page page-id-14666 wp-embed-responsive theme-corpkit  elementor-default elementor-kit-3 elementor-page elementor-page-14666">
+<body class="page-template-default page page-id-14666 wp-embed-responsive theme-corpkit  elementor-default elementor-kit-3 elementor-page elementor-page-14666">
    
     <div class="mobile-header">
       <div class="mobile-header-inner">
@@ -156,12 +156,12 @@
                 <li class="nav-item">
                   <div class="nav-item-inner">
                     <div class="mobile-logo">
-                      <a href="../index.html" title="Corpkit"
+                      <a href="/" title="Sunred"
                         ><img
                           class="img-responsive"
-                          src="../wp-content/uploads/sites/45/2022/06/corp-new-logo.png"
-                          alt="Corpkit"
-                          title="Corpkit"
+                          src="<?php if(@$setting_data->logo){?>{{asset('/images/settings/'.@$setting_data->logo)}}<?php }?>"
+                          alt="Sunred"
+                          title="Sunred"
                       /></a>
                     </div>
                   </div>
@@ -190,12 +190,12 @@
             <li class="nav-item">
               <div class="nav-item-inner">
                 <div class="mobile-logo">
-                  <a href="../index.html" title="Corpkit"
+                  <a href="/" title="Sunred"
                     ><img
                       class="img-responsive"
-                      src="../wp-content/uploads/sites/45/2022/06/corp-new-logo.png"
-                      alt="Corpkit"
-                      title="Corpkit"
+                      src="<?php if(@$setting_data->logo){?>{{asset('/images/settings/'.@$setting_data->logo)}}<?php }?>"
+                      alt="Sunred"
+                      title="Sunred"
                   /></a>
                 </div>
               </div>
@@ -556,7 +556,7 @@
                 <form
                   method="get"
                   class="search-form"
-                  action="https://elementor.zozothemes.com/corpkit/"
+                  action=""
                 >
                   <div class="input-group">
                     <input
@@ -593,21 +593,21 @@
                     <li class="nav-item">
                       <div class="nav-item-inner">
                         <div class="main-logo">
-                          <a href="../index.html" title="Corpkit"
+                          <a href="/" title="Sunred"
                             ><img
                               class="custom-logo img-responsive"
-                              src="../wp-content/uploads/sites/45/2022/06/corpkit-logo-light.png"
-                              alt="Corpkit"
-                              title="Corpkit"
+                              src="<?php if(@$setting_data->logo){?>{{asset('/images/settings/'.@$setting_data->logo)}}<?php }?>"
+                              alt="Sunred"
+                              title="Sunred"
                           /></a>
                         </div>
                         <div class="sticky-logo">
-                          <a href="../index.html" title="Corpkit"
+                          <a href="/" title="Sunred"
                             ><img
                               class="custom-logo img-responsive"
-                              src="../wp-content/uploads/sites/45/2022/06/corp-new-logo.png"
-                              alt="Corpkit"
-                              title="Corpkit"
+                              src="<?php if(@$setting_data->logo){?>{{asset('/images/settings/'.@$setting_data->logo)}}<?php }?>"
+                              alt="Sunred"
+                              title="Sunred"
                           /></a>
                         </div>
                       </div>
