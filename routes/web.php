@@ -146,6 +146,33 @@ Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function () {
     Route::delete('/testimonials/{testimonial}', 'App\Http\Controllers\TestimonialController@destroy')->name('testimonials.destroy');
     Route::get('/testimonials/{testimonial}/edit', 'App\Http\Controllers\TestimonialController@edit')->name('testimonials.edit');
 
+    //pages
+
+    Route::get('/pages', 'App\Http\Controllers\PageController@index')->name('pages.index');
+    Route::get('/pages/create', 'App\Http\Controllers\PageController@create')->name('pages.create');
+    Route::post('/pages', 'App\Http\Controllers\PageController@store')->name('pages.store');
+    Route::put('/pages/{pages}', 'App\Http\Controllers\PageController@update')->name('pages.update');
+    Route::delete('/pages/{pages}', 'App\Http\Controllers\PageController@destroy')->name('pages.destroy');
+    Route::get('/pages/{pages}/edit', 'App\Http\Controllers\PageController@edit')->name('pages.edit');
+    Route::patch('/pages/{id}/update', 'App\Http\Controllers\PageController@updateStatus')->name('pages-status.update');
+
+    Route::get('/section-elements/', 'App\Http\Controllers\SectionElementController@index')->name('section-elements.index');
+    Route::get('/section-elements/create/{id}', 'App\Http\Controllers\SectionElementController@create')->name('section-elements.create');
+    Route::post('/section-elements', 'App\Http\Controllers\SectionElementController@store')->name('section-elements.store');
+    Route::put('/section-elements/{elements}', 'App\Http\Controllers\SectionElementController@update')->name('section-elements.update');
+    Route::delete('/section-elements/{elements}', 'App\Http\Controllers\SectionElementController@destroy')->name('section-elements.destroy');
+    Route::get('/section-elements/{elements}/edit', 'App\Http\Controllers\SectionElementController@edit')->name('section-elements.edit');
+    Route::put('/section-elements-upload-gallery/{id}', 'App\Http\Controllers\SectionElementController@uploadGallery')->name('section-elements-gallery.update');
+    Route::post('/section-elements/image-delete', 'App\Http\Controllers\SectionElementController@deleteGallery')->name('section-elements-gallery.delete');
+    Route::get('/section-elements/gallery/{id}', 'App\Http\Controllers\SectionElementController@getGallery')->name('section-elements-gallery.display');
+
+    Route::put('/section-elements-upload-gallery2/{id}', 'App\Http\Controllers\SectionElementController@uploadGallery2')->name('section-elements-gallery2.update');
+    Route::post('/section-elements/image2-delete', 'App\Http\Controllers\SectionElementController@deleteGallery2')->name('section-elements-gallery2.delete');
+    Route::get('/section-elements/gallery2/{id}', 'App\Http\Controllers\SectionElementController@getGallery2')->name('section-elements-gallery2.display');
+    Route::post('/section-elements/tablist/', 'App\Http\Controllers\SectionElementController@tablistUpdate')->name('section-elements.tablistUpdate');
+
+    //End of pages
+
 });
 
 

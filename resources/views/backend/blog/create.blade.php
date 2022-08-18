@@ -66,7 +66,7 @@
                                 <div class="mb-3">
                                     <label>Blog Description</label>
 
-                                    <textarea class="form-control" id="ckeditor-classic" name="description" placeholder="Enter blog description" rows="3" required></textarea>
+                                    <textarea class="form-control" id="ckeditor-classic-blog" name="description" placeholder="Enter blog description" rows="3" required></textarea>
                                     <div class="invalid-tooltip">
                                         Please enter the post description.
                                     </div>
@@ -184,7 +184,7 @@
                                         id="profile-foreground-img-file-input" onchange="loadFile(event)" name="image" required
                                        class="profile-foreground-img-file-input" >
 
-                                    <figcaption class="figure-caption">*use image minimum of 800 x 700px </figcaption>
+                                    <figcaption class="figure-caption">*use image minimum of 1280 x 850px </figcaption>
                                     <div class="invalid-feedback" >
                                             Please select a image.
                                         </div>
@@ -214,6 +214,8 @@
 @section('js')
 {{--@include('backend.ckeditor')--}}
 <script src="{{asset('assets/backend/js/pages/form-validation.init.js')}}"></script>
+
+<script src="{{asset('assets/backend/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js')}}"></script>
 
     <!-- Sweet Alerts js -->
 <script src="{{asset('assets/backend/libs/sweetalert2/sweetalert2.min.js')}}"></script>
