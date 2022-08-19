@@ -124,7 +124,7 @@
 	</head>
 
 	
-<body class=" single-post page-template-default page   page-id-14666 wp-embed-responsive theme-corpkit  elementor-default elementor-kit-3 elementor-page elementor-page-14666">
+<body class="@if(request()->routeIs('blog.single')) single-post @endif @if(request()->routeIs('service.single')) cea-service-template-default single single-cea-service @endif page-template-default page   page-id-14666 wp-embed-responsive theme-corpkit  elementor-default elementor-kit-3 elementor-page elementor-page-14666">
    
     <div class="mobile-header">
       <div class="mobile-header-inner">
