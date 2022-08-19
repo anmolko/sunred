@@ -8,9 +8,13 @@ use App\Models\Faq;
 use App\Models\HomePage;
 use App\Models\Setting;
 use App\Models\Service;
+use App\Mail\ContactDetail;
 
 use App\Models\Testimonial;
 use App\Models\User;
+use App\Models\SectionElement;
+use App\Models\Page;
+use App\Models\PageSection;
 use App\Notifications\NewCareerNotification;
 use App\Notifications\NewServiceNotification;
 use App\Notifications\OtherNotification;
@@ -36,9 +40,11 @@ class FrontController extends Controller
     protected $request_quote = null;
     protected $testimonial = null;
     protected $home_page = null;
+    protected $page = null;
+    protected $pagesection = null;
 
 
-    public function __construct(HomePage $home_page,Testimonial $testimonial,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
+    public function __construct(PageSection $pagesection,Page $page,HomePage $home_page,Testimonial $testimonial,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
     {
         $this->setting = $setting;
         $this->bcategory = $bcategory;
@@ -46,7 +52,8 @@ class FrontController extends Controller
         $this->service = $service;
         $this->testimonial = $testimonial;
         $this->home_page = $home_page;
-
+        $this->page = $page;
+        $this->pagesection = $pagesection;
     }
 
 
@@ -62,12 +69,55 @@ class FrontController extends Controller
 
     public function privacy()
     {
-        return view('frontend.pages.privacy');
+        $page_detail = $this->page->with('sections')->where('slug','privacy-policy')->where('status','active')->first();
+        if (!$page_detail) {
+            return abort(404);
+        }
+        $page_section = $this->pagesection->with('page')->where('page_id', $page_detail->id)->orderBy('position', 'ASC')->get();
+        if (!$page_section) {
+            return abort(404);
+        }
+        $sorted_sections        = array();
+        $header_descp_elements = "";
+
+
+        foreach ($page_section as $section){
+            $sorted_sections[$section->id] = $section->section_slug;
+            if ($section->section_slug == 'simple_header_and_description'){
+                $header_descp_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            }
+         
+        }
+        return view('frontend.pages.privacy',compact('header_descp_elements'));
     }
 
     public function terms()
     {
-        return view('frontend.pages.term');
+        
+        $page_detail = $this->page->with('sections')->where('slug','terms-condition')->where('status','active')->first();
+        if (!$page_detail) {
+            return abort(404);
+        }
+        $page_section = $this->pagesection->with('page')->where('page_id', $page_detail->id)->orderBy('position', 'ASC')->get();
+        if (!$page_section) {
+            return abort(404);
+        }
+        $sorted_sections        = array();
+        $header_descp_elements = "";
+
+
+        foreach ($page_section as $section){
+            $sorted_sections[$section->id] = $section->section_slug;
+            if ($section->section_slug == 'simple_header_and_description'){
+                $header_descp_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            }
+         
+        }
+        return view('frontend.pages.term',compact('header_descp_elements'));
     }
 
 
@@ -173,6 +223,37 @@ class FrontController extends Controller
 
 
 
+    }
+
+    public function contact()
+    {
+        return view('frontend.pages.contact');
+
+    }
+
+    
+    public function contactStore(Request $request)
+    {
+        $theme_data = Setting::first();
+            $data = array(
+                'fullname'        =>$request->input('name'),
+                'message'        =>$request->input('message'),
+                'email'        =>$request->input('email'),
+                'subject'        =>$request->input('subject'),
+                'customer_phone'        =>$request->input('phone'),
+                'address'        =>ucwords($theme_data->address),
+                'site_email'        =>ucwords($theme_data->email),
+                'site_name'        =>ucwords($theme_data->website_name),
+                'phone'        =>ucwords($theme_data->phone),
+                'logo'        =>ucwords($theme_data->logo),
+            );
+//             Mail::to('surajmzn75@gmail.com')->send(new ContactDetail($data));
+
+            // Mail::to($theme_data->email)->send(new ContactDetail($data));
+
+            Session::flash('success','Thank you for contacting us!');
+
+        return redirect()->back();
     }
     public function careerSingle($slug){
 
