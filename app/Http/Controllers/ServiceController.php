@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CallAction;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +23,7 @@ class ServiceController extends Controller
 
     public function index()
     {
-        $services   = Service::with('callAction')->get();
+        $services   = Service::get();
         return view('backend.service.index',compact('services'));
     }
 

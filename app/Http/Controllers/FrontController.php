@@ -105,7 +105,7 @@ class FrontController extends Controller
     }
 
     public function service(){
-        $allservices = $this->service->paginate(6);
+        $allservices = $this->service->get();
         return view('frontend.pages.services.index',compact('allservices'));
     }
 
@@ -237,8 +237,10 @@ class FrontController extends Controller
         if (!$singleService) {
             return abort(404);
         }
+        $latestPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->take(3)->get();
+        $latestServices = $this->service->orderBy('created_at', 'DESC')->take(5)->get();
 
-        return view('frontend.pages.services.single',compact('singleService'));
+        return view('frontend.pages.services.single',compact('singleService','latestPosts','latestServices'));
     }
 
     public function blogCategories($slug){
