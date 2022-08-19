@@ -252,18 +252,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12 mb-2">
-                                            <div class="form-group">
-                                                <label>Select number of Tab List <span class="text-muted text-danger">*</span></label>
-                                                <select class="form-control select" name="list_number_2" id="list_number_2">
-                                                    <option disabled selected>Select Number of Tab List</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="4">Four</option>
-                                                    <option value="6">Six</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                    Please enter the Accordion tab number.
-                                                </div>
-                                            </div>
+                                            <input type="hidden" class="form-control" name="list_number_2"  id="list_number_2" value="4" required>
                                         </div>
                                         <div class="col-md-12">
                                             <label class="image-checkbox">

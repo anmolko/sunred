@@ -209,10 +209,10 @@
                                                     <div>
                                                         <img  id="current-basic-img"  src="<?php if(!empty(@$basic_elements->image)){ echo '/images/section_elements/basic_section/'.@$basic_elements->image; } else{  echo '/images/default-image.jpg'; } ?>" class="position-relative img-fluid img-thumbnail blog-feature-image" >
                                                         <input  type="file" accept="image/png, image/jpeg" hidden
-                                                                id="basic-image" onchange="loadbasicFile('basic-image','current-basic-img',event)" name="list_image[]" {{(@$process_elements[$i-1]->id !== null) ? "":"required" }}
+                                                                id="basic-image" onchange="loadbasicFile('basic-image','current-basic-img',event)" name="image" {{(@$process_elements[$i-1]->id !== null) ? "":"required" }}
                                                                 class="profile-foreground-img-file-input" >
 
-                                                        <figcaption class="figure-caption">Banner image for current service. (SIZE: 980 x  920px)</figcaption>
+                                                        <figcaption class="figure-caption">Banner image for current basic section. (SIZE: 980 x  920px)</figcaption>
                                                         <div class="invalid-feedback" >
                                                             Please select a image.
                                                         </div>
@@ -235,7 +235,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text-center mt-3" id="basic-form-button">
+                                    <div class="text-center mt-3 mb-3" id="basic-form-button">
                                         <button id="basic-button-submit" class="btn btn-success w-sm">
                                             {{(@$basic_elements !==null)? "Update Details":"Add Details"}}</button>
                                     </div>
@@ -254,8 +254,6 @@
                                                      <div class="card-header">
                                                          <h4 class="card-title mb-0">
                                                              Map and Description Details
-                                                             <br/>
-                                                             <span class="ctm-text-sm">*Map code will be used directly from settings</span>
                                                          </h4>
                                                      </div>
                                                      <div class="card-body">
@@ -270,8 +268,16 @@
                                                          </div>
 
                                                          <div class="form-group mb-3">
+                                                             <label>Subheading</label>
+                                                             <input type="text" maxlength="25" class="form-control" value="{{@$map_descp->subheading}}" name="subheading">
+                                                             <div class="invalid-feedback">
+                                                                 Please enter the sub heading.
+                                                             </div>
+                                                         </div>
+
+                                                         <div class="form-group mb-3">
                                                              <label>Description <span class="text-muted text-danger">*</span></label>
-                                                             <textarea class="form-control" maxlength="670" rows="6" name="description" required>{{@$map_descp->description}}</textarea>
+                                                             <textarea class="form-control" maxlength="700" rows="6" name="description" required>{{@$map_descp->description}}</textarea>
                                                              <div class="invalid-feedback">
                                                                  Please enter the description.
                                                              </div>
@@ -295,8 +301,8 @@
                                                  </div>
                                              </div>
                                          </div>
-                                         <div class="text-center mt-3" id="map-descrip-form-button">
-                                             <button id="map-descrip-form-submit" class="btn btn-theme button-1 ctm-border-radius text-white">
+                                         <div class="text-center mt-3 mb-3" id="map-descrip-form-button">
+                                             <button id="map-descrip-form-submit" class="btn btn-success w-sm">
                                                  {{(@$map_descp !==null)? "Update Details":"Add Details"}}</button>
                                          </div>
                                          {!! Form::close() !!}
@@ -322,7 +328,7 @@
                                                              <label>Description <span class="text-muted text-danger">*</span></label>
                                                              <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
                                                              <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
-                                                             <textarea class="form-control" maxlength="85" rows="6" name="description" required>{{@$call1_elements->description}}</textarea>
+                                                             <textarea class="form-control" maxlength="75" rows="6" name="description" required>{{@$call1_elements->description}}</textarea>
                                                              <div class="invalid-feedback">
                                                                  Please write the short description for basic section.
                                                              </div>
@@ -345,8 +351,8 @@
                                                  </div>
                                              </div>
                                          </div>
-                                         <div class="text-center mt-3" id="call-action1-form-button">
-                                             <button id="call-action-button-submit" class="btn btn-theme button-1 ctm-border-radius text-white">
+                                         <div class="text-center mt-3 mb-3" id="call-action1-form-button">
+                                             <button id="call-action-button-submit" class="btn btn-success w-sm">
                                                  {{(@$call1_elements !==null)? "Update Details":"Add Details"}}
                                              </button>
                                          </div>
@@ -355,11 +361,11 @@
                                      @endif
 
                                      @if($value == 'background_image_section')
-                                         @if(sizeof($bgimage_elements) !== 0)
-                                             {!! Form::open(['route' => 'section-elements.tablistUpdate','class'=>'needs-validation','id'=>'background-image-form','method'=>'post','novalidate'=>'','enctype'=>'multipart/form-data']) !!}
-                                         @else
-                                             {!! Form::open(['route' => 'section-elements.store','method'=>'post','class'=>'needs-validation','id'=>'background-image-form','novalidate'=>'','enctype'=>'multipart/form-data']) !!}
-                                         @endif
+                                            @if($bgimage_elements !== null)
+                                                {!! Form::open(['url'=>route('section-elements.update', @$bgimage_elements->id),'id'=>'background-image-form','class'=>'needs-validation','method'=>'PUT','novalidate'=>'','enctype'=>'multipart/form-data']) !!}
+                                            @else
+                                                {!! Form::open(['route' => 'section-elements.store','method'=>'post','class'=>'needs-validation','id'=>'background-image-form','novalidate'=>'','enctype'=>'multipart/form-data']) !!}
+                                            @endif
                                          <div id="background-image-form-ajax">
                                              <div class="row">
                                                  <div class="col-md-7">
@@ -372,7 +378,7 @@
                                                          <div class="card-body">
                                                              <div class="form-group mb-3">
                                                                  <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                 <input type="text" class="form-control" name="heading[]" value="{{@$bgimage_elements[0]->heading}}" required>
+                                                                 <input type="text" maxlength="100" class="form-control" name="heading" value="{{@$bgimage_elements->heading}}" required>
                                                                  <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
                                                                  <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
                                                                  <div class="invalid-feedback">
@@ -380,10 +386,17 @@
                                                                  </div>
                                                              </div>
                                                              <div class="form-group mb-3">
-                                                                 <label>Sub Heading <span class="text-muted text-danger">*</span></label>
-                                                                 <input type="text" class="form-control"  name="subheading[]" value="{{@$bgimage_elements[0]->subheading}}" required>
+                                                                 <label>Button Text </label>
+                                                                 <input type="text" maxlength="25" class="form-control" value="{{@$bgimage_elements->button}}" name="button">
                                                                  <div class="invalid-feedback">
-                                                                     Please enter the Background Image Section sub heading.
+                                                                     Please enter the button text.
+                                                                 </div>
+                                                             </div>
+                                                             <div class="form-group mb-3">
+                                                                 <label>Button Link </label>
+                                                                 <input type="text" class="form-control" value="{{@$bgimage_elements->button_link}}" name="button_link">
+                                                                 <div class="invalid-feedback">
+                                                                     Please enter the button link.
                                                                  </div>
                                                              </div>
                                                          </div>
@@ -398,141 +411,19 @@
                                                              </h4>
                                                          </div>
                                                          <div class="card-body">
-                                                             <div class="row justify-content-center">
-                                                                 <div class="col-8 mb-4">
-                                                                     <div class="custom-file h-auto">
-                                                                         <div class="avatar-upload">
-                                                                             <div class="avatar-edit">
-                                                                                 <input type="file" class="custom-file-input" hidden id="background-image" onchange="loadbasicFile('background-image','current-backgroundss-img',event)" name="image[]" {{(@$bgimage_elements !=="")? "":"required"}}>
-                                                                                 <label for="background-image"></label>
-                                                                                 <div class="invalid-feedback" style="position: absolute; width: 45px;">
-                                                                                     Please select a image.
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                         <img  id="current-backgroundss-img" src="<?php if(!empty(@$bgimage_elements[0]->image)){ echo '/images/uploads/section_elements/bgimage_section/'.@$bgimage_elements[0]->image; } else{  echo '/images/uploads/default-placeholder.png'; } ?>" alt="background_section_image" class="current-img w-100">
-                                                                     </div>
-                                                                     <span class="ctm-text-sm">*use image minimum of 1920 x 800px for Background section element</span>
+                                                             <div>
+                                                                 <img  id="current-backgroundss-img"  src="<?php if(!empty(@$bgimage_elements->image)){ echo '/images/section_elements/bgimage_section/'.@$bgimage_elements->image; } else{  echo '/images/default-image.jpg'; } ?>" class="position-relative img-fluid img-thumbnail blog-feature-image" >
+                                                                 <input  type="file" accept="image/png, image/jpeg" hidden
+                                                                         id="background-image" onchange="loadbasicFile('background-image','current-backgroundss-img',event)" name="image" {{(@$bgimage_elements !=="")? "":"required"}}
+                                                                         class="profile-foreground-img-file-input" >
+
+                                                                 <figcaption class="figure-caption">Banner image for current background section. (SIZE: 1920 x 1280px)</figcaption>
+                                                                 <div class="invalid-feedback" >
+                                                                     Please select a image.
                                                                  </div>
-
-                                                             </div>
-
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                             <div class="accordion add-tab-section1-details" id="accordion-details">
-                                                 <div class="card shadow-sm ctm-border-radius">
-                                                     <div class="card-header" id="card1">
-                                                         <h4 class="cursor-pointer mb-0">
-                                                             <a class=" coll-arrow d-block text-dark" href="javascript:void(0)" data-toggle="collapse" data-target="#card-one" aria-expanded="true">
-                                                                 Card 1 Details <span class="text-muted text-danger">*</span>
-                                                             </a>
-                                                         </h4>
-                                                     </div>
-                                                     <div class="card-body p-0">
-                                                         <div id="card-one" class="collapse show ctm-padding" aria-labelledby="card1" data-parent="#accordion-details">
-                                                             <div class="row">
-                                                                 <div class="col-md-12">
-                                                                     <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                         <div class="card-body">
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                                 <input type="hidden"  class="form-control" value="{{@$bgimage_elements[0]->id}}" name="id[]">
-                                                                                 <input type="text" class="form-control" maxlength="45"  name="list_header[]" value="{{@$bgimage_elements[0]->list_header}}" required>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please enter the card 1 heading.
-                                                                                 </div>
-                                                                             </div>
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Description <span class="text-muted text-danger">*</span></label>
-                                                                                 <textarea class="form-control" maxlength="110" rows="6" name="list_description[]" required>{{@$bgimage_elements[0]->list_description}}</textarea>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please write the Card 1 description.
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-
-                                                 <div class="card shadow-sm ctm-border-radius">
-                                                     <div class="card-header" id="card2">
-                                                         <h4 class="cursor-pointer mb-0">
-                                                             <a class="coll-arrow d-block text-dark collapsed" href="javascript:void(0)" data-toggle="collapse" data-target="#card-two" aria-expanded="false">
-                                                                 Card 2 Details <span class="text-muted text-danger">*</span>
-                                                             </a>
-                                                         </h4>
-                                                     </div>
-                                                     <div class="card-body p-0">
-                                                         <div id="card-two" class="ctm-padding collapse" aria-labelledby="card2" data-parent="#accordion-details">
-
-                                                             <div class="row">
-
-                                                                 <div class="col-md-12">
-                                                                     <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                         <div class="card-body">
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                                 <input type="hidden" class="form-control" value="{{@$bgimage_elements[1]->id}}" name="id[]">
-                                                                                 <input type="text" class="form-control" maxlength="45"  name="list_header[]" value="{{@$bgimage_elements[1]->list_header}}" required>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please enter the card 2 heading.
-                                                                                 </div>
-                                                                             </div>
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Description <span class="text-muted text-danger">*</span></label>
-                                                                                 <textarea class="form-control" maxlength="110" rows="6" name="list_description[]" required>{{@$bgimage_elements[1]->list_description}}</textarea>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please write the card 2 description.
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-
-                                                         </div>
-                                                     </div>
-                                                 </div>
-
-                                                 <div class="card shadow-sm ctm-border-radius">
-                                                     <div class="card-header" id="card3">
-                                                         <h4 class="cursor-pointer mb-0">
-                                                             <a class="coll-arrow d-block text-dark collapsed" href="javascript:void(0)" data-toggle="collapse" data-target="#card-three" aria-expanded="false">
-                                                                 Card 3 Details <span class="text-muted text-danger">*</span>
-                                                             </a>
-                                                         </h4>
-                                                     </div>
-                                                     <div class="card-body p-0">
-                                                         <div id="card-three" class="ctm-padding collapse" aria-labelledby="card3" data-parent="#accordion-details">
-
-                                                             <div class="row">
-
-                                                                 <div class="col-md-12">
-                                                                     <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                         <div class="card-body">
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                                 <input type="hidden" class="form-control" value="{{@$bgimage_elements[2]->id}}" name="id[]">
-                                                                                 <input type="text" class="form-control" maxlength="45"  name="list_header[]" value="{{@$bgimage_elements[2]->list_header}}" required>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please enter the card 3 heading.
-                                                                                 </div>
-                                                                             </div>
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Description <span class="text-muted text-danger">*</span></label>
-                                                                                 <textarea class="form-control" rows="6" maxlength="110" name="list_description[]"  required>{{@$bgimage_elements[2]->list_description}}</textarea>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please write the card 3 description.
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
+                                                                 <label for="background-image" class="profile-photo-edit btn btn-light feature-image-button">
+                                                                     <i class="ri-image-edit-line align-bottom me-1"></i> Add Basic Image
+                                                                 </label>
                                                              </div>
 
                                                          </div>
@@ -541,7 +432,8 @@
                                              </div>
                                          </div>
                                          <div class="text-center mt-3" id="background-image-form-button">
-                                             <button id="background-button-submit" class="btn btn-theme button-1 ctm-border-radius text-white">{{(sizeof(@$bgimage_elements) !== 0) ? "Update Details":"Add Details"}}</button>
+                                             <button id="background-button-submit" class="btn btn-success w-sm">
+                                                 {{(@$bgimage_elements !==null)? "Update Details":"Add Details"}}</button>
                                          </div>
                                          {!! Form::close() !!}
 
@@ -556,134 +448,115 @@
                                          @endif
                                          <div id="flash-card-form-ajax">
                                              <div class="accordion add-tab-section1-details" id="accordion-details">
+                                                 <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box accordion-success" id="accordionBordered2">
 
-                                                 <div class="card shadow-sm ctm-border-radius">
-                                                     <div class="card-header" id="mission1">
-                                                         <h4 class="cursor-pointer mb-0">
-                                                             <a class=" coll-arrow d-block text-dark" href="javascript:void(0)" data-toggle="collapse" data-target="#mission-one" aria-expanded="true">
-                                                                 Mission <span class="text-muted text-danger">*</span>
-                                                                 <br><span class="ctm-text-sm">Please enter the details for mission.</span>
-                                                             </a>
-                                                         </h4>
-                                                     </div>
-                                                     <div class="card-body p-0">
-                                                         <div id="mission-one" class="collapse show ctm-padding" aria-labelledby="mission1" data-parent="#accordion-details">
+                                                     <div class="accordion-item">
+                                                         <h2 class="accordion-header" id="processelect-heading-mission">
+                                                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accor_borderedExamplecollapse3" aria-expanded="true" aria-controls="accor_borderedExamplecollapse3">
+                                                                Card 1
+                                                             </button>
+                                                         </h2>
+                                                         <div id="accor_borderedExamplecollapse3" class="accordion-collapse collapse show" aria-labelledby="processelect-heading-mission" data-bs-parent="#accordionBordered2">
+                                                             <div class="accordion-body">
+                                                                 <div class="row">
+                                                                     <div class="col-md-12">
 
-                                                             <div class="row">
-                                                                 <div class="col-md-12">
-                                                                     <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                         <div class="card-body">
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                                 <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
-                                                                                 <input type="hidden" class="form-control" value="{{@$flash_elements[0]->id}}" name="id[]">
-                                                                                 <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
-                                                                                 <input type="text" class="form-control" maxlength="12" name="list_header[]" value="{{@$flash_elements[0]->list_header}}" required>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please enter the Mission heading.
-                                                                                 </div>
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Heading <span class="text-muted text-danger">*</span></label>
+                                                                             <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
+                                                                             <input type="hidden" class="form-control" value="{{@$flash_elements[0]->id}}" name="id[]">
+                                                                             <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
+                                                                             <input type="text" class="form-control" maxlength="12" name="list_header[]" value="{{@$flash_elements[0]->list_header}}" required>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please enter the card 1 heading.
                                                                              </div>
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Description <span class="text-muted text-danger">*</span></label>
-                                                                                 <textarea class="form-control" maxlength="220" rows="6" name="list_description[]" required>{{@$flash_elements[0]->list_description}}</textarea>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please write the Mission description.
-                                                                                 </div>
+                                                                         </div>
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Description <span class="text-muted text-danger">*</span></label>
+                                                                             <textarea class="form-control" maxlength="445" rows="6" name="list_description[]" required>{{@$flash_elements[0]->list_description}}</textarea>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please write the card 1 description.
+                                                                             </div>
+                                                                         </div>
+
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+
+                                                     <div class="accordion-item">
+                                                         <h2 class="accordion-header" id="processelect-heading-vision">
+                                                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accor_borderedExamplecollapse4" aria-expanded="false" aria-controls="accor_borderedExamplecollapse4">
+                                                                 Card 2
+                                                             </button>
+                                                         </h2>
+                                                         <div id="accor_borderedExamplecollapse4" class="accordion-collapse collapse" aria-labelledby="processelect-heading-vision" data-bs-parent="#accordionBordered2">
+                                                             <div class="accordion-body">
+                                                                 <div class="row">
+                                                                     <div class="col-md-12">
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Heading <span class="text-muted text-danger">*</span></label>
+                                                                             <input type="hidden" class="form-control" value="{{@$flash_elements[1]->id}}" name="id[]">
+                                                                             <input type="text" class="form-control" maxlength="12" name="list_header[]" value="{{@$flash_elements[1]->list_header}}" required>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please enter the card 1 heading.
+                                                                             </div>
+                                                                         </div>
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Description <span class="text-muted text-danger">*</span></label>
+                                                                             <textarea class="form-control" maxlength="445" rows="6" name="list_description[]" required>{{@$flash_elements[1]->list_description}}</textarea>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please write the card 1 description.
                                                                              </div>
                                                                          </div>
                                                                      </div>
                                                                  </div>
                                                              </div>
-
                                                          </div>
                                                      </div>
-                                                 </div>
 
-                                                 <div class="card shadow-sm ctm-border-radius">
-                                                     <div class="card-header" id="vision1">
-                                                         <h4 class="cursor-pointer mb-0">
-                                                             <a class="coll-arrow d-block text-dark collapsed" href="javascript:void(0)" data-toggle="collapse" data-target="#vision-one" aria-expanded="false">
-                                                                 Vision <span class="text-muted text-danger">*</span>
-                                                                 <br><span class="ctm-text-sm">Please enter the details for Vision.</span>
-                                                             </a>
-                                                         </h4>
-                                                     </div>
-                                                     <div class="card-body p-0">
-                                                         <div id="vision-one" class="ctm-padding collapse" aria-labelledby="vision1" data-parent="#accordion-details">
+                                                     <div class="accordion-item">
+                                                         <h2 class="accordion-header" id="processelect-heading-values">
+                                                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accor_borderedExamplecollapse5" aria-expanded="false" aria-controls="accor_borderedExamplecollapse5">
+                                                                 Card 3
+                                                             </button>
+                                                         </h2>
+                                                         <div id="accor_borderedExamplecollapse5" class="accordion-collapse collapse" aria-labelledby="processelect-heading-values" data-bs-parent="#accordionBordered2">
+                                                             <div class="accordion-body">
+                                                                 <div class="row">
 
-                                                             <div class="row">
-                                                                 <div class="col-md-12">
-                                                                     <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                         <div class="card-body">
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                                 <input type="hidden" class="form-control" value="{{@$flash_elements[1]->id}}" name="id[]">
-                                                                                 <input type="text" class="form-control" maxlength="12" name="list_header[]" value="{{@$flash_elements[1]->list_header}}" required>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please enter the Vision heading.
-                                                                                 </div>
-                                                                             </div>
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Description <span class="text-muted text-danger">*</span></label>
-                                                                                 <textarea class="form-control" maxlength="220" rows="6" name="list_description[]" required>{{@$flash_elements[1]->list_description}}</textarea>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please write the Vision description.
-                                                                                 </div>
+                                                                     <div class="col-md-12">
+
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Heading <span class="text-muted text-danger">*</span></label>
+                                                                             <input type="hidden" class="form-control" value="{{@$flash_elements[2]->id}}" name="id[]">
+                                                                             <input type="text" class="form-control" maxlength="12" name="list_header[]" value="{{@$flash_elements[2]->list_header}}" required>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please enter the card 3 heading.
                                                                              </div>
                                                                          </div>
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Description <span class="text-muted text-danger">*</span></label>
+                                                                             <textarea class="form-control" rows="6" maxlength="445" name="list_description[]" required>{{@$flash_elements[2]->list_description}}</textarea>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please write the card 3 description.
+                                                                             </div>
+                                                                         </div>
+
                                                                      </div>
                                                                  </div>
                                                              </div>
-
                                                          </div>
                                                      </div>
                                                  </div>
 
-                                                 <div class="card shadow-sm ctm-border-radius">
-                                                     <div class="card-header" id="goal1">
-                                                         <h4 class="cursor-pointer mb-0">
-                                                             <a class="coll-arrow d-block text-dark collapsed" href="javascript:void(0)" data-toggle="collapse" data-target="#goal-one" aria-expanded="false">
-                                                                 Values <span class="text-muted text-danger">*</span>
-                                                                 <br><span class="ctm-text-sm">Please enter the details for values.</span>
-                                                             </a>
-                                                         </h4>
-                                                     </div>
-                                                     <div class="card-body p-0">
-                                                         <div id="goal-one" class="ctm-padding collapse" aria-labelledby="goal1" data-parent="#accordion-details">
 
-                                                             <div class="row">
-
-                                                                 <div class="col-md-12">
-                                                                     <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                         <div class="card-body">
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                                 <input type="hidden" class="form-control" value="{{@$flash_elements[2]->id}}" name="id[]">
-                                                                                 <input type="text" class="form-control" maxlength="12" name="list_header[]" value="{{@$flash_elements[2]->list_header}}" required>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please enter the Values heading.
-                                                                                 </div>
-                                                                             </div>
-                                                                             <div class="form-group mb-3">
-                                                                                 <label>Description <span class="text-muted text-danger">*</span></label>
-                                                                                 <textarea class="form-control" rows="6" maxlength="220" name="list_description[]" required>{{@$flash_elements[2]->list_description}}</textarea>
-                                                                                 <div class="invalid-feedback">
-                                                                                     Please write the Values description.
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-
-                                                         </div>
-                                                     </div>
-                                                 </div>
 
                                              </div>
                                          </div>
-                                         <div class="text-center mt-3" id="flash-card-form-button">
-                                             <button id="tab1-button-submit" class="btn btn-theme button-1 ctm-border-radius text-white">{{(sizeof(@$flash_elements) !== 0) ? "Update Details":"Add Details"}}</button>
+                                         <div class="text-center mt-3 mb-3" id="flash-card-form-button">
+                                             <button id="tab1-button-submit" class="btn btn-success w-sm">{{(sizeof(@$flash_elements) !== 0) ? "Update Details":"Add Details"}}</button>
                                          </div>
                                          {!! Form::close() !!}
                                      @endif
@@ -731,8 +604,8 @@
                                                  </div>
                                              </div>
                                          </div>
-                                         <div class="text-center mt-3" id="header-descp-form-button">
-                                             <button id="call-action-button-submit" class="btn btn-theme button-1 ctm-border-radius text-white">
+                                         <div class="text-center mt-3 mb-3" id="header-descp-form-button">
+                                             <button id="call-action-button-submit" class="btn btn-success w-sm">
                                                  {{(@$header_descp_elements !==null)? "Update Details":"Add Details"}}
                                              </button>
                                          </div>
@@ -777,53 +650,60 @@
                                                                      Please write the short description.
                                                                  </div>
                                                              </div>
+                                                             <div class="form-group mb-3">
+                                                                 <label>Button Text </label>
+                                                                 <input type="text" maxlength="25" class="form-control" value="{{@$accordian2_elements[0]->button}}" name="button[]">
+                                                                 <div class="invalid-feedback">
+                                                                     Please enter the button text.
+                                                                 </div>
+                                                             </div>
+                                                             <div class="form-group mb-3">
+                                                                 <label>Button Link </label>
+                                                                 <input type="text" class="form-control" value="{{@$accordian2_elements[0]->button_link}}" name="button_link[]">
+                                                                 <div class="invalid-feedback">
+                                                                     Please enter the button link.
+                                                                 </div>
+                                                             </div>
                                                          </div>
                                                      </div>
                                                  </div>
                                              </div>
-                                             <div class="accordion listwo" id="accordion-details">
+
+
+                                             <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box accordion-success" id="accordionBordered5">
                                                  <input type="hidden" class="form-control" value="{{@$accordian2_elements}}" name="accordion2_elements">
-
                                                  @for ($i = 1; $i <=$list_2; $i++)
-                                                     <div class="card shadow-sm ctm-border-radius">
-                                                         <div class="card-header" id="listtwoheading{{$i}}">
-                                                             <h4 class="cursor-pointer mb-0">
-                                                                 <a class="{{($i==1) ? 'coll-arrow d-block text-dark':'coll-arrow d-block text-dark collapsed'}}" href="javascript:void(0)" data-toggle="collapse" data-target="#listtwo-heading-{{$i}}" aria-expanded="{{($i==1) ? 'true':'false'}}">
-                                                                     Accordion {{$i}} details <span class="text-muted text-danger">*</span>
-                                                                 </a>
-                                                             </h4>
-                                                         </div>
-                                                         <div class="card-body p-0">
-                                                             <div id="listtwo-heading-{{$i}}" class="{{($i==1) ? 'collapse show ctm-padding':'collapse ctm-padding'}}" aria-labelledby="listtwoheading{{$i}}" data-parent="#accordion-details" >
 
+                                                     <div class="accordion-item">
+                                                         <h2 class="accordion-header" id="accordian-heading-{{$i}}">
+                                                             <button class="accordion-button {{($i==1) ? '':'collapsed'}}" type="button" data-bs-toggle="collapse" data-bs-target="#accor_borderedExamplecollapse_{{$i}}" aria-expanded="{{($i==1) ? 'true':'false'}}" aria-controls="accor_borderedExamplecollapse_{{$i}}">
+                                                                 Box {{$i}} details
+                                                             </button>
+                                                         </h2>
+                                                         <div id="accor_borderedExamplecollapse_{{$i}}" class="accordion-collapse collapse {{($i==1) ? 'show':''}} " aria-labelledby="accordian-heading-{{$i}}" data-bs-parent="#accordionBordered5">
+                                                             <div class="accordion-body">
                                                                  <div class="row">
                                                                      <div class="col-md-12">
-                                                                         <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                             <div class="card-body">
-                                                                                 <div class="form-group mb-3">
-                                                                                     <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                                     <input type="hidden" class="form-control" value="{{$key}}"    name="page_section_id" required>
-                                                                                     <input type="hidden" class="form-control" value="{{$value}}"  name="section_name" required>
-                                                                                     <input type="hidden" class="form-control" value="{{$list_2}}" name="list_number_2" required>
-                                                                                     <input type="hidden" class="form-control" value="{{@$accordian2_elements[$i-1]->id}}" name="id[]">
-                                                                                     <input type="text" class="form-control" name="list_header[]" value="{{@$accordian2_elements[$i-1]->list_header}}" required>
-                                                                                     <div class="invalid-feedback">
-                                                                                         Please enter the heading.
-                                                                                     </div>
-                                                                                 </div>
-                                                                                 <div class="form-group mb-3">
-                                                                                     <label>Description <span class="text-muted text-danger">*</span></label>
-                                                                                     <textarea class="form-control" rows="6" name="list_description[]" id="accordian_two_editor_{{$i}}" required>{{@$accordian2_elements[$i-1]->list_description}}</textarea>
-                                                                                     <div class="invalid-feedback">
-                                                                                         Please write the description.
-                                                                                     </div>
-                                                                                 </div>
-
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Heading <span class="text-muted text-danger">*</span></label>
+                                                                             <input type="hidden" class="form-control" value="{{$key}}"    name="page_section_id" required>
+                                                                             <input type="hidden" class="form-control" value="{{$value}}"  name="section_name" required>
+                                                                             <input type="hidden" class="form-control" value="{{$list_2}}" name="list_number_2" required>
+                                                                             <input type="hidden" class="form-control" value="{{@$accordian2_elements[$i-1]->id}}" name="id[]">
+                                                                             <input type="text" class="form-control" name="list_header[]" value="{{@$accordian2_elements[$i-1]->list_header}}" required>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please enter the heading.
+                                                                             </div>
+                                                                         </div>
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Description <span class="text-muted text-danger">*</span></label>
+                                                                             <textarea class="form-control" rows="6" name="list_description[]" id="accordian_two_editor_{{$i}}" required>{{@$accordian2_elements[$i-1]->list_description}}</textarea>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please write the description.
                                                                              </div>
                                                                          </div>
                                                                      </div>
                                                                  </div>
-
                                                              </div>
                                                          </div>
                                                      </div>
@@ -831,8 +711,8 @@
 
                                              </div>
                                          </div>
-                                         <div class="text-center mt-3" id="accordion2-form-button">
-                                             <button id="list2-button-submit" class="btn btn-theme button-1 ctm-border-radius text-white">{{(sizeof(@$accordian2_elements) !== 0) ? "Update Details":"Add Details"}}</button>
+                                         <div class="text-center mt-3 mb-3" id="accordion2-form-button">
+                                             <button id="list2-button-submit" class="btn btn-success w-sm">{{(sizeof(@$accordian2_elements) !== 0) ? "Update Details":"Add Details"}}</button>
                                          </div>
                                          {!! Form::close() !!}
                                      @endif
@@ -872,104 +752,78 @@
                                                  </div>
                                              </div>
 
-                                             <div class="accordion listwo" id="accordion-details">
+
+                                             <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box accordion-success" id="accordionBordered11">
                                                  <input type="hidden" class="form-control" value="{{@$slider_list_elements}}" name="slider_list_elements">
 
                                                  @for ($i = 1; $i <=$list_3; $i++)
-                                                     <div class="card shadow-sm ctm-border-radius">
-                                                         <div class="card-header" id="processelect{{$i}}">
-                                                             <h4 class="cursor-pointer mb-0">
-                                                                 <a class="{{($i==1) ? 'coll-arrow d-block text-dark':'coll-arrow d-block text-dark collapsed'}}" href="javascript:void(0)" data-toggle="collapse" data-target="#processelect-heading-{{$i}}" aria-expanded="{{($i==1) ? 'true':'false'}}">
-                                                                     Slider List {{$i}} details <span class="text-muted text-danger">*</span>
-                                                                 </a>
-                                                             </h4>
-                                                         </div>
-                                                         <div class="card-body p-0">
-                                                             <div id="processelect-heading-{{$i}}" class="{{($i==1) ? 'collapse show ctm-padding':'collapse ctm-padding'}}" aria-labelledby="processelect{{$i}}" data-parent="#accordion-details" >
 
+                                                     <div class="accordion-item">
+                                                         <h2 class="accordion-header" id="slider-lists-{{$i}}">
+                                                             <button class="accordion-button {{($i==1) ? '':'collapsed'}}" type="button" data-bs-toggle="collapse" data-bs-target="#accor_borderedExamplecollapsedd_{{$i}}" aria-expanded="{{($i==1) ? 'true':'false'}}" aria-controls="accor_borderedExamplecollapsedd_{{$i}}">
+                                                                 Slider {{$i}} details
+                                                             </button>
+                                                         </h2>
+                                                         <div id="accor_borderedExamplecollapsedd_{{$i}}" class="accordion-collapse collapse {{($i==1) ? 'show':''}} " aria-labelledby="slider-lists-{{$i}}" data-bs-parent="#accordionBordered11">
+                                                             <div class="accordion-body">
                                                                  <div class="row">
                                                                      <div class="col-md-7">
-                                                                         <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                             <div class="card-body">
-                                                                                 <div class="form-group mb-3">
-                                                                                     <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                                                     <input type="hidden" class="form-control" value="{{$key}}"    name="page_section_id" required>
-                                                                                     <input type="hidden" class="form-control" value="{{$value}}"  name="section_name" required>
-                                                                                     <input type="hidden" class="form-control" value="{{$list_3}}" name="list_number_3" required>
-                                                                                     <input type="hidden" class="form-control" value="{{@$slider_list_elements[$i-1]->id}}" name="id[]">
-                                                                                     <input type="text" class="form-control" name="list_header[]" id="slider_title_{{$i-1}}" onkeyup="slugMaker('slider_title_{{$i-1}}','slider_slug_{{$i-1}}')" value="{{@$slider_list_elements[$i-1]->list_header}}"  required>
-                                                                                     <div class="invalid-feedback">
-                                                                                         Please enter the heading.
-                                                                                     </div>
-                                                                                 </div>
-                                                                                 <div class="form-group mb-3">
-                                                                                     <label>Slug </label>
-                                                                                     <input type="text" class="form-control" name="subheading[]" id="slider_slug_{{$i-1}}"  value="{{@$slider_list_elements[$i-1]->subheading}}" >
-                                                                                     <div class="invalid-feedback">
-                                                                                         Please enter the slug.
-                                                                                     </div>
-                                                                                 </div>
-                                                                                 <div class="form-group mb-3">
-                                                                                     <label>{{($slider_type =='simple_list') ? 'Short Description':'Long Description.'}} <span class="text-muted text-danger">*</span></label>
-                                                                                     <textarea class="form-control" rows="6"  maxlength="{{($slider_type =='simple_list') ? '160':''}}" name="list_description[]" required>{{@$slider_list_elements[$i-1]->list_description}}</textarea>
-                                                                                     <span class="ctm-text-sm">{{($slider_type =='simple_list') ? 'Please write a short description':'Please write the long description.'}}</span>
-                                                                                     <div class="invalid-feedback">
-                                                                                         {{($slider_type =='simple_list') ? 'Please write a short description':'Please write the long description.'}}                                                                                            </div>
-                                                                                 </div>
-                                                                                 <div class="form-group mb-3">
-                                                                                     <label>Button Text </label>
-                                                                                     <input type="text" maxlength="18" class="form-control" name="button[]" value="{{@$slider_list_elements[$i-1]->button}}" >
-                                                                                     <div class="invalid-feedback">
-                                                                                         Please enter the button text.
-                                                                                     </div>
-                                                                                 </div>
-                                                                                 <div class="form-group mb-3">
-                                                                                     <label>Button Link </label>
-                                                                                     <input type="text" class="form-control" name="button_link[]" value="{{@$slider_list_elements[$i-1]->button_link}}" >
-                                                                                     <div class="invalid-feedback">
-                                                                                         Please enter the button link.
-                                                                                     </div>
-                                                                                 </div>
+
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Heading <span class="text-muted text-danger">*</span></label>
+                                                                             <input type="hidden" class="form-control" value="{{$key}}"    name="page_section_id" required>
+                                                                             <input type="hidden" class="form-control" value="{{$value}}"  name="section_name" required>
+                                                                             <input type="hidden" class="form-control" value="{{$list_3}}" name="list_number_3" required>
+                                                                             <input type="hidden" class="form-control" value="{{@$slider_list_elements[$i-1]->id}}" name="id[]">
+                                                                             <input type="text" class="form-control" name="list_header[]" id="slider_title_{{$i-1}}" onkeyup="slugMaker('slider_title_{{$i-1}}','slider_slug_{{$i-1}}')" value="{{@$slider_list_elements[$i-1]->list_header}}"  required>
+                                                                             <div class="invalid-feedback">
+                                                                                 Please enter the heading.
                                                                              </div>
                                                                          </div>
+                                                                         <div class="form-group mb-3">
+                                                                             <label>Slug </label>
+                                                                             <input type="text" class="form-control" name="subheading[]" id="slider_slug_{{$i-1}}"  value="{{@$slider_list_elements[$i-1]->subheading}}" >
+                                                                             <div class="invalid-feedback">
+                                                                                 Please enter the slug.
+                                                                             </div>
+                                                                         </div>
+                                                                         <div class="form-group mb-3">
+                                                                                     <label>Long Description<span class="text-muted text-danger">*</span></label>
+                                                                                     <textarea class="form-control" rows="6"  name="list_description[]" required>{{@$slider_list_elements[$i-1]->list_description}}</textarea>
+                                                                                     <span class="ctm-text-sm">Please write the description</span>
+                                                                                     <div class="invalid-feedback">
+                                                                                         Please write the long description.                                                                                            </div>
+                                                                                 </div>
+
                                                                      </div>
                                                                      <div class="col-md-5">
-                                                                         <div class="card ctm-border-radius shadow-sm flex-fill">
-                                                                             <div class="card-body">
-                                                                                 <div class="row justify-content-center">
-                                                                                     <div class="col-9 mb-4">
-                                                                                         <div class="custom-file h-auto">
-                                                                                             <div class="avatar-upload">
-                                                                                                 <div class="avatar-edit">
-                                                                                                     <input type="file" class="custom-file-input" hidden id="sliderlist-{{$i}}-image" onchange="loadbasicFile('sliderlist-{{$i}}-image','current-sliderlist-{{$i}}-img',event)" name="list_image[]" {{(@$slider_list_elements[$i-1]->id !== null) ? "":"required" }}>
-                                                                                                     <label for="sliderlist-{{$i}}-image"></label>
-                                                                                                     <div class="invalid-feedback" style="position: absolute; width: 45px;">
-                                                                                                         Please select a image.
-                                                                                                     </div>
-                                                                                                 </div>
-                                                                                             </div>
-                                                                                             <img id="current-sliderlist-{{$i}}-img" src="<?php if(!empty(@$slider_list_elements[$i-1]->list_image)){ echo '/images/uploads/section_elements/list_1/'.@$slider_list_elements[$i-1]->list_image; } else{  echo '/images/uploads/default-placeholder.png'; } ?>"  alt="sliderlist_{{$i}}_section_image" class="current-img w-100">
-                                                                                         </div>
-                                                                                         <span class="ctm-text-sm text-danger"> {{(@$slider_list_elements[$i-1]->id !== null) ? "":"*required" }}</span>
-                                                                                         <span class="ctm-text-sm">*use image minimum of 1170 x 600px for  Slider list {{$i}} element</span>
-                                                                                     </div>
+                                                                         <div>
+                                                                             <img  id="current-sliderlist-{{$i}}-img"  src="<?php if(!empty(@$slider_list_elements[$i-1]->list_image)){ echo '/images/section_elements/list_1/'.@$slider_list_elements[$i-1]->list_image; } else{  echo '/images/default-image.jpg'; } ?>" class="position-relative img-fluid img-thumbnail blog-feature-image" >
+                                                                             <input  type="file" accept="image/png, image/jpeg" hidden
+                                                                                     id="sliderlist-{{$i}}-image" onchange="loadbasicFile('sliderlist-{{$i}}-image','current-sliderlist-{{$i}}-img',event)" name="list_image[]" {{(@$slider_list_elements[$i-1]->id !== null) ? "":"required" }}
+                                                                                     class="profile-foreground-img-file-input" >
 
-                                                                                 </div>
-
+                                                                             <figcaption class="figure-caption">Banner image for current slider. (SIZE: 1280 X 885px)</figcaption>
+                                                                             <div class="invalid-feedback" >
+                                                                                 Please select a image.
                                                                              </div>
+                                                                             <label for="sliderlist-{{$i}}-image" class="profile-photo-edit btn btn-light feature-image-button">
+                                                                                 <i class="ri-image-edit-line align-bottom me-1"></i> Add Image
+                                                                             </label>
                                                                          </div>
+
                                                                      </div>
                                                                  </div>
-
                                                              </div>
                                                          </div>
                                                      </div>
                                                  @endfor
 
                                              </div>
+
                                          </div>
-                                         <div class="text-center mt-3" id="slider-list-form-button">
-                                             <button id="process-button-submit" class="btn btn-theme button-1 ctm-border-radius text-white">{{(sizeof(@$slider_list_elements) !== 0) ? "Update Details":"Add Details"}}</button>
+                                         <div class="text-center mt-3 mb-3" id="slider-list-form-button">
+                                             <button id="process-button-submit" class="btn btn-success w-sm">{{(sizeof(@$slider_list_elements) !== 0) ? "Update Details":"Add Details"}}</button>
                                          </div>
                                          {!! Form::close() !!}
 
@@ -1212,7 +1066,7 @@
                                                                                         id="processelect-{{$i}}-image" onchange="loadbasicFile('processelect-{{$i}}-image','current-processelect-{{$i}}-img',event)" name="list_image[]" {{(@$process_elements[$i-1]->id !== null) ? "":"required" }}
                                                                                         class="profile-foreground-img-file-input" >
 
-                                                                                <figcaption class="figure-caption">Banner image for current service. (SIZE: 64px X 64px)</figcaption>
+                                                                                <figcaption class="figure-caption">Banner image for current box. (SIZE: 64px X 64px)</figcaption>
                                                                                 <div class="invalid-feedback" >
                                                                                     Please select a image.
                                                                                 </div>
@@ -2508,11 +2362,7 @@
                 createEditor('basic1_editor');
             }
             if(section_list.includes("simple_header_and_description")){
-                // createEditor('header_descp_editor');
-            }
-
-            if(section_list.includes("contact_information")){
-                createEditor('first_section_editor');
+                createEditor('task-textarea');
             }
 
             if(section_list.includes("accordion_section_2")){

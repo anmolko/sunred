@@ -240,19 +240,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Select number of Tab List <span class="text-muted text-danger">*</span></label>
-                                                <select class="form-control select" name="list_number_2" id="list_number_2">
-                                                    <option  {{($list2 == null) ? "disabled selected":"disabled"}}>Select Number of Tab List</option>
-                                                    <option value="2" {{($list2 =="2") ? "selected":""}}>Two</option>
-                                                    <option value="4" {{($list2 =="4") ? "selected":""}}>Four</option>
-                                                    <option value="6" {{($list2 =="6") ? "selected":""}}>Six</option>
-                                                </select>
-                                                <input type="hidden" name="list_2_id" value="{{$list2_id}}">
-                                                <div class="invalid-feedback">
-                                                    Please enter the Accordion Tab number.
-                                                </div>
-                                            </div>
+                                            <input type="hidden" class="form-control" name="list_number_2"  id="list_number_2" value="{{$list2}}" required>
                                         </div>
                                         <div class="col-md-12">
                                             <label class="image-checkbox {{(in_array('accordion_section_2', $sections) ? "image-checkbox-checked":"")}}">
@@ -352,9 +340,9 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <label class="image-checkbox {{(in_array('process_selection', $sections) ? "image-checkbox-checked":"")}}">
-                                                <img class="img-responsive" src="{{asset('assets/backend/img/page_sections/process_section.png')}}" />
-                                                <input type="checkbox" name="section[]" id="process_section.png" value="process_selection" {{(in_array('process_selection', $sections) ? "checked":"")}} />
+                                            <label class="image-checkbox {{(in_array('small_box_description', $sections) ? "image-checkbox-checked":"")}}">
+                                                <img class="img-responsive" src="{{asset('assets/backend/img/page_sections/small_box_description.png')}}" />
+                                                <input type="checkbox" name="section[]" id="small_box_description.png" value="small_box_description" {{(in_array('small_box_description', $sections) ? "checked":"")}} />
                                                 <i class="ri ri-check-line hidden"></i>
                                             </label>
                                         </div>

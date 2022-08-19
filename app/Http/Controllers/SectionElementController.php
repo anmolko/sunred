@@ -88,7 +88,7 @@ class SectionElementController extends Controller
             else if ($section->section_slug == 'background_image_section'){
                 $bgimage_elements = SectionElement::with('section')
                     ->where('page_section_id', $section->id)
-                    ->get();
+                    ->first();
             }
             else if ($section->section_slug == 'flash_cards'){
                 $flash_elements = SectionElement::with('section')
@@ -170,6 +170,7 @@ class SectionElementController extends Controller
         else if($section_name == 'map_and_description'){
             $data=[
                 'heading'                => $request->input('heading'),
+                'subheading'             => $request->input('subheading'),
                 'page_section_id'        => $section_id,
                 'description'            => $request->input('description'),
                 'button'                 => $request->input('button'),
@@ -190,34 +191,24 @@ class SectionElementController extends Controller
         }
 
         elseif ($section_name == 'background_image_section'){
-            for ($i=0;$i<3;$i++){
-                $heading =  (array_key_exists($i, $request->input('heading')) ?  $request->input('heading')[$i]: Null);
-                $subheading =  ( array_key_exists($i, $request->input('subheading')) ?  $request->input('subheading')[$i]: Null);
-                $data=[
-                    'heading'                => $heading,
-                    'subheading'             => $subheading,
-                    'list_header'            => $request->input('list_header')[$i],
-                    'page_section_id'        => $section_id,
-                    'list_description'       => $request->input('list_description')[$i],
-                    'created_by'             => Auth::user()->id,
-                ];
+            $data=[
+                'page_section_id'        => $section_id,
+                'heading'                => $request->input('heading'),
+                'button'                 => $request->input('button'),
+                'button_link'            => $request->input('button_link'),
+                'created_by'             => Auth::user()->id,
+            ];
 
-                if($request->file('image') !== null) {
-                    if (array_key_exists($i, $request->file('image'))) {
-                        $image = $request->file('image')[0];
-                        $name = uniqid() . '__background__' . $image->getClientOriginalName();
-                        $path = base_path() . '/public/images/section_elements/bgimage_section/';
-                        $moved = Image::make($image->getRealPath())->resize(1920, 800)->orientate()->save($path . $name);
-                        if ($moved) {
-                            $data['image'] = $name;
-                        }
-
-                    }
+            if($request->file('image') !== null) {
+                $image = $request->file('image');
+                $name = uniqid() . '__background__' . $image->getClientOriginalName();
+                $path = base_path() . '/public/images/section_elements/bgimage_section/';
+                $moved = Image::make($image->getRealPath())->resize(1920, 800)->orientate()->save($path . $name);
+                if ($moved) {
+                    $data['image'] = $name;
                 }
-
-                $status = SectionElement::create($data);
             }
-
+                $status = SectionElement::create($data);
         }
         elseif ($section_name == 'flash_cards'){
             for ($i=0;$i<3;$i++){
@@ -246,10 +237,14 @@ class SectionElementController extends Controller
                     $heading     =  (array_key_exists($i, $request->input('heading')) ?  $request->input('heading')[$i]: Null);
                     $subheading  =  (array_key_exists($i, $request->input('subheading')) ?  $request->input('subheading')[$i]: Null);
                     $description =  (array_key_exists($i, $request->input('description')) ?  $request->input('description')[$i]: Null);
+                    $button      =  (array_key_exists($i, $request->input('button')) ?  $request->input('button')[$i]: Null);
+                    $link        =  (array_key_exists($i, $request->input('button_link')) ?  $request->input('button_link')[$i]: Null);
                     $data=[
                         'heading'               => $heading,
                         'subheading'            => $subheading,
                         'description'           => $description,
+                        'button'                => $button,
+                        'button_link'           => $link,
                         'page_section_id'       => $section_id,
                         'list_header'           => $request->input('list_header')[$i],
                         'list_description'      => $request->input('list_description')[$i],
@@ -270,8 +265,6 @@ class SectionElementController extends Controller
                     'subheading'            => $request->input('subheading')[$i],
                     'page_section_id'       => $section_id,
                     'list_description'      => $request->input('list_description')[$i],
-                    'button'                => $request->input('button')[$i],
-                    'button_link'           => $request->input('button_link')[$i],
                     'created_by'            => Auth::user()->id,
                 ];
                 if (array_key_exists($i,$request->file('list_image'))){
@@ -280,8 +273,8 @@ class SectionElementController extends Controller
                     $thumb        = 'thumb_'.$name;
                     $path         = base_path().'/public/images/section_elements/list_1/';
                     $thumb_path   = base_path().'/public/images/section_elements/list_1/thumb/';
-                    $moved        = Image::make($image->getRealPath())->fit(1170, 600)->orientate()->save($path.$name);
-                    $thumb        = Image::make($image->getRealPath())->fit(768, 510)->orientate()->save($thumb_path.$thumb);
+                    $moved        = Image::make($image->getRealPath())->fit(1280, 885)->orientate()->save($path.$name);
+                    $thumb        = Image::make($image->getRealPath())->fit(418, 278)->orientate()->save($thumb_path.$thumb);
                     if ($moved && $thumb){
                         $data['list_image']= $name;
                     }
@@ -390,6 +383,7 @@ class SectionElementController extends Controller
         elseif($section_name == 'map_and_description'){
             $map                      = SectionElement::find($id);
             $map->heading             = $request->input('heading');
+            $map->subheading          = $request->input('subheading');
             $map->page_section_id     = $section_id;
             $map->description         = $request->input('description');
             $map->button              = $request->input('button');
@@ -404,6 +398,32 @@ class SectionElementController extends Controller
             $action->button              = $request->input('button');
             $action->button_link         = $request->input('button_link');
             $action->updated_by          = Auth::user()->id;
+            $status                      = $action->update();
+
+        }
+        elseif ($section_name == 'background_image_section'){
+            $action                      = SectionElement::find($id);
+            $action->page_section_id     = $section_id;
+            $action->heading             = $request->input('heading');
+            $action->button              = $request->input('button');
+            $action->button_link         = $request->input('button_link');
+            $action->updated_by          = Auth::user()->id;
+            $oldimage                    = $action->image;
+
+            if($request->file('image') !== null){
+                $image        = $request->file('image');
+                $name         = uniqid().'__background__'.$image->getClientOriginalName();
+                $path         = base_path().'/public/images/section_elements/bgimage_section/';
+                $moved        = Image::make($image->getRealPath())->resize(1920, 1280)->orientate()->save($path.$name);
+                if ($moved){
+                    $action->image = $name;
+                    if (!empty($oldimage) && file_exists(public_path().'/images/section_elements/bgimage_section/'.$oldimage)){
+                        @unlink(public_path().'/images/section_elements/bgimage_section/'.$oldimage);
+                    }
+                }
+
+
+            }
             $status                      = $action->update();
 
         }
@@ -431,42 +451,8 @@ class SectionElementController extends Controller
         $section_name       = $request->input('section_name');
         $section_id         = $request->input('page_section_id');
 
-        if($section_name == 'background_image_section'){
 
-            for ($i=0;$i<3;$i++){
-                $heading =  (array_key_exists($i, $request->input('heading')) ?  $request->input('heading')[$i]: Null);
-                $subheading =  ( array_key_exists($i, $request->input('subheading')) ?  $request->input('subheading')[$i]: Null);
-
-                $bgsection                    = SectionElement::find($request->input('id')[$i]);
-                $bgsection->heading           = $heading;
-                $bgsection->subheading        = $subheading;
-                $bgsection->list_header       = $request->input('list_header')[$i];
-                $bgsection->page_section_id   = $section_id;
-                $bgsection->list_description  = $request->input('list_description')[$i];
-                $bgsection->updated_by        = Auth::user()->id;
-                $oldimage                     = $bgsection->image;
-
-                if($request->file('image') !== null){
-                    if (array_key_exists($i,$request->file('image'))){
-                        $image        = $request->file('image')[$i];
-                        $name         = uniqid().'_background_'.$image->getClientOriginalName();
-                        $path         = base_path().'/public/images/section_elements/bgimage_section/';
-                        $moved        = Image::make($image->getRealPath())->resize(1920, 800)->orientate()->save($path.$name);
-                        if ($moved){
-                            $bgsection->image = $name;
-                            if (!empty($oldimage) && file_exists(public_path().'/images/section_elements/bgimage_section/'.$oldimage)){
-                                @unlink(public_path().'/images/section_elements/bgimage_section/'.$oldimage);
-                            }
-                        }
-
-                    }
-
-                }
-                $status = $bgsection->update();
-            }
-
-        }
-        elseif ($section_name == 'flash_cards') {
+        if ($section_name == 'flash_cards') {
             for ($i=0;$i<3;$i++){
                 $flash                   = SectionElement::find($request->input('id')[$i]);
                 $flash->list_header      = $request->input('list_header')[$i];
@@ -486,11 +472,15 @@ class SectionElementController extends Controller
                 $heading     =  (array_key_exists($i, $request->input('heading')) ?  $request->input('heading')[$i]: Null);
                 $subheading  =  (array_key_exists($i, $request->input('subheading')) ?  $request->input('subheading')[$i]: Null);
                 $description =  (array_key_exists($i, $request->input('description')) ?  $request->input('description')[$i]: Null);
+                $button      =  (array_key_exists($i, $request->input('button')) ?  $request->input('button')[$i]: Null);
+                $link        =  (array_key_exists($i, $request->input('button_link')) ?  $request->input('button_link')[$i]: Null);
                 if($request->input('id')[$i] == null){
                     $data=[
                         'heading'               => $heading,
                         'subheading'            => $subheading,
                         'description'           => $description,
+                        'button'                => $button,
+                        'button_link'           => $link,
                         'page_section_id'       => $section_id,
                         'list_header'           => $request->input('list_header')[$i],
                         'list_description'      => $request->input('list_description')[$i],
@@ -533,8 +523,6 @@ class SectionElementController extends Controller
                         'page_section_id'       => $section_id,
                         'subheading'            => $request->input('subheading')[$i],
                         'list_description'      => $request->input('list_description')[$i],
-                        'button'                => $request->input('button')[$i],
-                        'button_link'           => $request->input('button_link')[$i],
                         'created_by'            => Auth::user()->id,
                     ];
                     if (array_key_exists($i,$request->file('list_image'))){
@@ -543,8 +531,8 @@ class SectionElementController extends Controller
                         $thumb        = 'thumb_'.$name;
                         $path         = base_path().'/public/images/section_elements/list_1/';
                         $thumb_path   = base_path().'/public/images/section_elements/list_1/thumb/';
-                        $moved        = Image::make($image->getRealPath())->fit(1170, 600)->orientate()->save($path.$name);
-                        $thumb        = Image::make($image->getRealPath())->fit(768, 510)->orientate()->save($thumb_path.$thumb);
+                        $moved        = Image::make($image->getRealPath())->fit(1280, 885)->orientate()->save($path.$name);
+                        $thumb        = Image::make($image->getRealPath())->fit(418, 278)->orientate()->save($thumb_path.$thumb);
                         if ($moved && $thumb){
                             $data['list_image']= $name;
                         }
@@ -559,8 +547,6 @@ class SectionElementController extends Controller
                     $sliderlist->page_section_id     = $section_id;
                     $sliderlist->subheading          = $request->input('subheading')[$i];
                     $sliderlist->list_description    = $request->input('list_description')[$i];
-                    $sliderlist->button              = $request->input('button')[$i];
-                    $sliderlist->button_link         = $request->input('button_link')[$i];
                     $sliderlist->updated_by          = Auth::user()->id;
                     $oldimage                        = $sliderlist->list_image;
                     $thumbimage                      = 'thumb_'.$sliderlist->list_image;
@@ -572,8 +558,8 @@ class SectionElementController extends Controller
                             $thumb        = 'thumb_'.$name;
                             $path         = base_path().'/public/images/section_elements/list_1/';
                             $thumb_path   = base_path().'/public/images/section_elements/list_1/thumb/';
-                            $moved        = Image::make($image->getRealPath())->fit(1170, 600)->orientate()->save($path.$name);
-                            $thumb        = Image::make($image->getRealPath())->fit(768, 510)->orientate()->save($thumb_path.$thumb);
+                            $moved        = Image::make($image->getRealPath())->fit(1280, 885)->orientate()->save($path.$name);
+                            $thumb        = Image::make($image->getRealPath())->fit(418, 278)->orientate()->save($thumb_path.$thumb);
 
                             if ($moved){
                                 $sliderlist->list_image = $name;
