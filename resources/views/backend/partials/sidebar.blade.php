@@ -86,6 +86,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link menu-link @if(\Request::route()->getName() == 'pages.index') active @endif" href="{{route('pages.index')}}">
+                        <i class="ri-pages-line"></i> <span data-key="t-widgets">Pages</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
                     <a class="nav-link menu-link @if(\Request::route()->getName() == 'testimonials.index') active @endif" href="{{route('testimonials.index')}}">
                         <i class="ri-hand-heart-line"></i> <span data-key="t-widgets">Testimonial</span>
                     </a>

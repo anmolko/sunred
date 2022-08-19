@@ -82,16 +82,15 @@
                                                         - Page Section Details</h4>
                                                     <div class="hstack gap-3 flex-wrap">
                                                         <div><i class="ri-smartphone-line align-bottom me-1"></i>
-                                                            {{$page->status}}
+                                                            Current Status:- {{ucwords($page->status)}}
                                                         </div>
                                                         <div class="vr"></div>
                                                         <div>
-                                                            <i class="ri-mail-send-line align-bottom me-1"></i>
+                                                            <i class="ri-user-5-line align-bottom me-1"></i>
                                                             <span class="fw-medium">
-                                                                {{$page->created_by}}
+                                                                Created by :-  {{ucwords(\App\Models\User::find($page->created_by)->name)}}
                                                             </span>
                                                         </div>
-                                                        <div class="vr"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -836,7 +835,7 @@
                                                          <h4 class="card-title mb-0">
                                                              Add image to gallery section
                                                          </h4>
-                                                         <p class="text-danger">Note* Please add the images in the multiplication of 4 (like 4, 8, 12) for perfect design  </p>
+                                                         <p class="text-danger">Note* Please add the images in the multiplication of 3 (like 3, 6, 9) for perfect design  </p>
                                                      </div>
                                                      <div class="card-body">
                                                          <h2 class="page-heading">Upload your Images <span id="counter"></span></h2>
@@ -917,7 +916,7 @@
                                                          <h4 class="card-title mb-0">
                                                              Add image to gallery section 2
                                                          </h4>
-                                                         <p class="text-danger">Note* Please add the images in the multiplication of 4 (like 4, 8, 12) for perfect design  </p>
+                                                         <p class="text-danger">Note* Please add the images in the multiplication of 3 (like 3, 6, 9) for perfect design  </p>
                                                          <p class="text-info">Please use relatable name for the image as it will be used as the title of the image in design. </p>
                                                      </div>
                                                      <div class="card-body">
