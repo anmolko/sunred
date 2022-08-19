@@ -14,7 +14,7 @@ class AddIdsToMenuItemsTable extends Migration
     public function up()
     {
         Schema::table('menu_items', function (Blueprint $table) {
-            $table->integer('service_id')->after('menu_id')->nullable();
+            $table->integer('page_id')->after('menu_id')->nullable();
             $table->integer('blog_id')->after('menu_id')->nullable();
         });
     }
@@ -27,7 +27,7 @@ class AddIdsToMenuItemsTable extends Migration
     public function down()
     {
         Schema::table('menu_items', function (Blueprint $table) {
-            $table->dropColumn('service_id');
+            $table->dropColumn('page_id');
             $table->dropColumn('blog_id');
         });
     }

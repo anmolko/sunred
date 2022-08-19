@@ -58,21 +58,6 @@ class ServiceController extends Controller
             'created_by'        => Auth::user()->id,
         ];
 
-        if(!empty($request->file('feature_image'))){
-            $image          = $request->file('feature_image');
-            $name           = uniqid().'_feature_'.$image->getClientOriginalName();
-            $blog_path      = public_path('/images/service');
-
-            if (!is_dir($blog_path)) {
-                mkdir($blog_path, 0777);
-            }
-            $path           = base_path().'/public/images/service/';
-            $moved          = Image::make($image->getRealPath())->orientate()->save($path.$name);
-
-            if ($moved){
-                $data['feature_image']=$name;
-            }
-        }
         if(!empty($request->file('banner_image'))){
             $image          = $request->file('banner_image');
             $name           = uniqid().'_banner_'.$image->getClientOriginalName();
@@ -82,7 +67,7 @@ class ServiceController extends Controller
                 mkdir($blog_path, 0777);
             }
             $path           = base_path().'/public/images/service/';
-            $moved          = Image::make($image->getRealPath())->orientate()->save($path.$name);
+            $moved          = Image::make($image->getRealPath())->fit(1280, 850)->orientate()->save($path.$name);
 
             if ($moved){
                 $data['banner_image']=$name;
@@ -140,26 +125,13 @@ class ServiceController extends Controller
         $service->meta_title          =  $request->input('meta_title');
         $service->meta_tags           =  $request->input('meta_tags');
         $service->meta_description    =  $request->input('meta_description');
-        $feature                      =  $service->feature_image;
         $banner                       =  $service->banner_image;
         $path                         = base_path().'/public/images/service/';
 
-        if (!empty($request->file('feature_image'))){
-            $image       = $request->file('feature_image');
-            $name1       = uniqid().'_feature_'.$image->getClientOriginalName();
-            $moved       = Image::make($image->getRealPath())->orientate()->save($path.$name1);
-
-            if ($moved){
-                $service->feature_image= $name1;
-                if (!empty($feature) && file_exists(public_path().'/images/service/'.$feature)){
-                    @unlink(public_path().'/images/service/'.$feature);
-                }
-            }
-        }
         if (!empty($request->file('banner_image'))){
             $image       = $request->file('banner_image');
             $name1       = uniqid().'_banner_'.$image->getClientOriginalName();
-            $moved       = Image::make($image->getRealPath())->orientate()->save($path.$name1);
+            $moved       = Image::make($image->getRealPath())->fit(1280, 850)->orientate()->save($path.$name1);
 
             if ($moved){
                 $service->banner_image= $name1;

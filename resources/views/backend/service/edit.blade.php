@@ -138,19 +138,19 @@
 {{--                    </div>--}}
                     <!-- end card -->
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Add on</h5>
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <label for="sub-title-status-input" class="form-label">Sub Description</label>
-                                <textarea class="form-control" id="sub-title-status-input" placeholder="Enter sub description" name="sub_description" rows="4">{!! @$edit->sub_description !!}</textarea>
+{{--                    <div class="card">--}}
+{{--                        <div class="card-header">--}}
+{{--                            <h5 class="card-title mb-0">Add on</h5>--}}
+{{--                        </div>--}}
+{{--                        <div class="card-body">--}}
+{{--                            <div>--}}
+{{--                                <label for="sub-title-status-input" class="form-label">Sub Description</label>--}}
+{{--                                <textarea class="form-control" id="sub-title-status-input" placeholder="Enter sub description" name="sub_description" rows="4">{!! @$edit->sub_description !!}</textarea>--}}
 
-                            </div>
-                        </div>
-                        <!-- end card body -->
-                    </div>
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!-- end card body -->--}}
+{{--                    </div>--}}
 
                     <div class="card">
                         <div class="card-header">
@@ -163,7 +163,7 @@
                                         id="profile-foreground-img-file-input" onchange="loadbasicFile('profile-foreground-img-file-input','current-img',event)" name="banner_image"
                                         class="profile-foreground-img-file-input" >
 
-                                <figcaption class="figure-caption">Banner image for current service.</figcaption>
+                                <figcaption class="figure-caption">Banner image for current service. (Size: 1280 x 850)</figcaption>
                                 <div class="invalid-feedback" >
                                     Please select a image.
                                 </div>

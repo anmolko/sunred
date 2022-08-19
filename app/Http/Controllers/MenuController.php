@@ -23,7 +23,7 @@ class MenuController extends Controller
         $menuitems          = '';
         $desiredMenu        = '';
         $menuTitle          = '';
-        $services           = Service::all();
+        $pages              = Page::all();
         $menus              = Menu::all();
         $blogs              = Blog::all();
         if(isset($_GET['slug']) && $_GET['slug'] != 'new'){
@@ -114,7 +114,7 @@ class MenuController extends Controller
             }
         }
 
-        return view('backend.menu.index',compact('services','menuTitle','blogs','menus','desiredMenu','menuitems'));
+        return view('backend.menu.index',compact('pages','menuTitle','blogs','menus','desiredMenu','menuitems'));
 
     }
 
@@ -207,7 +207,7 @@ class MenuController extends Controller
 
     }
 
-    public function addService(Request $request){
+    public function addPage(Request $request){
         $data       = $request->all();
         $menuid     = $request->menuid;
         $ids        = $request->ids;
@@ -215,12 +215,12 @@ class MenuController extends Controller
         if($menu->content == ''){
 //            dd('content empty');
             foreach($ids as $id){
-                $service = Service::find($id);
+                $page = Page::find($id);
                 $data =[
-                    'title'         => $service->title,
-                    'slug'          => $service->slug,
-                    'service_id'       => $id,
-                    'type'          => 'service',
+                    'title'          => $page->name,
+                    'slug'          => $page->slug,
+                    'page_id'        => $id,
+                    'type'          => 'page',
                     'menu_id'       => $menuid,
                     'created_by'    => Auth::user()->id,
                 ];
@@ -231,23 +231,23 @@ class MenuController extends Controller
         else{
             $olddata = json_decode($menu->content,true);
             foreach($ids as $id){
-                $service = Service::find($id);
+                $page = Page::find($id);
                 $data =[
-                    'title'         => $service->title,
-                    'slug'          => $service->slug,
-                    'service_id'    => $id,
-                    'type'          => 'service',
+                    'title'          => $page->name,
+                    'slug'          => $page->slug,
+                    'page_id'       => $id,
+                    'type'          => 'page',
                     'menu_id'       => $menuid,
                     'created_by'    => Auth::user()->id,
                 ];
                 $status = MenuItem::create($data);
             }
             foreach($ids as $id){
-                $service = Service::find($id);
-                $array['title']         = $service->title;
-                $array['slug']          = $service->slug;
-                $array['service_id']    = $id;
-                $array['type']          = 'service';
+                $page = Page::find($id);
+                $array['title']         = $page->name;
+                $array['slug']          = $page->slug;
+                $array['page_id']       = $id;
+                $array['type']          = 'page';
                 $array['id']            = MenuItem::where('slug',$array['slug'])->where('type',$array['type'])->value('id');
                 $array['children']      = [[]];
                 array_push($olddata[0],$array);
