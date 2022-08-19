@@ -39,13 +39,13 @@
                                 <div class="row mb-3">
                                     <div class="col-md">
                                         <div class="row align-items-center g-3">
-                                           
+
                                             <div class="col-md">
                                                 <div>
                                                     <h4 class="fw-bold">
-                                                        
+
                                                          Home Page Settings</h4>
-                                                   
+
                                                 </div>
                                             </div>
                                         </div>
@@ -86,7 +86,7 @@
                                             Background Image with Header & Description
                                         </a>
                                     </li>
-                                  
+
                                     @endif
                                 </ul>
                             </div>
@@ -125,24 +125,38 @@
                                                         <input type="text" class="form-control" id="welcome-subheading-input" name="welcome_subheading" value="{{@$homesettings->welcome_subheading}}"
                                                                placeholder="Enter  subheading">
                                                     </div>
-                                                    <div class="position-relative">
+                                                    <div class="position-relative mb-3">
                                                         <label> Description</label>
                                                         <textarea class="form-control" id="ckeditor-classic" name="welcome_description" placeholder="Enter welcome description" rows="3" required>{{@$homesettings->welcome_description}}</textarea>
                                                         <div class="invalid-tooltip">
                                                             Please enter the  description.
                                                         </div>
                                                     </div>
+                                                    <div class="form-group mb-3">
+                                                        <label>Button Text </label>
+                                                        <input type="text" maxlength="20" class="form-control" value="{{@$homesettings->welcome_button}}" name="welcome_button">
+                                                        <div class="invalid-feedback">
+                                                            Please enter the button text.
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group mb-3">
+                                                        <label>Button Link </label>
+                                                        <input type="text" class="form-control" value="{{@$homesettings->welcome_link}}" name="welcome_link">
+                                                        <div class="invalid-feedback">
+                                                            Please enter the button link.
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- end card -->
 
-                                      
-                                          
+
+
                                             <!-- end card -->
                                             <div class="text-end mb-3">
                                                 <button type="submit" class="btn btn-success w-sm">{{($homesettings !== null) ? "Update Home Settings":"Save Home Settings"}}</button>
                                             </div>
-                                       
+
 
 
                                     </div>
@@ -161,7 +175,7 @@
                                                             id="profile-foreground-img-file-input" onchange="loadFile(event)" name="welcome_image" {{ (@$homesettings->welcome_image !== null) ? '' :  'required' }}
                                                         class="profile-foreground-img-file-input" >
 
-                                                        <figcaption class="figure-caption">*use image minimum of 820 x 825px </figcaption>
+                                                        <figcaption class="figure-caption">*use image minimum of 550 x 790px </figcaption>
                                                         <div class="invalid-feedback" >
                                                                 Please select a image.
                                                             </div>
@@ -181,7 +195,7 @@
                                                 <!-- end card body -->
                                             </div>
 
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -192,7 +206,7 @@
                             <div class="tab-pane fade" id="simple-header-overview" role="tabpanel">
 
                             {!! Form::open(['url'=>route('homepage.direction', @$homesettings->id),'id'=>'homesettings-simple-header-form','class'=>'needs-validation','novalidate'=>'','method'=>'PUT','enctype'=>'multipart/form-data']) !!}
-                            
+
                             <div class="row  mb-4">
                                     <div class="col-lg-8">
                                         <figure class="figure">
@@ -209,7 +223,7 @@
                                                     <input type="text" class="form-control" id="direction-heading-input" name="direction_heading" value="{{@$homesettings->direction_heading}}"
                                                             placeholder="Enter heading">
                                                 </div>
-                                               
+
                                                 <div class="position-relative">
                                                     <label> Description</label>
                                                     <textarea class="form-control"  name="direction_description" placeholder="Enter description" rows="3" >{{@$homesettings->direction_description}}</textarea>
@@ -230,7 +244,7 @@
                                                     <input type="text" class="form-control" id="direction-list-heading-input" name="direction_list_heading" value="{{@$homesettings->direction_list_heading}}"
                                                             placeholder="Enter  heading">
                                                 </div>
-                                               
+
                                                 <div class="position-relative">
                                                     <label> Description</label>
                                                     <textarea class="form-control" id="ckeditor-classic-direction" name="direction_list_description" placeholder="Enter description" rows="3" required>{{@$homesettings->direction_list_description}}</textarea>
@@ -242,13 +256,13 @@
                                         </div>
                                         <!-- end card -->
 
-                                    
-                                        
+
+
                                         <!-- end card -->
                                         <div class="text-end mb-3">
                                             <button type="submit" class="btn btn-success w-sm">Update Section</button>
                                         </div>
-                                       
+
 
 
                                     </div>
@@ -292,12 +306,12 @@
                                                             <option value="grey" @if(@$homesettings->direction_container_color == "grey") selected @endif>Light Grey color</option>
                                                         </select>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <!-- end card body -->
                                             </div>
 
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -339,13 +353,13 @@
                                             </div>
                                             <!-- end card -->
 
-                                      
-                                          
+
+
                                             <!-- end card -->
                                             <div class="text-end mb-3">
                                                 <button type="submit" class="btn btn-success w-sm">Update </button>
                                             </div>
-                                       
+
 
 
                                     </div>
@@ -390,7 +404,7 @@
                                                 <!-- end card body -->
                                             </div>
 
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -399,8 +413,8 @@
 
                             </div>
 
-                      
-                           
+
+
 
                         @endif
 

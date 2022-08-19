@@ -19,7 +19,7 @@ class HomePageController extends Controller
     private $welcome_path;
     private $direction_path;
     private $background_path;
-    
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -27,7 +27,7 @@ class HomePageController extends Controller
         $this->welcome_path   = public_path('/images/home/welcome');
         $this->direction_path   = public_path('/images/home/direction');
         $this->background_path   = public_path('/images/home/background');
-        
+
     }
 
 
@@ -61,6 +61,8 @@ class HomePageController extends Controller
             'welcome_subheading'       => $request->input('welcome_subheading'),
             'welcome_description'      => $request->input('welcome_description'),
             'welcome_side_image'       => $request->input('welcome_side_image'),
+            'welcome_button'           => $request->input('welcome_button'),
+            'welcome_link'             => $request->input('welcome_link'),
             'created_by'                => Auth::user()->id,
         ];
 
@@ -122,16 +124,18 @@ class HomePageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function update(Request $request, $id)
     {
         $update_theme                           =  HomePage::find($id);
-        $update_theme->welcome_heading             =  $request->input('welcome_heading');
-        $update_theme->welcome_subheading             =  $request->input('welcome_subheading');
-        $update_theme->welcome_description             =  $request->input('welcome_description');
-        $update_theme->welcome_side_image             =  $request->input('welcome_side_image');
+        $update_theme->welcome_heading          =  $request->input('welcome_heading');
+        $update_theme->welcome_subheading       =  $request->input('welcome_subheading');
+        $update_theme->welcome_description      =  $request->input('welcome_description');
+        $update_theme->welcome_side_image       =  $request->input('welcome_side_image');
+        $update_theme->welcome_button           =  $request->input('welcome_button');
+        $update_theme->welcome_link             =  $request->input('welcome_link');
         $update_theme->updated_by               =  Auth::user()->id;
-       
+
         $oldimage                       = $update_theme->welcome_image;
 
         if (!empty($request->file('welcome_image'))){
@@ -214,7 +218,7 @@ class HomePageController extends Controller
         $update_theme->background_heading                =  $request->input('background_heading');
         $update_theme->background_subheading            =  $request->input('background_subheading');
         $update_theme->background_description           =  $request->input('background_description');
-       
+
         $update_theme->updated_by                       =  Auth::user()->id;
         $backgroundoldimage                             = $update_theme->background_image;
         $sideoldimage                                   = $update_theme->background_side_image;
@@ -266,7 +270,7 @@ class HomePageController extends Controller
 
         return redirect()->back();
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *

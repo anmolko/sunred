@@ -15,11 +15,13 @@ class CreateHomepagesTable extends Migration
     {
         Schema::create('homepages', function (Blueprint $table) {
             $table->bigIncrements('id');
-           
+
             $table->string('welcome_heading')->nullable();
             $table->string('welcome_subheading')->nullable();
             $table->text('welcome_description')->nullable();
             $table->string('welcome_image')->nullable();
+            $table->string('welcome_button')->nullable();
+            $table->string('welcome_link')->nullable();
             $table->string('welcome_side_image')->nullable();
             $table->string('direction_heading')->nullable();
             $table->text('direction_description')->nullable();
@@ -28,7 +30,7 @@ class CreateHomepagesTable extends Migration
             $table->string('direction_list_image')->nullable();
             $table->string('direction_displaying_side_image')->nullable();
             $table->string('direction_container_color')->nullable();
-            
+
             $table->string('background_heading')->nullable();
             $table->string('background_subheading')->nullable();
             $table->text('background_description')->nullable();
