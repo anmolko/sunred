@@ -172,34 +172,13 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group mb-3">
-                                                        <label>Small Description <span class="text-muted text-danger">* write 890 characters only</span></label>
-                                                        <textarea class="form-control" maxlength="890" rows="6" name="description" id="basic_editor" required>{!! @$basic_elements->description !!}</textarea>
+                                                        <label>Description <span class="text-muted text-danger">* write 785 characters only</span></label>
+                                                        <textarea class="form-control" maxlength="785" rows="6" name="description" id="basic_editor" required>{!! @$basic_elements->description !!}</textarea>
                                                         <div class="invalid-feedback">
                                                             Please write the small summary for basic section.
                                                         </div>
-                                                        <div class="word-count" id="word-count"></div>
+{{--                                                        <div class="word-count" id="word-count"></div>--}}
 
-                                                    </div>
-                                                    <div class="form-group mb-3">
-                                                        <label>Additional Description </label>
-                                                        <textarea class="form-control" rows="6" name="extra_description" id="basic_editor_extra" >{!! @$basic_elements->extra_description !!}</textarea>
-                                                        <div class="invalid-feedback">
-                                                            Please write the extra description for basic section.
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group mb-3">
-                                                        <label>Blue Box Heading </label>
-                                                        <input type="text" class="form-control" maxlength="25" name="list_header" value="{{@$basic_elements->list_header}}">
-                                                        <div class="invalid-feedback">
-                                                            Please enter the basic section blue box heading.
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group mb-3">
-                                                        <label>Blue Box Description</label>
-                                                        <textarea class="form-control" maxlength="175" rows="6" name="list_description" id="basic1_editor">{!! @$basic_elements->list_description !!}</textarea>
-                                                        <div class="invalid-feedback">
-                                                            Please write the short description for blue box description.
-                                                        </div>
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label>Button Text </label>
@@ -226,23 +205,20 @@
                                                     </h4>
                                                 </div>
                                                 <div class="card-body">
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-9 mb-4">
-                                                            <div class="custom-file h-auto">
-                                                                <div class="avatar-upload">
-                                                                    <div class="avatar-edit">
-                                                                        <input type="file" class="custom-file-input" hidden id="basic-image" onchange="loadbasicFile('basic-image','current-basic-img',event)" name="image" {{(@$basic_elements !== null)? "":"required"}}>
-                                                                        <label for="basic-image"></label>
-                                                                        <div class="invalid-feedback" style="position: absolute; width: 45px;">
-                                                                            Please select a image.
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <img id="current-basic-img" src="<?php if(!empty(@$basic_elements->image)){ echo '/images/section_elements/basic_section/'.@$basic_elements->image; } else{  echo '/images/default-image.jpg'; } ?>" alt="basic_section_image" class="current-img w-100">
-                                                            </div>
-                                                            <span class="ctm-text-sm">*use image minimum of 980 x  920px for Basic section</span>
-                                                        </div>
 
+                                                    <div>
+                                                        <img  id="current-basic-img"  src="<?php if(!empty(@$basic_elements->image)){ echo '/images/section_elements/basic_section/'.@$basic_elements->image; } else{  echo '/images/default-image.jpg'; } ?>" class="position-relative img-fluid img-thumbnail blog-feature-image" >
+                                                        <input  type="file" accept="image/png, image/jpeg" hidden
+                                                                id="basic-image" onchange="loadbasicFile('basic-image','current-basic-img',event)" name="list_image[]" {{(@$process_elements[$i-1]->id !== null) ? "":"required" }}
+                                                                class="profile-foreground-img-file-input" >
+
+                                                        <figcaption class="figure-caption">Banner image for current service. (SIZE: 980 x  920px)</figcaption>
+                                                        <div class="invalid-feedback" >
+                                                            Please select a image.
+                                                        </div>
+                                                        <label for="basic-image" class="profile-photo-edit btn btn-light feature-image-button">
+                                                            <i class="ri-image-edit-line align-bottom me-1"></i> Add Basic Image
+                                                        </label>
                                                     </div>
                                                     <div class="form-group mb-3">
                                                         <label>Image Alignment </label>
@@ -260,7 +236,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center mt-3" id="basic-form-button">
-                                        <button id="basic-button-submit" class="btn btn-theme button-1 ctm-border-radius text-white">
+                                        <button id="basic-button-submit" class="btn btn-success w-sm">
                                             {{(@$basic_elements !==null)? "Update Details":"Add Details"}}</button>
                                     </div>
                                     {!! Form::close() !!}
@@ -2468,13 +2444,13 @@
 
                     editor.model.document.on( 'change:data', () => {
                         $( '#' + elementId).text(editor.getData());
-                        if(elementId == 'basic_editor') {
-                            if (editor.getData().length >= 907) {
-                                $('#word-count').css('border-left', '10px hsl(0deg 34% 57%) solid');
-                            } else {
-                                $('#word-count').css('border-left', '10px hsl(260deg 43% 53%) solid');
-                            }
-                        }
+                        // if(elementId == 'basic_editor') {
+                        //     if (editor.getData().length >= 907) {
+                        //         $('#word-count').css('border-left', '10px hsl(0deg 34% 57%) solid');
+                        //     } else {
+                        //         $('#word-count').css('border-left', '10px hsl(260deg 43% 53%) solid');
+                        //     }
+                        // }
                     } );
 
                 } )

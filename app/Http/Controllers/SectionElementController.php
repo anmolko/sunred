@@ -150,11 +150,8 @@ class SectionElementController extends Controller
                 'heading'                => $request->input('heading'),
                 'page_section_id'        => $section_id,
                 'subheading'             => $request->input('subheading'),
-                'list_image'             => $request->input('list_image'),
                 'description'            => $request->input('description'),
-                'list_header'            => $request->input('list_header'),
-                'list_description'       => $request->input('list_description'),
-                'extra_description'      => $request->input('extra_description'),
+                'list_image'             => $request->input('list_image'),
                 'button'                 => $request->input('button'),
                 'button_link'            => $request->input('button_link'),
                 'created_by'             => Auth::user()->id,
@@ -371,9 +368,6 @@ class SectionElementController extends Controller
             $basic->subheading          = $request->input('subheading');
             $basic->list_image          = $request->input('list_image');
             $basic->description         = $request->input('description');
-            $basic->list_header         = $request->input('list_header');
-            $basic->list_description    = $request->input('list_description');
-            $basic->extra_description   = $request->input('extra_description');
             $basic->button              = $request->input('button');
             $basic->button_link         = $request->input('button_link');
             $basic->updated_by          = Auth::user()->id;

@@ -144,19 +144,19 @@
 {{--                    </div>--}}
                     <!-- end card -->
 
-{{--                    <div class="card">--}}
-{{--                        <div class="card-header">--}}
-{{--                            <h5 class="card-title mb-0">Add on</h5>--}}
-{{--                        </div>--}}
-{{--                        <div class="card-body">--}}
-{{--                            <div>--}}
-{{--                                <label for="sub-title-status-input" class="form-label">Sub Description</label>--}}
-{{--                                <textarea class="form-control" id="sub-title-status-input" placeholder="Enter sub description" name="sub_description" rows="4"></textarea>--}}
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Add on</h5>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <label for="sub-title-status-input" class="form-label">Sub Description</label>
+                                <textarea class="form-control" id="sub-title-status-input" placeholder="Enter sub description" name="sub_description" rows="4"></textarea>
 
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- end card body -->--}}
-{{--                    </div>--}}
+                            </div>
+                        </div>
+                        <!-- end card body -->
+                    </div>
 
                     <div class="card">
                         <div class="card-header">

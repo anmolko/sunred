@@ -256,9 +256,9 @@ class MenuController extends Controller
             }
         }
         if($status){
-            Session::flash('success','Service added in Menu');
+            Session::flash('success','Page added in Menu');
         }else{
-            Session::flash('error','Service could not be added in Menu');
+            Session::flash('error','Page could not be added in Menu');
         }
     }
 
