@@ -9,11 +9,7 @@
 					<section id="text-2" class="widget widget_text">
 						<h3 class="widget-title">About Us</h3>
 						<div class="textwidget">
-						<p>
-							Sed do eiusmod tempor incididunt ut labore et dolore
-							magna aliqua. Ut enim ad minim veniam, quis us nostrud
-							exercitation amet, consectetur elit aboris nisi.
-						</p>
+						@if(!empty(@$setting_data->website_description)) {!! ucfirst(@$setting_data->website_description) !!} @else Sunred @endif 
 						</div>
 					</section>
 					<section
@@ -23,26 +19,39 @@
 						<ul
 						class="nav social-icons social-widget widget-content social-rounded social-white social-h-white social-bg-own social-hbg-dark"
 						>
+
+						@if(!empty(@$setting_data->facebook))
 						<li>
-							<a href="#" target="_blank" class="social-fb"
+							<a href="@if(!empty(@$setting_data->facebook)) {{@$setting_data->facebook}} @endif" target="_blank" class="social-fb"
 							><i class="ti-facebook"></i
 							></a>
 						</li>
+						@endif
+						@if(!empty(@$setting_data->youtube))
+
 						<li>
-							<a href="#" target="_blank" class="social-twitter"
-							><i class="ti-twitter"></i
+							<a href="@if(!empty(@$setting_data->youtube)) {{@$setting_data->youtube}} @endif" target="_blank" class="social-youtube"
+							><i class="ti-youtube"></i
 							></a>
 						</li>
+						@endif
+						@if(!empty(@$setting_data->instagram))
+
 						<li>
-							<a href="#" target="_blank" class="social-instagram"
+							<a href="@if(!empty(@$setting_data->instagram)) {{@$setting_data->instagram}} @endif" target="_blank" class="social-instagram"
 							><i class="ti-instagram"></i
 							></a>
 						</li>
+						@endif
+						@if(!empty(@$setting_data->linkedin))
+
 						<li>
-							<a href="#" target="_blank" class="social-pinterest"
-							><i class="ti-pinterest"></i
+							<a href="@if(!empty(@$setting_data->linkedin)) {{@$setting_data->linkedin}} @endif" target="_blank" class="social-linkedin"
+							><i class="ti-linkedin"></i
 							></a>
 						</li>
+						@endif
+
 						</ul>
 					</section>
 					</div>
@@ -107,23 +116,25 @@
 						<h3 class="widget-title">Latest Posts</h3>
 						<div class="widg-content">
 						<ul class="side-newsfeed">
+						@if(!empty($latestPostsfooter))
+							@foreach($latestPostsfooter as $latestPosts)
 							<li>
 							<div class="side-item">
 								<div class="side-image">
 								<a
-									href="5-effective-ways-to-hire-more-workers/index.html"
+									href="{{route('blog.single',$latestPosts->slug)}}"
 									rel="bookmark"
 									><img
 									width="80"
 									height="80"
-									src="wp-content/uploads/sites/45/2019/04/6-1-80x80.jpg"
+									src="<?php if(@$latestPosts->image){?>{{asset('/images/blog/thumb/thumb_'.@$latestPosts->image)}}<?php }?>"
 									class="img-responsive wp-post-image"
 									alt=""
 									loading="lazy"
 									srcset="
-										https://elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2019/04/6-1-80x80.jpg    80w,
-										https://elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2019/04/6-1-300x300.jpg 300w,
-										https://elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2019/04/6-1-100x100.jpg 100w
+									<?php if(@$latestPosts->image){?>{{asset('/images/blog/thumb/thumb_'.@$latestPosts->image)}}<?php }?>   80w,
+									<?php if(@$latestPosts->image){?>{{asset('/images/blog/thumb/thumb_'.@$latestPosts->image)}}<?php }?> 300w,
+									<?php if(@$latestPosts->image){?>{{asset('/images/blog/thumb/thumb_'.@$latestPosts->image)}}<?php }?> 100w
 									"
 									sizes="(max-width: 80px) 100vw, 80px"
 								/></a>
@@ -131,115 +142,78 @@
 								<div class="side-item-text">
 								<a
 									class="themeh-color"
-									href="5-effective-ways-to-hire-more-workers/index.html"
+									href="{{route('blog.single',$latestPosts->slug)}}"
 									rel="bookmark"
-									>5 Effective Ways to Hire More Workers</a
+									>{{ucwords($latestPosts->title)}}</a
 								>
 								<div class="comments-wrap">
 									<div class="meta-left">
-									<span class="">April 19, 2019</span>
+									<span class="">{{date('M j, Y',strtotime(@$latestPosts->created_at))}}</span>
 									</div>
 								</div>
 								</div>
 							</div>
 							</li>
-
-							<li>
-							<div class="side-item">
-								<div class="side-image">
-								<a
-									href="going-to-start-business/index.html"
-									rel="bookmark"
-									><img
-									width="80"
-									height="80"
-									src="wp-content/uploads/sites/45/2019/04/5-1-80x80.jpg"
-									class="img-responsive wp-post-image"
-									alt=""
-									loading="lazy"
-									srcset="
-										https://elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2019/04/5-1-80x80.jpg    80w,
-										https://elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2019/04/5-1-300x300.jpg 300w,
-										https://elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2019/04/5-1-100x100.jpg 100w
-									"
-									sizes="(max-width: 80px) 100vw, 80px"
-								/></a>
-								</div>
-								<div class="side-item-text">
-								<a
-									class="themeh-color"
-									href="going-to-start-business/index.html"
-									rel="bookmark"
-									>Going to Start Digital Business?</a
-								>
-								<div class="comments-wrap">
-									<div class="meta-left">
-									<span class="">April 19, 2019</span>
-									</div>
-								</div>
-								</div>
-							</div>
-							</li>
+							@endforeach
+						@endif
+							
 						</ul>
 						</div>
 					</section>
 					</div>
 				</div>
 				<div class="col-lg-3">
+					
 					<div class="footer-middle-sidebar">
-					<section
-						id="corpkit_mailchimp_widget-2"
-						class="widget corpkit_mailchimp_widget"
-					>
-						<h3 class="widget-title">Subscribe Us</h3>
-						<div class="mailchimp-wrapper">
-						<form
-							class="zozo-mc-form"
-							id="zozo-mc-form"
-							method="post"
-						>
-							<p class="zozo-mc-subtitle">
-							Lorem ipsum is placeholder text commonly used in the
-							graphic, print, and publishing industries for
-							previewing layouts and visual mockups.
-							</p>
-							<input
-							type="hidden"
-							name="corpkit_mc_listid"
-							value=""
-							/>
-
-							<div class="input-group">
-							<input
-								type="text"
-								class="form-control zozo-mc-email"
-								required="required"
-								id="zozo-mc-email"
-								placeholder="Email Address"
-								name="zozo_mc_email"
-							/>
-							<input
-								class="input-group-addon zozo-mc btn btn-default"
-								type="button"
-								name="SIGN UP"
-								value="SIGN UP"
-							/>
+						<section id="nav_menu-2" class="widget widget_nav_menu">
+							<h3 class="widget-title">Quick Links</h3>
+							<div class="menu-services-menu-container">
+							<ul id="menu-services-menu" class="menu">
+								<li
+								id="menu-item-13703"
+								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13703"
+								>
+								<a href="service/strategy-and-planning/index.html"
+									>Strategy and Planning</a
+								>
+								</li>
+								<li
+								id="menu-item-13698"
+								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13698"
+								>
+								<a href="service/business-analysis/index.html"
+									>Business Analysis</a
+								>
+								</li>
+								<li
+								id="menu-item-13699"
+								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13699"
+								>
+								<a href="service/consumer-markets/index.html"
+									>Consumer Markets</a
+								>
+								</li>
+								<li
+								id="menu-item-13700"
+								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13700"
+								>
+								<a href="service/corporate-finance/index.html"
+									>Corporate Finance</a
+								>
+								</li>
+								<li
+								id="menu-item-13702"
+								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13702"
+								>
+								<a href="service/market-research/index.html"
+									>Market Research</a
+								>
+								</li>
+							</ul>
 							</div>
-						</form>
-						<!--Mailchimp Custom Script-->
-
-						<div
-							class="mc-notice-group"
-							data-success="You are subscribed now"
-							data-fail="Please enter valid email address"
-						>
-							<span class="mc-notice-msg"></span>
-						</div>
-						<!-- .mc-notice-group -->
-						</div>
-						<!-- .mailchimp-wrapper -->
-					</section>
+						</section>
 					</div>
+
 				</div>
 				</div>
 			</div>
@@ -261,7 +235,7 @@
 								loading="lazy"
 								width="565"
 								height="129"
-								src="wp-content/uploads/sites/45/2022/06/corpkit-footer-logo.png"
+								src="<?php if(@$setting_data->logo_white){?>{{asset('/images/settings/'.@$setting_data->logo_white)}}<?php } ?>"
 								alt=""
 								class="wp-image-16055"
 								/>
@@ -275,14 +249,13 @@
 					<li class="nav-item">
 						<div class="nav-item-inner">
 						<div class="copyright-text-wrap">
-							Copyrights © 2022
+							Copyrights © {{date("Y")}}  
 							<a
-							href="https://zozothemes.com/item/corpkit-business-consulting-wordpress-theme/"
+							href="/"
 							class="theme-color"
-							>Corpkit</a
-							>. Designed by
-							<a href="http://zozothemes.com/" class="theme-color"
-							>Zozothemes <span class="heart-color">♥</span></a
+							>@if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @endif</a>. Developed by
+							<a href="https://www.canosoft.com.np/" class="theme-color"
+							>Canosoft Techonology </a
 							>
 						</div>
 						</div>

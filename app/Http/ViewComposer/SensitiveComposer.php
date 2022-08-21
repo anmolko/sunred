@@ -3,6 +3,7 @@
 
 namespace App\Http\ViewComposer;
 
+use App\Models\Blog;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\View\View;
@@ -78,11 +79,11 @@ class SensitiveComposer
             $menu3->type    = MenuItem::where('id',$menu3->id)->value('type');
         }
     }
-    //    $latestPostsfooter = Blog::orderBy('created_at', 'DESC')->where('status','publish')->take(2)->get();
+       $latestPostsfooter = Blog::orderBy('created_at', 'DESC')->where('status','publish')->take(2)->get();
         $theme_data = Setting::first();
         $view
             ->with('setting_data', $theme_data)
-//            ->with('latestPostsfooter', $latestPostsfooter)
+           ->with('latestPostsfooter', $latestPostsfooter)
            ->with('footer_nav_data1', $footerItem1)
            ->with('footer_nav_title1', $footerItemTitle1)
            ->with('footer_nav_data2', $footerItem2)

@@ -176,3 +176,5 @@ Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function () {
 });
 
 
+Route::get('/{page}', 'App\Http\Controllers\FrontController@page')
+        ->name('page');

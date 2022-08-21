@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\Faq;
-use App\Models\HomePage;
 use App\Models\Setting;
 use App\Models\Service;
 use App\Mail\ContactDetail;
@@ -44,26 +43,23 @@ class FrontController extends Controller
     protected $pagesection = null;
 
 
-    public function __construct(PageSection $pagesection,Page $page,HomePage $home_page,Testimonial $testimonial,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
+    public function __construct(PageSection $pagesection,Page $page,Testimonial $testimonial,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
     {
         $this->setting = $setting;
         $this->bcategory = $bcategory;
         $this->blog = $blog;
         $this->service = $service;
         $this->testimonial = $testimonial;
-        $this->home_page = $home_page;
         $this->page = $page;
         $this->pagesection = $pagesection;
     }
 
 
+
     public function index()
     {
-        $testimonials = $this->testimonial->take(7)->get();
-
-        $homepage_info = $this->home_page->first();
-
-        return view('welcome',compact('testimonials','homepage_info'));
+        $testimonials = $this->testimonial->take(7)->get(); 
+        return view('welcome',compact('testimonials'));
     }
 
 
@@ -121,12 +117,134 @@ class FrontController extends Controller
     }
 
 
-    public function domainRegistration()
+    
+
+    public function faq()
     {
-        return view('frontend.pages.domain_registration');
+        $page_detail = $this->page->with('sections')->where('slug','faq')->where('status','active')->first();
+        if (!$page_detail) {
+            return abort(404);
+        }
+        $page_section = $this->pagesection->with('page')->where('page_id', $page_detail->id)->orderBy('position', 'ASC')->get();
+        if (!$page_section) {
+            return abort(404);
+        }
+        $sorted_sections        = array();
+        $accordian2_elements = "";
+        $list_2        = "";
+
+
+        foreach ($page_section as $section){
+            $sorted_sections[$section->id] = $section->section_slug;
+            if ($section->section_slug == 'accordion_section_2'){
+                $list_2 = $section->list_number_2;
+                $accordian2_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->get();
+            }
+         
+        }
+        return view('frontend.pages.faq',compact('list_2','accordian2_elements'));
     }
 
 
+    public function page($page)
+    {
+        $page_detail = $this->page->with('sections')->where('slug', $page)->where('status','active')->first();
+        if (!$page_detail) {
+            return abort(404);
+        }
+        $page_section = $this->pagesection->with('page')->where('page_id', $page_detail->id)->orderBy('position', 'ASC')->get();
+        if (!$page_section) {
+            return abort(404);
+        }
+        $sections      = array();
+
+        $list_2        = "";
+        $list_3        = "";
+        $process_num   = "";
+        $basic_elements = "";
+        $map_descp = "";
+        $call1_elements = "";
+        $call2_elements = "";
+        $bgimage_elements = "";
+        $flash_elements = "";
+        $header_descp_elements = "";
+        $video_descp_elements = "";
+        $gallery_elements = "";
+        $location_map = "";
+        $gallery2_elements = "";
+        $contact_info_elements = "";
+        $accordian1_elements = "";
+        $accordian2_elements = "";
+        $slider_list_elements = "";
+        $icon_title_elements = "";
+        $process_elements = "";
+        foreach ($page_section as $section){
+            $sections[$section->id] = $section->section_slug;
+            if($section->section_slug == 'basic_section'){
+                $basic_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            } else if($section->section_slug == 'map_and_description'){
+                $map_descp = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            }
+            else if ($section->section_slug == 'call_to_action_1'){
+                $call1_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            }
+            else if ($section->section_slug == 'background_image_section'){
+                $bgimage_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            }
+            else if ($section->section_slug == 'flash_cards'){
+                $flash_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->get();
+            }
+            else if ($section->section_slug == 'simple_header_and_description'){
+                $header_descp_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            }
+            else if ($section->section_slug == 'accordion_section_2'){
+                $list_2 = $section->list_number_2;
+                $accordian2_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->get();
+            }
+            else if ($section->section_slug == 'gallery_section'){
+                $gallery_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            }
+            else if ($section->section_slug == 'gallery_section_2'){
+                $gallery2_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->first();
+            }
+            else if ($section->section_slug == 'slider_list'){
+                $list_3      = $section->list_number_3;
+                $slider_list_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->get();
+            }
+
+            else if ($section->section_slug == 'small_box_description'){
+                $process_num = $section->list_number_3;
+                $process_elements = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->get();
+            }
+        }
+
+        return view('frontend.pages.dynamic_page',compact( 'page_detail','sections','process_num','process_elements','map_descp','icon_title_elements','location_map','video_descp_elements','list_2','list_3','basic_elements','call1_elements','gallery2_elements','bgimage_elements','call2_elements','flash_elements','gallery_elements','header_descp_elements','accordian1_elements','accordian2_elements','slider_list_elements','contact_info_elements'));
+
+    }
 
     public function work(){
         $our_works = $this->our_work->get();
@@ -230,6 +348,8 @@ class FrontController extends Controller
         return view('frontend.pages.contact');
 
     }
+
+
 
     
     public function contactStore(Request $request)
