@@ -714,7 +714,7 @@ class SectionElementController extends Controller
             $upload->upload_by = Auth::user()->id;
             $upload->filename = $save_name;
             $upload->resized_name = $resize_name;
-            $upload->original_name = basename($photo->getClientOriginalName());
+            $upload->original_name = basename(pathinfo($photo->getClientOriginalName(),PATHINFO_FILENAME));
             $upload->save();
         }
 
@@ -762,7 +762,7 @@ class SectionElementController extends Controller
             $upload->upload_by          = Auth::user()->id;
             $upload->filename           = $save_name;
             $upload->resized_name       = $resize_name;
-            $upload->original_name      = pathinfo($photo->getClientOriginalName(), PATHINFO_FILENAME);
+            $upload->original_name      = basename(pathinfo($photo->getClientOriginalName(),PATHINFO_FILENAME));
             $upload->save();
         }
         return response()->json(['success'=>$save_name]);
