@@ -85,14 +85,14 @@
                                             General
                                         </a>
                                     </li>
-                                    @if($settings !== null)
-                                        <li class="nav-item">
-                                            <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#status-overview"
-                                               role="tab">
-                                                Status
-                                            </a>
-                                        </li>
-                                    @endif
+{{--                                    @if($settings !== null)--}}
+{{--                                        <li class="nav-item">--}}
+{{--                                            <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#status-overview"--}}
+{{--                                               role="tab">--}}
+{{--                                                Status--}}
+{{--                                            </a>--}}
+{{--                                        </li>--}}
+{{--                                    @endif--}}
                                 </ul>
                             </div>
                             <!-- end card body -->
@@ -366,58 +366,58 @@
                             {!! Form::close() !!}
 
                         </div>
-                        @if($settings !== null)
+{{--                        @if($settings !== null)--}}
 
-                            <div class="tab-pane fade" id="status-overview" role="tabpanel">
+{{--                            <div class="tab-pane fade" id="status-overview" role="tabpanel">--}}
 
-                                {!! Form::open(['url'=>route('settings.status', @$settings->id),'id'=>'status-terms-form','class'=>'needs-validation','novalidate'=>'','method'=>'PUT']) !!}
-                                <div class="row  mb-4">
-                                    <div class="col-lg-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="online-input">Years of Online</label>
-                                                    <input type="number" min="0" name="online" class="form-control" id="online-input" value="{{@$settings->online}}" placeholder="Enter years of online">
-                                                    <div class="invalid-feedback">
-                                                        Please enter the years of online status.
-                                                    </div>
-                                                </div>
+{{--                                {!! Form::open(['url'=>route('settings.status', @$settings->id),'id'=>'status-terms-form','class'=>'needs-validation','novalidate'=>'','method'=>'PUT']) !!}--}}
+{{--                                <div class="row  mb-4">--}}
+{{--                                    <div class="col-lg-12">--}}
+{{--                                        <div class="card">--}}
+{{--                                            <div class="card-body">--}}
+{{--                                                <div class="mb-3">--}}
+{{--                                                    <label class="form-label" for="online-input">Years of Online</label>--}}
+{{--                                                    <input type="number" min="0" name="online" class="form-control" id="online-input" value="{{@$settings->online}}" placeholder="Enter years of online">--}}
+{{--                                                    <div class="invalid-feedback">--}}
+{{--                                                        Please enter the years of online status.--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="clients-input">Happy clients</label>
-                                                    <input type="number" min="0" name="clients" class="form-control" id="clients-input" value="{{@$settings->clients}}" placeholder="Enter number of happy clients">
-                                                    <div class="invalid-feedback">
-                                                        Please enter the number of happy clients.
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="projects-input">Projects Delivered</label>
-                                                    <input type="number" min="0" name="projects" class="form-control" id="projects-input" value="{{@$settings->projects}}" placeholder="Enter number of project delivered">
-                                                    <div class="invalid-feedback">
-                                                        Please enter the number of projects delivered.
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="professionals-input">Professionals Engaged</label>
-                                                    <input type="number" min="0" name="professionals" class="form-control" id="professionals-input" value="{{@$settings->professionals}}" placeholder="Enter number of professionals Engaged">
-                                                    <div class="invalid-feedback">
-                                                        Please enter the number of projects delivered.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                                <div class="mb-3">--}}
+{{--                                                    <label class="form-label" for="clients-input">Happy clients</label>--}}
+{{--                                                    <input type="number" min="0" name="clients" class="form-control" id="clients-input" value="{{@$settings->clients}}" placeholder="Enter number of happy clients">--}}
+{{--                                                    <div class="invalid-feedback">--}}
+{{--                                                        Please enter the number of happy clients.--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="mb-3">--}}
+{{--                                                    <label class="form-label" for="projects-input">Projects Delivered</label>--}}
+{{--                                                    <input type="number" min="0" name="projects" class="form-control" id="projects-input" value="{{@$settings->projects}}" placeholder="Enter number of project delivered">--}}
+{{--                                                    <div class="invalid-feedback">--}}
+{{--                                                        Please enter the number of projects delivered.--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="mb-3">--}}
+{{--                                                    <label class="form-label" for="professionals-input">Professionals Engaged</label>--}}
+{{--                                                    <input type="number" min="0" name="professionals" class="form-control" id="professionals-input" value="{{@$settings->professionals}}" placeholder="Enter number of professionals Engaged">--}}
+{{--                                                    <div class="invalid-feedback">--}}
+{{--                                                        Please enter the number of projects delivered.--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div class="text-end mb-3">
-                                            <button type="submit" class="btn btn-success w-sm">{{(@$settings->online !== null) ? "Update Status":"Save Status"}}</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                {!! Form::close() !!}
+{{--                                        <div class="text-end mb-3">--}}
+{{--                                            <button type="submit" class="btn btn-success w-sm">{{(@$settings->online !== null) ? "Update Status":"Save Status"}}</button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                {!! Form::close() !!}--}}
 
 
-                            </div>
+{{--                            </div>--}}
 
-                        @endif
+{{--                        @endif--}}
 
                     </div>
                 </div>
