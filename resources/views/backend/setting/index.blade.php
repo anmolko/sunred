@@ -443,9 +443,7 @@
     <script src="{{asset('assets/backend/js/pages/ecommerce-product-create.init.js')}}"></script>
 
     <script src="{{asset('assets/backend/libs/sweetalert2/sweetalert2.min.js')}}"></script>
-
-    <script src="{{asset('assets/backend/custom_js/setting.js')}}"></script>
-
+    
 
 
 @endsection
