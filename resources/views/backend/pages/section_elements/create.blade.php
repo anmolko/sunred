@@ -207,7 +207,7 @@
                                                     <div>
                                                         <img  id="current-basic-img"  src="<?php if(!empty(@$basic_elements->image)){ echo '/images/section_elements/basic_section/'.@$basic_elements->image; } else{  echo '/images/default-image.jpg'; } ?>" class="position-relative img-fluid img-thumbnail blog-feature-image" >
                                                         <input  type="file" accept="image/png, image/jpeg" hidden
-                                                                id="basic-image" onchange="loadbasicFile('basic-image','current-basic-img',event)" name="image" {{(@$process_elements[$i-1]->id !== null) ? "":"required" }}
+                                                                id="basic-image" onchange="loadbasicFile('basic-image','current-basic-img',event)" name="image" {{(@$basic_elements->id !== null) ? "":"required" }}
                                                                 class="profile-foreground-img-file-input" >
 
                                                         <figcaption class="figure-caption">Banner image for current basic section. (SIZE: 980 x  920px)</figcaption>
@@ -234,7 +234,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center mt-3 mb-3" id="basic-form-button">
-                                        <button id="basic-button-submit" class="btn btn-success w-sm">
+                                        <button id="basic-button-submit" type="submit" class="btn btn-success w-sm">
                                             {{(@$basic_elements !==null)? "Update Details":"Add Details"}}</button>
                                     </div>
                                     {!! Form::close() !!}
@@ -1104,7 +1104,8 @@
 
 @section('js')
 {{--    <!-- <script src="{{asset('assets/backend/plugins/ckeditor/ckeditor.js')}}"></script> -->--}}
-    @include('backend.ckeditor')
+{{--    @include('backend.ckeditor')--}}
+    <script src="{{asset('assets/backend/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js')}}"></script>
     <script src="{{asset('assets/backend/plugins/dropzone/dropzone.js')}}"></script>
     <script src="{{asset('assets/backend/plugins/dropzone/dropzone.config.js')}}"></script>
     <script src="{{asset('assets/backend/plugins/dropzone/dropzone2.config.js')}}"></script>
@@ -1227,21 +1228,8 @@
             } )
                 .then( editor => {
                     window.editor = editor;
-                    if(elementId == 'basic_editor'){
-                        var wordCountPlugin = editor.plugins.get( 'WordCount' );
-                        var wordCountWrapper= document.getElementById( 'word-count' );
-                        wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
-                    }
-
                     editor.model.document.on( 'change:data', () => {
                         $( '#' + elementId).text(editor.getData());
-                        // if(elementId == 'basic_editor') {
-                        //     if (editor.getData().length >= 907) {
-                        //         $('#word-count').css('border-left', '10px hsl(0deg 34% 57%) solid');
-                        //     } else {
-                        //         $('#word-count').css('border-left', '10px hsl(260deg 43% 53%) solid');
-                        //     }
-                        // }
                     } );
 
                 } )
