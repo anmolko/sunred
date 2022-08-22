@@ -203,7 +203,7 @@ class SectionElementController extends Controller
                 $image = $request->file('image');
                 $name = uniqid() . '__background__' . $image->getClientOriginalName();
                 $path = base_path() . '/public/images/section_elements/bgimage_section/';
-                $moved = Image::make($image->getRealPath())->resize(1920, 800)->orientate()->save($path . $name);
+                $moved = Image::make($image->getRealPath())->resize(1920, 1280)->orientate()->save($path . $name);
                 if ($moved) {
                     $data['image'] = $name;
                 }

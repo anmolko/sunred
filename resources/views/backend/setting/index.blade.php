@@ -34,7 +34,7 @@
                                             <div class="col-md">
                                                 <div>
                                                     <h4 class="fw-bold">
-                                                        {{ ($setting_data !== null && $setting_data->website_name !== null) ? $setting_data->website_name:"Canosoft Technology" }}
+                                                        {{($setting_data !== null && @$setting_data->website_name !== "") ? $setting_data->website_name :"Sunred Advance Management Services SDN. BHD." }}
                                                         - Dashboard Settings</h4>
                                                     <div class="hstack gap-3 flex-wrap">
                                                         <div><i class="ri-smartphone-line align-bottom me-1"></i>
@@ -44,7 +44,7 @@
                                                         <div>
                                                             <i class="ri-mail-send-line align-bottom me-1"></i>
                                                             <span class="fw-medium">
-                                                                {{ ($setting_data !== null && $setting_data->email !== null) ? $setting_data->email:"info@canosoft.com.np" }}
+                                                                {{ ($setting_data !== null && $setting_data->email !== null) ? $setting_data->email:"sample@email.com" }}
                                                             </span>
                                                         </div>
                                                         <div class="vr"></div>

@@ -81,7 +81,7 @@
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p
                                                         class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                        Project Plan Response</p>
+                                                        Total Menu</p>
                                                 </div>
 {{--                                                <div class="flex-shrink-0">--}}
 {{--                                                    <h5 class="text-success fs-14 mb-0">--}}
@@ -93,10 +93,9 @@
                                             <div class="d-flex align-items-end justify-content-between mt-4">
                                                 <div>
                                                     <h4 class="fs-22 fw-semibold ff-secondary mb-4">Total: <span
-                                                            class="counter-value" data-target="0">0</span>
+                                                            class="counter-value" data-target="{{$menus}}">{{$menus}}</span>
                                                     </h4>
-                                                    <a href="#" class="text-decoration-underline">Manage all
-                                                        responses</a>
+                                                    <a href="{{route('menu.index')}}" class="text-decoration-underline">Manage menus</a>
                                                 </div>
                                                 <div class="avatar-sm flex-shrink-0">
                                                         <span class="avatar-title bg-soft-success rounded fs-3">
@@ -116,18 +115,18 @@
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p
                                                         class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                        Career Responses</p>
+                                                        Total Pages</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-end justify-content-between mt-4">
                                                 <div>
                                                     <h4 class="fs-22 fw-semibold ff-secondary mb-4">Total: <span
-                                                            class="counter-value" data-target="0">0</span></h4>
-                                                    <a href="#" class="text-decoration-underline">View all responses</a>
+                                                            class="counter-value" data-target="{{$pages}}">{{$pages}}</span></h4>
+                                                    <a href="{{route('pages.index')}}" class="text-decoration-underline">Manage Pages</a>
                                                 </div>
                                                 <div class="avatar-sm flex-shrink-0">
                                                         <span class="avatar-title bg-soft-info rounded fs-3">
-                                                            <i class="bx bx-briefcase-alt-2 text-info"></i>
+                                                            <i class="bx bx-receipt text-info"></i>
                                                         </span>
                                                 </div>
                                             </div>
@@ -143,19 +142,19 @@
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p
                                                         class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                        Quote Requested</p>
+                                                        Total Blog Category</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-end justify-content-between mt-4">
                                                 <div>
                                                     <h4 class="fs-22 fw-semibold ff-secondary mb-4">Total: <span
-                                                            class="counter-value" data-target="0">0</span>
+                                                            class="counter-value" data-target="{{$blog_cat}}">{{$blog_cat}}</span>
                                                     </h4>
-                                                    <a href="#" class="text-decoration-underline">See details</a>
+                                                    <a href="{{route('blogcategory.index')}}" class="text-decoration-underline">See all category</a>
                                                 </div>
                                                 <div class="avatar-sm flex-shrink-0">
                                                         <span class="avatar-title bg-soft-warning rounded fs-3">
-                                                            <i class="bx bxs-add-to-queue text-warning"></i>
+                                                            <i class="bx bx-category-alt text-warning"></i>
                                                         </span>
                                                 </div>
                                             </div>
@@ -171,19 +170,19 @@
                                                 <div class="flex-grow-1 overflow-hidden">
                                                     <p
                                                         class="text-uppercase fw-medium text-muted text-truncate mb-0">
-                                                         Customer Contact List</p>
+                                                         Total Clients</p>
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-end justify-content-between mt-4">
                                                 <div>
                                                     <h4 class="fs-22 fw-semibold ff-secondary mb-4">Total: <span
-                                                            class="counter-value" data-target="0">0</span>
+                                                            class="counter-value" data-target="{{$clients}}">{{$clients}}</span>
                                                     </h4>
                                                     <a href="#" class="text-decoration-underline">View all list</a>
                                                 </div>
                                                 <div class="avatar-sm flex-shrink-0">
                                                         <span class="avatar-title bg-soft-primary rounded fs-3">
-                                                            <i class="bx bx-envelope-open text-primary"></i>
+                                                            <i class="bx bx-user-plus text-primary"></i>
                                                         </span>
                                                 </div>
                                             </div>
@@ -249,29 +248,38 @@
                                 <div class="col-xxl-4 col-lg-6">
                                     <div class="card card-height-100">
                                         <div class="card-header align-items-center d-flex">
-                                            <h4 class="card-title mb-0 flex-grow-1">Latest Works</h4>
+                                            <h4 class="card-title mb-0 flex-grow-1">Latest Services</h4>
                                             <a href="#" type="button" class="btn btn-soft-primary btn-sm">
                                                 View all
                                             </a>
                                         </div><!-- end card-header -->
                                         <div class="card-body p-0">
                                             <ul class="list-group list-group-flush border-dashed mb-0">
-                                                @foreach($works as $work)
-                                                <li class="list-group-item d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <img src="{{asset('images/work/'.$work->image)}}" class="avatar-xs"
-                                                             alt="">
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h6 class="fs-14 mb-1">{{$work->title}}</h6>
-                                                        <p class="text-muted mb-0">{{$work->category->name}}</p>
-                                                    </div>
-                                                    <div class="flex-shrink-0 text-end">
-                                                        <h6 class="fs-14 mb-1">{{\App\Models\User::find($work->created_by)->name}}</h6>
-                                                        <p class="text-success fs-12 mb-0">{{\Carbon\Carbon::parse(@$work->created_at)->isoFormat('MMMM Do, YYYY')}}</p>
-                                                    </div>
-                                                </li>
-                                                @endforeach
+                                                @if(count($services)>0)
+                                                    @foreach($services as $service)
+                                                    <li class="list-group-item d-flex align-items-center">
+                                                        <div class="flex-shrink-0">
+                                                            <img src="{{asset('images/service/'.$service->banner_image)}}" class="avatar-xs"
+                                                                 alt="">
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <h6 class="fs-14 mb-1">{{$service->title}}</h6>
+                                                            <p class="text-muted mb-0">{{$service->slug}}</p>
+                                                        </div>
+                                                        <div class="flex-shrink-0 text-end">
+                                                            <h6 class="fs-14 mb-1">{{\App\Models\User::find($service->created_by)->name}}</h6>
+                                                            <p class="text-success fs-12 mb-0">{{\Carbon\Carbon::parse(@$service->created_at)->isoFormat('MMMM Do, YYYY')}}</p>
+                                                        </div>
+                                                    </li>
+                                                    @endforeach
+                                                @else
+                                                    <li class="list-group-item align-items-center">
+                                                        <div class="ms-3">
+                                                            <h6 class="fs-14 mb-1">There are no new services created yet !</h6>
+                                                            <p class="text-muted mb-0"> <a href="{{route('services.index')}}"> click here </a> to create one.</p>
+                                                        </div>
+                                                    </li>
+                                                @endif
                                             </ul><!-- end ul -->
                                         </div><!-- end card body -->
                                     </div><!-- end card -->
@@ -289,21 +297,30 @@
                                         </div><!-- end card-header -->
 
                                         <div class="card-body">
-                                            @foreach($feeds as $feed)
-                                                <div class="d-flex {{($loop->first) ? "":"mt-4"}} align-middle">
-                                                <div class="flex-shrink-0">
-                                                    <img src="{{asset('/images/blog/'.@$feed->image)}}" class="rounded img-fluid"
-                                                         style="height: 60px;" alt="">
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-1 lh-base"><a href="#" class="text-reset">
-                                                            {{ ucwords(@$feed->title) }}
-                                                        </a></h6>
-                                                    <p class="text-muted fs-12 mb-0">{{ucfirst(@$feed->category->name)}} <i
-                                                            class="mdi mdi-circle-medium align-middle mx-1"></i>{{\Carbon\Carbon::parse(@$feed->created_at)->isoFormat('MMMM Do, YYYY')}}</p>
-                                                </div>
-                                            </div>
-                                            @endforeach
+                                            @if(count($feeds)>0))
+                                                @foreach($feeds as $feed)
+                                                        <div class="d-flex {{($loop->first) ? "":"mt-4"}} align-middle">
+                                                        <div class="flex-shrink-0">
+                                                            <img src="{{asset('/images/blog/'.@$feed->image)}}" class="rounded img-fluid"
+                                                                 style="height: 60px;" alt="">
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-3">
+                                                            <h6 class="mb-1 lh-base"><a href="#" class="text-reset">
+                                                                    {{ ucwords(@$feed->title) }}
+                                                                </a></h6>
+                                                            <p class="text-muted fs-12 mb-0">{{ucfirst(@$feed->category->name)}} <i
+                                                                    class="mdi mdi-circle-medium align-middle mx-1"></i>{{\Carbon\Carbon::parse(@$feed->created_at)->isoFormat('MMMM Do, YYYY')}}</p>
+                                                        </div>
+                                                    </div>
+                                                    @endforeach
+                                            @else
+                                                <li class="list-group-item align-items-center">
+                                                    <div class="ms-3">
+                                                        <h6 class="fs-14 mb-1">There are no new blog created yet !</h6>
+                                                        <p class="text-muted mb-0"> <a href="{{route('blog.index')}}"> click here </a> to create one.</p>
+                                                    </div>
+                                                </li>
+                                            @endif
                                         </div><!-- end card body -->
                                     </div><!-- end card -->
                                 </div><!-- end col -->

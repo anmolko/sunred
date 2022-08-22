@@ -160,14 +160,9 @@ class ServiceController extends Controller
     {
         $delete          = Service::find($id);
         $blogid          = $delete->id;
-        $feature         = $delete->feature_image;
         $banner          = $delete->banner_image;
         $count           = $delete->count();
 
-
-        if (!empty($feature) && file_exists(public_path().'/images/service/'.$feature)){
-            @unlink(public_path().'/images/service/'.$feature);
-        }
         if (!empty($banner) && file_exists(public_path().'/images/service/'.$banner)){
             @unlink(public_path().'/images/service/'.$banner);
         }
