@@ -289,6 +289,13 @@
 		<script>
 		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
 		</script>
+		    <link
+			rel="stylesheet"
+			id="magnific-popup-css"
+			href="{{asset('assets/frontend/wp-content/plugins/classic-elementor-addons-pro/assets/css/magnific-popup.min5152.css?ver=1.0')}}"
+			type="text/css"
+			media="all"
+			/>
 		<link rel="preload" as="font" id="rs-icon-set-revicon-woff" href="{{asset('assets/frontend/wp-content/plugins/revslider/public/assets/fonts/revicons/revicons90c6.woff?5510888')}}" type="font/woff" crossorigin="anonymous" media="all" />
 		<link rel='stylesheet' id='rs-plugin-settings-css'  href="{{asset('assets/frontend/wp-content/plugins/revslider/public/assets/css/rs6b02e.css?ver=6.5.25')}}' type='text/css" media='all' />
 		<style id='rs-plugin-settings-inline-css' type='text/css'>
@@ -328,6 +335,12 @@
 		<script  type='text/javascript' src="{{asset('assets/frontend/wp-content/cache/min/45/corpkit/wp-content/themes/corpkit/assets/js/corpkit-woo-customb948.js?ver=1659790913')}}" id='corpkit-woo-custom-js' defer></script>
 		<script data-minify="1" type='text/javascript' src="{{asset('assets/frontend/wp-content/cache/min/45/corpkit/wp-content/themes/corpkit/assets/js/themeb948.js?ver=1659790913')}}" id='corpkit-theme-js' defer></script>
 		<script type='text/javascript' src="{{asset('assets/frontend/wp-content/themes/corpkit/assets/js/sticky-kit.minc358.js?ver=1.1.3')}}" id='sticky-kit-js' defer></script>
+		<script
+			type="text/javascript"
+			src="{{asset('assets/frontend/wp-content/plugins/classic-elementor-addons-pro/assets/js/jquery.magnific.popup.minf488.js?ver=1.1.0')}}"
+			id="magnific-popup-js"
+			defer
+			></script>
 		<script data-minify="1" type='text/javascript' src="{{asset('assets/frontend/wp-content/cache/min/45/corpkit/wp-content/plugins/classic-elementor-addons-pro/assets/js/cea-float-parallaxb948.js?ver=1659790913')}}" id='cea-float-parallax-js' defer></script>
 		<script data-minify="1" type='text/javascript' src="{{asset('assets/frontend/wp-content/cache/min/45/corpkit/wp-content/plugins/classic-elementor-addons-pro/assets/js/custom-frontb948.js?ver=1659790913')}}" id='custom-front-js' defer></script>
 		<script type='text/javascript' src="{{asset('assets/frontend/wp-content/plugins/classic-elementor-addons-pro/assets/js/owl.carousel.min531b.js?ver=2.3.4')}}" id='owl-carousel-js' defer></script>

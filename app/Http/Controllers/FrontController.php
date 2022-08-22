@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Models\SectionElement;
 use App\Models\Page;
 use App\Models\PageSection;
+use App\Models\SectionGallery;
 use App\Notifications\NewCareerNotification;
 use App\Notifications\NewServiceNotification;
 use App\Notifications\OtherNotification;
@@ -151,6 +152,7 @@ class FrontController extends Controller
     public function page($page)
     {
         $page_detail = $this->page->with('sections')->where('slug', $page)->where('status','active')->first();
+        
         if (!$page_detail) {
             return abort(404);
         }
@@ -218,14 +220,14 @@ class FrontController extends Controller
                     ->get();
             }
             else if ($section->section_slug == 'gallery_section'){
-                $gallery_elements = SectionElement::with('section')
+                $gallery_elements = SectionGallery::with('section')
                     ->where('page_section_id', $section->id)
-                    ->first();
+                    ->get();
             }
             else if ($section->section_slug == 'gallery_section_2'){
-                $gallery2_elements = SectionElement::with('section')
+                $gallery2_elements = SectionGallery::with('section')
                     ->where('page_section_id', $section->id)
-                    ->first();
+                    ->get();
             }
             else if ($section->section_slug == 'slider_list'){
                 $list_3      = $section->list_number_3;
