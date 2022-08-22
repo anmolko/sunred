@@ -382,8 +382,8 @@
 
 
     <div class="modal fade" id="addStructure" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0">
                 <div class="modal-header p-3 ps-4 bg-soft-success">
                     <h5 class="modal-title" id="myModalLabel">Page Structure</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

@@ -461,7 +461,7 @@ class PageController extends Controller
                 array_push($menuname,ucwords($menu->name));
             }
             $status = 'Warning';
-            return response(['status'=>$status,'message'=>'This page is attached to menu(s). Please remove menu item first to delete this page.','name'=>$menuname]);
+            return response()->json(['status'=>$status,'message'=>'This page is attached to menu(s). Please remove menu item first to delete this page.','name'=>$menuname]);
         }
 
 
@@ -532,8 +532,14 @@ class PageController extends Controller
             }
         }
 
-        $delete->delete();
-        return 'success';
+        $remove          = $delete->delete();
+        if($remove){
+            $status ='success';
+            return response()->json(['status'=>$status,'message'=>'Page has been removed successfully!']);
+        } else{
+            $status ='error';
+            return response()->json(['status'=>$status,'message'=>'Page could not be removed. Try Again later !']);
+        }
     }
 
     public function updateStatus(Request $request, $id){
