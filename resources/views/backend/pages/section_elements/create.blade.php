@@ -1059,7 +1059,7 @@
                                                                     <div class="col-md-4">
 
                                                                         <div>
-                                                                            <img  id="current-processelect-{{$i}}-img"  src="<?php if(!empty(@$process_elements[$i-1]->list_image)){ echo '/images/section_elements/list_1/'.@$process_elements[$i-1]->list_image; } else{  echo 'images/default-image.jpg'; } ?>" class="position-relative img-fluid img-thumbnail blog-feature-image" >
+                                                                            <img  id="current-processelect-{{$i}}-img"  src="<?php if(!empty(@$process_elements[$i-1]->list_image)){ echo '/images/section_elements/list_1/'.@$process_elements[$i-1]->list_image; } else{  echo '/images/default-image.jpg'; } ?>" class="position-relative img-fluid img-thumbnail blog-feature-image" >
                                                                             <input  type="file" accept="image/png, image/jpeg" hidden
                                                                                     id="processelect-{{$i}}-image" onchange="loadbasicFile('processelect-{{$i}}-image','current-processelect-{{$i}}-img',event)" name="list_image[]" {{(@$process_elements[$i-1]->id !== null) ? "":"required" }}
                                                                                     class="profile-foreground-img-file-input" >
