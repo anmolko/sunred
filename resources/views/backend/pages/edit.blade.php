@@ -241,6 +241,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <input type="hidden" class="form-control" name="list_number_2"  id="list_number_2" value="{{$list2}}" required>
+                                            <input type="hidden" name="list_2_id" value="{{$list2_id}}">
                                         </div>
                                         <div class="col-md-12">
                                             <label class="image-checkbox {{(in_array('accordion_section_2', $sections) ? "image-checkbox-checked":"")}}">

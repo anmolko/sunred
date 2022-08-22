@@ -170,8 +170,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group mb-3">
-                                                        <label>Description <span class="text-muted text-danger">* write 785 characters only</span></label>
-                                                        <textarea class="form-control" maxlength="785" rows="6" name="description" id="basic_editor" required>{!! @$basic_elements->description !!}</textarea>
+                                                        <label>Description <span class="text-muted text-danger">* write 675 characters only</span></label>
+                                                        <textarea class="form-control" maxlength="675" rows="6" name="description" id="basic_editor" required>{!! @$basic_elements->description !!}</textarea>
                                                         <div class="invalid-feedback">
                                                             Please write the small summary for basic section.
                                                         </div>
@@ -1281,9 +1281,6 @@
 
 
         $(document).ready(function () {
-            if(section_list.includes("basic_section")) {
-                createEditor('basic_editor');
-            }
             if(section_list.includes("simple_header_and_description")){
                 createEditor('task-textarea');
             }
