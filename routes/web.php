@@ -128,7 +128,8 @@ Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function () {
     //for menu
     Route::get('/manage-menus/{slug?}', 'App\Http\Controllers\MenuController@index')->name('menu.index');
     Route::post('/create-menu', 'App\Http\Controllers\MenuController@store')->name('menu.store');
-    Route::get('/add-service-to-menu','App\Http\Controllers\MenuController@addPage')->name('menu.page');
+    Route::get('/add-page-to-menu','App\Http\Controllers\MenuController@addPage')->name('menu.page');
+    Route::get('/add-service-to-menu','App\Http\Controllers\MenuController@addService')->name('menu.service');
     Route::get('add-post-to-menu','App\Http\Controllers\MenuController@addPost')->name('menu.post');
     Route::get('add-custom-link','App\Http\Controllers\MenuController@addCustomLink')->name('menu.custom');
     Route::get('/update-menu','App\Http\Controllers\MenuController@updateMenu')->name('menu.updateMenu');

@@ -24,6 +24,7 @@ class MenuController extends Controller
         $desiredMenu        = '';
         $menuTitle          = '';
         $pages              = Page::all();
+        $services           = Service::all();
         $menus              = Menu::all();
         $blogs              = Blog::all();
         if(isset($_GET['slug']) && $_GET['slug'] != 'new'){
@@ -114,7 +115,7 @@ class MenuController extends Controller
             }
         }
 
-        return view('backend.menu.index',compact('pages','menuTitle','blogs','menus','desiredMenu','menuitems'));
+        return view('backend.menu.index',compact('pages','services','menuTitle','blogs','menus','desiredMenu','menuitems'));
 
     }
 
@@ -259,6 +260,61 @@ class MenuController extends Controller
             Session::flash('success','Page added in Menu');
         }else{
             Session::flash('error','Page could not be added in Menu');
+        }
+    }
+
+    public function addService(Request $request){
+        $data       = $request->all();
+        $menuid     = $request->menuid;
+        $ids        = $request->ids;
+        $menu       = Menu::findOrFail($menuid);
+        if($menu->content == ''){
+//            dd('content empty');
+            foreach($ids as $id){
+                $service = Service::find($id);
+                $data = [
+                    'title'          => $service->title,
+                    'slug'           => $service->slug,
+                    'page_id'        => $id,
+                    'type'           => 'service',
+                    'menu_id'        => $menuid,
+                    'created_by'     => Auth::user()->id,
+                ];
+                $status = MenuItem::create($data);
+            }
+
+        }
+        else{
+            $olddata = json_decode($menu->content,true);
+            foreach($ids as $id){
+                $service = Service::find($id);
+                $data =[
+                    'title'         => $service->title,
+                    'slug'          => $service->slug,
+                    'page_id'       => $id,
+                    'type'          => 'service',
+                    'menu_id'       => $menuid,
+                    'created_by'    => Auth::user()->id,
+                ];
+                $status = MenuItem::create($data);
+            }
+            foreach($ids as $id){
+                $service = Service::find($id);
+                $array['title']         = $service->title;
+                $array['slug']          = $service->slug;
+                $array['page_id']       = $id;
+                $array['type']          = 'service';
+                $array['id']            = MenuItem::where('slug',$array['slug'])->where('type',$array['type'])->value('id');
+                $array['children']      = [[]];
+                array_push($olddata[0],$array);
+                $oldata = json_encode($olddata);
+                $status = $menu->update(['content'=>$olddata]);
+            }
+        }
+        if($status){
+            Session::flash('success','Service added in Menu');
+        }else{
+            Session::flash('error','Service could not be added in Menu');
         }
     }
 

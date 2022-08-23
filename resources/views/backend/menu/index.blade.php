@@ -115,8 +115,8 @@
                                             @if(count($pages) !== 0)
                                                 @foreach($pages as $page)
                                                     <div class="form-check form-check-outline form-check-success {{(in_array($page->slug, $slug_to_disable)) ? 'disabled':''}}">
-                                                        <input class="form-check-input" type="checkbox" id="service-{{$page->id}}" value="{{$page->id}}" name="select-page[]" {{(count($menus) == 0 || in_array($page->slug, $slug_to_disable)) ? 'disabled':''}}>
-                                                        <label class="form-check-label {{(in_array($page->slug, $slug_to_disable)) ? 'disabled':''}}" for="service-{{$page->id}}"> {{ucfirst($page->name)}}</label>
+                                                        <input class="form-check-input" type="checkbox" id="pages-{{$page->id}}" value="{{$page->id}}" name="select-page[]" {{(count($menus) == 0 || in_array($page->slug, $slug_to_disable)) ? 'disabled':''}}>
+                                                        <label class="form-check-label {{(in_array($page->slug, $slug_to_disable)) ? 'disabled':''}}" for="pages-{{$page->id}}"> {{ucfirst($page->name)}}</label>
                                                     </div>
                                                 @endforeach
                                                 @else
@@ -129,6 +129,39 @@
                                             <div class="{{(count($pages) == 0) ? 'disabled':''}}">
                                                 <label class="btn btn-light btn-sm bg-gradient waves-effect waves-light text-decoration-none"><input type="checkbox" id="select-all-pages" class="hidden"> Select All</label>
                                                 <button type="button" class="pull-right btn btn-light bg-gradient waves-effect waves-light btn-sm text-decoration-none pull-right" id="add-pages">Add to Menu</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingBrands">
+                                    <button class="accordion-button bg-transparent shadow-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseBrands" aria-expanded="false" aria-controls="flush-collapseBrands">
+                                        <span class="text-muted text-uppercase fs-12 fw-medium">Services </span> <span class="badge bg-success rounded-pill align-middle ms-1">{{count($services)}}</span>
+                                    </button>
+                                </h2>
+
+                                <div id="flush-collapseBrands" class="accordion-collapse collapse" aria-labelledby="flush-headingBrands" style="">
+                                    <div class="accordion-body {{(count($menus) == 0) ? 'disabled':''}} text-body pt-0" id="service-list">
+                                        <div class="d-flex flex-column gap-2 mt-3">
+                                            @if(count($services) !== 0)
+                                                @foreach($services as $service)
+                                                    <div class="form-check form-check-outline form-check-success {{(in_array($service->slug, $slug_to_disable)) ? 'disabled':''}}">
+                                                        <input class="form-check-input" type="checkbox" id="service-{{$service->id}}" value="{{$service->id}}" name="select-service[]" {{(count($menus) == 0 || in_array($service->slug, $slug_to_disable)) ? 'disabled':''}}>
+                                                        <label class="form-check-label {{(in_array($service->slug, $slug_to_disable)) ? 'disabled':''}}" for="service-{{$service->id}}"> {{ucfirst($service->title)}}</label>
+                                                    </div>
+                                                @endforeach
+                                            @else
+                                                <div class="pb-2">
+                                                    <span class="h6">Please <a href="{{route('service.index')}}">create a service</a> to add in menu.</span>
+                                                </div>
+                                            @endif
+
+
+                                            <div class="{{(count($services) == 0) ? 'disabled':''}}">
+                                                <label class="btn btn-light btn-sm bg-gradient waves-effect waves-light text-decoration-none"><input type="checkbox" id="select-all-services" class="hidden"> Select All</label>
+                                                <button type="button" class="pull-right btn btn-light bg-gradient waves-effect waves-light btn-sm text-decoration-none pull-right" id="add-service">Add to Menu</button>
                                             </div>
                                         </div>
                                     </div>
@@ -584,6 +617,18 @@
             }
         });
 
+        $('#select-all-services').click(function(event) {
+            if(this.checked) {
+                $('#service-list :checkbox:not(:disabled)').each(function() {
+                    this.checked = true;
+                });
+            }else{
+                $('#service-list :checkbox:not(:disabled)').each(function() {
+                    this.checked = false;
+                });
+            }
+        });
+
         $('#select-all-posts').click(function(event) {
             if(this.checked) {
                 $('#posts-list :checkbox:not(:disabled)').each(function() {
@@ -619,6 +664,34 @@
                     type:"get",
                     data: {menuid:menuid,ids:ids},
                     url: "{{route('menu.page')}}",
+                    success:function(res){
+                        location.reload();
+                    }
+                });
+            });
+
+            $('#add-service').click(function(){
+                var menuid  = "{{$desiredMenu->id}}";
+                var n       = $('input[name="select-service[]"]:checked').length;
+                var array   = $('input[name="select-service[]"]:checked');
+                var ids     = [];
+
+                if(n == 0){
+                    return false;
+                }
+
+                for(var i=0;i<n;i++){
+                    ids[i] =  array.eq(i).val();
+                }
+
+                if(ids.length == 0){
+                    return false;
+                }
+
+                $.ajax({
+                    type:"get",
+                    data: {menuid:menuid,ids:ids},
+                    url: "{{route('menu.service')}}",
                     success:function(res){
                         location.reload();
                     }
