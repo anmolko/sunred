@@ -294,7 +294,7 @@
                                                     <div class="position-relative mb-3">
                                                         <label class="form-label" for="direction-input">Button</label>
                                                         <input type="text" class="form-control" id="direction-input" name="action_button" value="{{@$homesettings->action_button}}"
-                                                               placeholder="Enter button text">
+                                                               placeholder="Enter button text" required>
                                                         <div class="invalid-feedback">
                                                             Please enter the button text.
                                                         </div>
@@ -302,7 +302,7 @@
                                                     <div class="position-relative mb-3">
                                                         <label class="form-label" for="direction-heading-inputs">Link</label>
                                                         <input type="text" class="form-control" id="direction-heading-inputs" name="action_link" value="{{@$homesettings->action_link}}"
-                                                               placeholder="Enter button link">
+                                                               placeholder="Enter button link" required>
                                                         <div class="invalid-feedback">
                                                             Please enter the button link.
                                                         </div>
