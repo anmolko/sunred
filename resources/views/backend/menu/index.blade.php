@@ -154,7 +154,7 @@
                                                 @endforeach
                                             @else
                                                 <div class="pb-2">
-                                                    <span class="h6">Please <a href="{{route('service.index')}}">create a service</a> to add in menu.</span>
+                                                    <span class="h6">Please <a href="{{route('services.index')}}">create a service</a> to add in menu.</span>
                                                 </div>
                                             @endif
 

@@ -523,46 +523,6 @@
 
         });
 
-        $(document).on('click','.action-delete', function (e) {
-            e.preventDefault();
-            var form = $('#deleted-form');
-            var action = $(this).attr('hrm-delete-per-action');
-            form.attr('action',$(this).attr('hrm-delete-per-action'));
-            $url = form.attr('action');
-            var form_data = form.serialize();
-            // $('.deleterole').attr('action',action);
-            swal({
-                title: "Are You Sure?",
-                text: "Removing page will delete its section and data",
-                type: "info",
-                showCancelButton: true,
-                closeOnConfirm: false,
-                showLoaderOnConfirm: true,
-            }, function(){
-                $.post( $url, form_data)
-                    .done(function(response) {
-                        if(response.status == 'Warning'){
-                            swal(response.status+"!", response.message+'\n\n Related Menu: '+response.name, "warning");
-                            $(response).remove();
-                        }else{
-                            swal("Deleted!", "Page Deleted Successfully", "success");
-                            $(response).remove();
-                            setTimeout(function() {
-                                window.location.reload();
-                            }, 2500);
-                        }
-
-
-
-                    })
-                    .fail(function(response){
-                        console.log(response)
-
-                    });
-            });
-
-        });
-
         $(document).on('click','.status-update', function (e) {
             e.preventDefault();
             var status = $(this).attr('id');

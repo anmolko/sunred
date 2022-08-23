@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use App\Models\MenuItem;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -163,6 +165,19 @@ class ServiceController extends Controller
         $banner          = $delete->banner_image;
         $count           = $delete->count();
 
+        $serviceid        = $delete->id;
+        $menuitems        = MenuItem::where('service_id',$serviceid)->get();
+        $menuname         = [];
+
+        if(count($menuitems)>0){
+            foreach ($menuitems as $items){
+                $menu  = Menu::find($items->menu_id);
+                array_push($menuname,ucwords($menu->name));
+            }
+            $status = 'Warning';
+            return response()->json(['status'=>$status,'message'=>'This service is attached to menu(s). Please remove menu item first to delete this page.','name'=>$menuname]);
+        }
+        
         if (!empty($banner) && file_exists(public_path().'/images/service/'.$banner)){
             @unlink(public_path().'/images/service/'.$banner);
         }

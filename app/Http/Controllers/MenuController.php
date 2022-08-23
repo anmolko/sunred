@@ -275,7 +275,7 @@ class MenuController extends Controller
                 $data = [
                     'title'          => $service->title,
                     'slug'           => $service->slug,
-                    'page_id'        => $id,
+                    'service_id'     => $id,
                     'type'           => 'service',
                     'menu_id'        => $menuid,
                     'created_by'     => Auth::user()->id,
@@ -291,7 +291,7 @@ class MenuController extends Controller
                 $data =[
                     'title'         => $service->title,
                     'slug'          => $service->slug,
-                    'page_id'       => $id,
+                    'service_id'    => $id,
                     'type'          => 'service',
                     'menu_id'       => $menuid,
                     'created_by'    => Auth::user()->id,
@@ -302,7 +302,7 @@ class MenuController extends Controller
                 $service = Service::find($id);
                 $array['title']         = $service->title;
                 $array['slug']          = $service->slug;
-                $array['page_id']       = $id;
+                $array['service_id']    = $id;
                 $array['type']          = 'service';
                 $array['id']            = MenuItem::where('slug',$array['slug'])->where('type',$array['type'])->value('id');
                 $array['children']      = [[]];
