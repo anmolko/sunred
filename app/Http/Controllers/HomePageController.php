@@ -173,38 +173,13 @@ class HomePageController extends Controller
         $update_theme->direction_heading                =  $request->input('direction_heading');
         $update_theme->direction_description            =  $request->input('direction_description');
         $update_theme->direction_list_heading           =  $request->input('direction_list_heading');
-        $update_theme->direction_list_description       =  $request->input('direction_list_description');
-        $update_theme->direction_displaying_side_image  =  $request->input('direction_displaying_side_image');
-        $update_theme->direction_container_color        =  $request->input('direction_container_color');
         $update_theme->updated_by                       =  Auth::user()->id;
-        $oldimage                                       = $update_theme->direction_list_image;
-
-        if (!is_dir($this->direction_path)) {
-            mkdir($this->direction_path, 0777);
-        }
-
-        if (!empty($request->file('direction_list_image'))){
-            $path    = base_path().'/public/images/home/direction/';
-            $image = $request->file('direction_list_image');
-            $name1 = uniqid().'_direction_'.$image->getClientOriginalName();
-            $moved          = Image::make($image->getRealPath())->fit(550, 790)->orientate()->save($path.$name1);
-
-            if ($moved){
-                $update_theme->direction_list_image= $name1;
-                if (!empty($oldimage) && file_exists(public_path().'/images/home/direction/'.$oldimage)){
-                    @unlink(public_path().'/images/home/direction/'.$oldimage);
-                }
-            }
-
-        }
-
         $status=$update_theme->update();
-
         if($status){
-            Session::flash('success','Simple Section Updated Successfully');
+            Session::flash('success','Header and description section updated successfully');
         }
         else{
-            Session::flash('error','Something Went Wrong. Simple  Section could not be Updated');
+            Session::flash('error','Something Went Wrong. Header and description section could not be Updated');
         }
 
 
