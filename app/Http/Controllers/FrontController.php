@@ -8,10 +8,12 @@ use App\Models\Faq;
 use App\Models\Setting;
 use App\Models\Service;
 use App\Mail\ContactDetail;
+use App\Models\HomePage;
 
 use App\Models\User;
 use App\Models\SectionElement;
 use App\Models\Page;
+use App\Models\Client;
 use App\Models\PageSection;
 use App\Models\SectionGallery;
 use App\Notifications\NewCareerNotification;
@@ -21,6 +23,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
+use CountryState;
 
 
 class FrontController extends Controller
@@ -40,9 +43,10 @@ class FrontController extends Controller
     protected $home_page = null;
     protected $page = null;
     protected $pagesection = null;
+    protected $client = null;
 
 
-    public function __construct(PageSection $pagesection,Page $page,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
+    public function __construct(HomePage $home_page,Client $client,PageSection $pagesection,Page $page,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
     {
         $this->setting = $setting;
         $this->bcategory = $bcategory;
@@ -50,13 +54,20 @@ class FrontController extends Controller
         $this->service = $service;
         $this->page = $page;
         $this->pagesection = $pagesection;
+        $this->client = $client;
+        $this->home_page = $home_page;
     }
 
 
 
     public function index()
     {
-        return view('welcome');
+        $clients =$this->client->orderBy('created_at', 'asc')->get();
+        $latestServices = $this->service->orderBy('created_at', 'DESC')->take(5)->get();
+        $countries  = CountryState::getCountries();
+        $homepage_info = $this->home_page->first();
+
+        return view('welcome',compact('clients','latestServices','countries','homepage_info'));
     }
 
 

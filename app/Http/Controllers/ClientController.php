@@ -113,7 +113,7 @@ class ClientController extends Controller
         if (!empty($request->file('image'))){
             $image                = $request->file('image');
             $name                 = uniqid().'_'.$image->getClientOriginalName();
-            $path                 = base_path().'/public/images/uploads/clients/';
+            $path                 = base_path().'/public/images/clients/';
             $moved                = Image::make($image->getRealPath())->resize(500, 500)->orientate()->save($path.$name);
             if ($moved){
                 $clients->image = $name;
