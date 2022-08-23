@@ -1156,9 +1156,7 @@
                               @endif
 
                               @if($value == "gallery_section")
-
                                   <!--- Gallery Section 1-->
-
                                   <section
                                     class="elementor-section elementor-top-section elementor-element elementor-element-7f7d0aa elementor-section-content-middle elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                     data-id="7f7d0aa"
@@ -1403,120 +1401,231 @@
 
                               @if($value == "small_box_description")
 
-                        <!-- Small Box Description-->    
-                        
-                        <section
-                          class="elementor-section elementor-top-section elementor-element elementor-element-ef34a06 elementor-section-content-middle elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                          data-id="ef34a06"
-                          data-element_type="section"
-                          data-settings='{"stretch_section":"section-stretched","background_background":"classic","shape_divider_top":"waves"}'
-                        >
-                          <div class="elementor-background-overlay"></div>
-                          <div
-                            class="elementor-shape elementor-shape-top"
-                            data-negative="false"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 1000 100"
-                              preserveAspectRatio="none"
-                            >
-                              <path
-                                class="elementor-shape-fill"
-                                d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
-	                        c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
-	                        c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="elementor-container elementor-column-gap-extended"
-                          >
-                            <div
-                              class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bae3f46"
-                              data-id="bae3f46"
-                              data-element_type="column"
-                            >
-                              <div
-                                class="elementor-widget-wrap elementor-element-populated"
-                              >
-                                <div
-                                  class="elementor-element elementor-element-8866676 cea-align-center elementor-widget elementor-widget-ceasectiontitle"
-                                  data-id="8866676"
-                                  data-element_type="widget"
-                                  data-widget_type="ceasectiontitle.default"
-                                >
-                                  <div class="elementor-widget-container">
-                                    <div class="section-title-wrapper">
-                                      <div class="title-wrap">
-                                        
-                                        @if(@$process_elements[0]->heading)
-                                          <h6 class="sub-title">{{ucwords(@$process_elements[0]->heading)}}</h6>
-                                          @endif
-                                          @if(@$process_elements[0]->description)
-                                          <h2 class="section-title">{{ucwords(@$process_elements[0]->description)}}</h2>
-                                          @endif
+                                    <!-- Small Box Description-->    
+                                    <section
+                                      class="elementor-section elementor-top-section elementor-element elementor-element-ef34a06 elementor-section-content-middle elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                      data-id="ef34a06"
+                                      data-element_type="section"
+                                      data-settings='{"stretch_section":"section-stretched","background_background":"classic","shape_divider_top":"waves"}'
+                                    >
+                                      <div class="elementor-background-overlay"></div>
+                                      <div
+                                        class="elementor-shape elementor-shape-top"
+                                        data-negative="false"
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 1000 100"
+                                          preserveAspectRatio="none"
+                                        >
+                                          <path
+                                            class="elementor-shape-fill"
+                                            d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+                                      c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+                                      c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"
+                                          />
+                                        </svg>
                                       </div>
-                                      <!-- .title-wrap -->
-                                      <div class="section-description"></div>
-                                      <!-- .section-description -->
-                                    </div>
-                                    <!-- .section-title-wrapper -->
-                                  </div>
-                                </div>
-                                <div
-                                  class="elementor-element elementor-element-1b88514 elementor-widget elementor-widget-ceaservice"
-                                  data-id="1b88514"
-                                  data-element_type="widget"
-                                  data-widget_type="ceaservice.default"
-                                >
-                                  <div
-                                    class="elementor-widget-container service-wrapper service-style-default service-light service-normal-model"
-                                  >
-                                    <div class="row">
-                                      @for ($i = 1; $i <=@$process_num; $i++)
-
-                                      <div class="col-lg-4 col-md-4">
-                                        <div class="service-inner">
-                                          <div class="service-icon-img-wrap">
-                                            <img
-                                              src="<?php if(@$process_elements[$i-1]->list_image){?>{{asset('/images/section_elements/list_1/'.@$process_elements[$i-1]->list_image)}}<?php }?>"
-                                              class="img-fluid service-icon-img"
-                                              alt="{{ucwords(@$process_elements[$i-1]->list_header)}}"
-                                            />
-                                          </div>
-                                          <div class="entry-title">
-                                            <h4 class="post-title-head">
-                                              <a
-                                                href="#"
-                                                class="post-title"
-                                                >{{ucwords(@$process_elements[$i-1]->list_header)}}</a
+                                      <div
+                                        class="elementor-container elementor-column-gap-extended"
+                                      >
+                                        <div
+                                          class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bae3f46"
+                                          data-id="bae3f46"
+                                          data-element_type="column"
+                                        >
+                                          <div
+                                            class="elementor-widget-wrap elementor-element-populated"
+                                          >
+                                            <div
+                                              class="elementor-element elementor-element-8866676 cea-align-center elementor-widget elementor-widget-ceasectiontitle"
+                                              data-id="8866676"
+                                              data-element_type="widget"
+                                              data-widget_type="ceasectiontitle.default"
+                                            >
+                                              <div class="elementor-widget-container">
+                                                <div class="section-title-wrapper">
+                                                  <div class="title-wrap">
+                                                    
+                                                    @if(@$process_elements[0]->heading)
+                                                      <h6 class="sub-title">{{ucwords(@$process_elements[0]->heading)}}</h6>
+                                                      @endif
+                                                      @if(@$process_elements[0]->description)
+                                                      <h2 class="section-title">{{ucwords(@$process_elements[0]->description)}}</h2>
+                                                      @endif
+                                                  </div>
+                                                  <!-- .title-wrap -->
+                                                  <div class="section-description"></div>
+                                                  <!-- .section-description -->
+                                                </div>
+                                                <!-- .section-title-wrapper -->
+                                              </div>
+                                            </div>
+                                            <div
+                                              class="elementor-element elementor-element-1b88514 elementor-widget elementor-widget-ceaservice"
+                                              data-id="1b88514"
+                                              data-element_type="widget"
+                                              data-widget_type="ceaservice.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container service-wrapper service-style-default service-light service-normal-model"
                                               >
-                                            </h4>
+                                                <div class="row">
+                                                  @for ($i = 1; $i <=@$process_num; $i++)
+
+                                                  <div class="col-lg-4 col-md-4">
+                                                    <div class="service-inner">
+                                                      <div class="service-icon-img-wrap">
+                                                        <img
+                                                          src="<?php if(@$process_elements[$i-1]->list_image){?>{{asset('/images/section_elements/list_1/'.@$process_elements[$i-1]->list_image)}}<?php }?>"
+                                                          class="img-fluid service-icon-img"
+                                                          alt="{{ucwords(@$process_elements[$i-1]->list_header)}}"
+                                                        />
+                                                      </div>
+                                                      <div class="entry-title">
+                                                        <h4 class="post-title-head">
+                                                          <a
+                                                            href="#"
+                                                            class="post-title"
+                                                            >{{ucwords(@$process_elements[$i-1]->list_header)}}</a
+                                                          >
+                                                        </h4>
+                                                      </div>
+                                                      <!-- .entry-title -->
+                                                      <div class="post-excerpt">
+                                                        <p>
+                                                        {{ucfirst(@$process_elements[$i-1]->list_description)}}
+                                                        </p>
+                                                      </div>
+                                                      <!-- .post-excerpt -->
+                                                    </div>
+                                                    <!-- .service-inner -->
+                                                  </div>
+                                                  @endfor
+                                                
+                                                </div>
+                                                <!-- .row -->
+                                          
+                                              </div>
+                                            </div>
                                           </div>
-                                          <!-- .entry-title -->
-                                          <div class="post-excerpt">
-                                            <p>
-                                            {{ucfirst(@$process_elements[$i-1]->list_description)}}
-                                            </p>
-                                          </div>
-                                          <!-- .post-excerpt -->
                                         </div>
-                                        <!-- .service-inner -->
                                       </div>
-                                      @endfor
-                                    
+                                    </section>
+
+                              @endif
+                              @if($value == "slider_list")
+                              slider_list_elements
+                                <section
+                                  class="elementor-section elementor-top-section elementor-element elementor-element-0d7e32e elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                  data-id="0d7e32e"
+                                  data-element_type="section"
+                                  data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'
+                                >
+                                  <div class="elementor-background-overlay"></div>
+                                  <div
+                                    class="elementor-container elementor-column-gap-no"
+                                  >
+                                    <div
+                                      class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8654d1e"
+                                      data-id="8654d1e"
+                                      data-element_type="column"
+                                    >
+                                      <div
+                                        class="elementor-widget-wrap elementor-element-populated"
+                                      >
+                                        <div
+                                          class="elementor-element elementor-element-6216715 cea-align-center elementor-widget elementor-widget-ceasectiontitle"
+                                          data-id="6216715"
+                                          data-element_type="widget"
+                                          data-widget_type="ceasectiontitle.default"
+                                        >
+                                          <div class="elementor-widget-container">
+                                            <div class="section-title-wrapper">
+                                              <div class="title-wrap">
+                                                <h6 class="sub-title">{{ucwords(@$slider_list_elements[0]->heading)}}</h6>
+                                                <h2 class="section-title">
+                                                {{ucwords(@$slider_list_elements[0]->description)}}
+                                                </h2>
+                                              </div>
+                                              <!-- .title-wrap -->
+                                              <div class="section-description">
+                                                <p class="section-content"></p>
+                                              </div>
+                                              <!-- .section-description -->
+                                            </div>
+                                            <!-- .section-title-wrapper -->
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="elementor-element elementor-element-21d83a1 elementor-widget elementor-widget-ceaservice"
+                                          data-id="21d83a1"
+                                          data-element_type="widget"
+                                          data-widget_type="ceaservice.default"
+                                        >
+                                          <div
+                                            class="elementor-widget-container service-wrapper service-style-modern service-light service-slide-model"
+                                          >
+                                            <div
+                                              class="cea-carousel owl-carousel"
+                                              data-loop="1"
+                                              data-margin="30"
+                                              data-center="0"
+                                              data-nav="1"
+                                              data-dots="0"
+                                              data-autoplay="0"
+                                              data-items="3"
+                                              data-items-tab="2"
+                                              data-items-mob="1"
+                                              data-duration="5000"
+                                              data-smartspeed="250"
+                                              data-scrollby="1"
+                                              data-autoheight="0"
+                                            >
+                                            @for ($i = 1; $i <=@$list_3; $i++)
+
+                                              <div class="owl-carousel-item">
+                                                <div class="service-inner">
+                                                  <div class="post-thumb">
+                                                    <a
+                                                      href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}"
+                                                      class="post-image-link"
+                                                      ><img
+                                                        src="{{ asset('/images/section_elements/list_1/thumb/thumb_'.@$slider_list_elements[$i-1]->list_image) }}"
+                                                        title="1"
+                                                        alt=""
+                                                        class="img-fluid squared"
+                                                    /></a>
+                                                  </div>
+                                                  <div class="entry-title">
+                                                    <h4 class="post-title-head">
+                                                      <a
+                                                        href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}"
+                                                        class="post-title"
+                                                        >{{ucwords(@$slider_list_elements[$i-1]->list_header)}}</a
+                                                      >
+                                                    </h4>
+                                                  </div>
+                                                  <!-- .entry-title -->
+                                                  <div class="post-excerpt">
+                                                    <p>
+                                                    {{ucfirst(Str::limit(@$slider_list_elements[$i-1]->list_description, 70))}}...
+                                                    </p>
+                                                  </div>
+                                                  <!-- .post-excerpt -->
+                                                </div>
+                                                <!-- .service-inner -->
+                                              </div>
+                                              @endfor
+                                              
+                                            </div>
+                                            <!-- .owl-carousel -->
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <!-- .row -->
-                              
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
-
-
+                                </section>
                               @endif
                               
 

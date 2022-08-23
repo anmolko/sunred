@@ -9,7 +9,6 @@ use App\Models\Setting;
 use App\Models\Service;
 use App\Mail\ContactDetail;
 
-use App\Models\Testimonial;
 use App\Models\User;
 use App\Models\SectionElement;
 use App\Models\Page;
@@ -38,19 +37,17 @@ class FrontController extends Controller
     protected $apply_job = null;
     protected $our_work = null;
     protected $request_quote = null;
-    protected $testimonial = null;
     protected $home_page = null;
     protected $page = null;
     protected $pagesection = null;
 
 
-    public function __construct(PageSection $pagesection,Page $page,Testimonial $testimonial,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
+    public function __construct(PageSection $pagesection,Page $page,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
     {
         $this->setting = $setting;
         $this->bcategory = $bcategory;
         $this->blog = $blog;
         $this->service = $service;
-        $this->testimonial = $testimonial;
         $this->page = $page;
         $this->pagesection = $pagesection;
     }
@@ -59,8 +56,7 @@ class FrontController extends Controller
 
     public function index()
     {
-        $testimonials = $this->testimonial->take(7)->get(); 
-        return view('welcome',compact('testimonials'));
+        return view('welcome');
     }
 
 
@@ -247,6 +243,19 @@ class FrontController extends Controller
         return view('frontend.pages.dynamic_page',compact( 'page_detail','sections','process_num','process_elements','map_descp','icon_title_elements','location_map','video_descp_elements','list_2','list_3','basic_elements','call1_elements','gallery2_elements','bgimage_elements','call2_elements','flash_elements','gallery_elements','header_descp_elements','accordian1_elements','accordian2_elements','slider_list_elements','contact_info_elements'));
 
     }
+
+    public function sliderSingle($slug){
+
+        $singleSlider = SectionElement::with('section')->where('subheading', $slug)->first();
+        if (!$singleSlider) {
+            return abort(404);
+        }
+        $slider_lists = SectionElement::with('section')->where('page_section_id', @$singleSlider->page_section_id)->get();
+
+
+        return view('frontend.pages.sliderlist.single',compact('singleSlider','slider_lists'));
+    }
+
 
     public function work(){
         $our_works = $this->our_work->get();

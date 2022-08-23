@@ -24,8 +24,13 @@ Route::any('/register', function() {
     abort(404);
 });
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/slider-list', function () {
+    return redirect('/');
+});
+
+
+Route::get('/categories', function () {
+    return redirect('/blog');
 });
 
 Route::get('/contact-us', 'App\Http\Controllers\FrontController@contact')->name('contact');
@@ -48,6 +53,8 @@ Route::get('/faq', 'App\Http\Controllers\FrontController@faq')->name('faq.fronte
 Route::get('/privacy-policy', 'App\Http\Controllers\FrontController@privacy')->name('privacy.frontend');
 Route::get('/terms-condition', 'App\Http\Controllers\FrontController@terms')->name('term.frontend');
 
+//slider list single page
+Route::get('slider-list/{slug}','App\Http\Controllers\FrontController@sliderSingle')->name('slider.single');
 
 //end blog
 

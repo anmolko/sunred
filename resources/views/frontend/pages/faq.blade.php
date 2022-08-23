@@ -51,7 +51,7 @@
 					class="elementor elementor-10922"
 					>
 					<section
-						data-cea-float='[{"float_title":"Floating Image","float_img":"https:\/\/elementor.zozothemes.com\/corpkit\/wp-content\/uploads\/sites\/45\/2021\/08\/icon-5.png","float_left":"0","float_top":"50","float_distance":"","float_animation":"2","float_mouse":"0","float_width":"50px"}]'
+						data-cea-float='[{"float_title":"Floating Image","float_img":"{{asset("assets/frontend/wp-content/uploads/sites/45/2021/08/icon-5.png")}}","float_left":"0","float_top":"50","float_distance":"","float_animation":"2","float_mouse":"0","float_width":"50px"}]'
 						class="elementor-section elementor-top-section elementor-element elementor-element-ba6a5da elementor-section-stretched elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 						data-id="ba6a5da"
 						data-element_type="section"
