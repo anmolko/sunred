@@ -99,7 +99,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link menu-link @if(\Request::route()->getName() == 'sliders.index') active @endif" href="{{route('sliders.index')}}">
-                        <i class="ri-user-2-line"></i> <span data-key="t-widgets">Sliders</span>
+                        <i class="ri-slideshow-line"></i> <span data-key="t-widgets">Sliders</span>
                     </a>
                 </li>
 

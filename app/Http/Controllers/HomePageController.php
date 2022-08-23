@@ -246,6 +246,23 @@ class HomePageController extends Controller
         return redirect()->back();
     }
 
+    public function callactionhome(Request $request, $id)
+    {
+        $update_theme                        =  HomePage::find($id);
+        $update_theme->action_heading        =  $request->input('action_heading');
+        $update_theme->action_button         =  $request->input('action_button');
+        $update_theme->action_link           =  $request->input('action_link');
+        $update_theme->updated_by            =  Auth::user()->id;
+
+        $status=$update_theme->update();
+        if($status){
+            Session::flash('success','Call Action Section Updated Successfully');
+        } else{
+            Session::flash('error','Something Went Wrong. Call Action could not be Updated');
+        }
+        return redirect()->back();
+    }
+
     /**
      * Remove the specified resource from storage.
      *

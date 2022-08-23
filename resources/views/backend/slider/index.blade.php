@@ -77,14 +77,14 @@
                                 <label>Button text</label>
                                 <input type="text" class="form-control" name="button" required>
                                 <div class="invalid-feedback">
-                                    Please enter the category button.
+                                    Please enter the button text.
                                 </div>
                             </div>
                             <div class="form-group mb-3">
                                 <label>Button link </label>
                                 <input type="text" class="form-control" name="link" required>
                                 <div class="invalid-feedback">
-                                    Please enter the category name.
+                                    Please enter the button link.
                                 </div>
                             </div>
 
