@@ -78,7 +78,7 @@ class HomePageController extends Controller
             $path    = base_path().'/public/images/home/welcome/';
             $image   = $request->file('welcome_image');
             $name1   = uniqid().'_welcome_'.$image->getClientOriginalName();
-            $moved          = Image::make($image->getRealPath())->fit(820, 825)->orientate()->save($path.$name1);
+            $moved          = Image::make($image->getRealPath())->fit(550, 790)->orientate()->save($path.$name1);
             if ($moved){
                 $data['welcome_image']= $name1;
             }
@@ -142,7 +142,7 @@ class HomePageController extends Controller
             $path    = base_path().'/public/images/home/welcome/';
             $image = $request->file('welcome_image');
             $name1 = uniqid().'_welcome_'.$image->getClientOriginalName();
-            $moved          = Image::make($image->getRealPath())->fit(820, 825)->orientate()->save($path.$name1);
+            $moved          = Image::make($image->getRealPath())->fit(550, 790)->orientate()->save($path.$name1);
 
             if ($moved){
                 $update_theme->welcome_image= $name1;
@@ -187,7 +187,7 @@ class HomePageController extends Controller
             $path    = base_path().'/public/images/home/direction/';
             $image = $request->file('direction_list_image');
             $name1 = uniqid().'_direction_'.$image->getClientOriginalName();
-            $moved          = Image::make($image->getRealPath())->fit(725, 810)->orientate()->save($path.$name1);
+            $moved          = Image::make($image->getRealPath())->fit(550, 790)->orientate()->save($path.$name1);
 
             if ($moved){
                 $update_theme->direction_list_image= $name1;
