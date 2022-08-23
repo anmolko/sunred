@@ -127,7 +127,7 @@
                                                     </div>
                                                     <div class="position-relative mb-3">
                                                         <label> Description</label>
-                                                        <textarea class="form-control" id="ckeditor-classic" name="welcome_description" placeholder="Enter welcome description" rows="3" required>{{@$homesettings->welcome_description}}</textarea>
+                                                        <textarea class="form-control" maxlength="650" name="welcome_description" placeholder="Enter welcome description" rows="3" required>{{@$homesettings->welcome_description}}</textarea>
                                                         <div class="invalid-tooltip">
                                                             Please enter the  description.
                                                         </div>
@@ -434,9 +434,6 @@
 
 @section('js')
     <script src="{{asset('assets/backend/js/pages/form-validation.init.js')}}"></script>
-
-
-    <script src="{{asset('assets/backend/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js')}}"></script>
 
 
     <script src="{{asset('assets/backend/libs/sweetalert2/sweetalert2.min.js')}}"></script>
