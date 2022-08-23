@@ -57,55 +57,45 @@
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<div class="footer-middle-sidebar">
-					<section id="nav_menu-2" class="widget widget_nav_menu">
-						<h3 class="widget-title">Services</h3>
-						<div class="menu-services-menu-container">
-						<ul id="menu-services-menu" class="menu">
-							<li
-							id="menu-item-13703"
-							class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13703"
-							>
-							<a href="service/strategy-and-planning/index.html"
-								>Strategy and Planning</a
-							>
-							</li>
-							<li
-							id="menu-item-13698"
-							class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13698"
-							>
-							<a href="service/business-analysis/index.html"
-								>Business Analysis</a
-							>
-							</li>
-							<li
-							id="menu-item-13699"
-							class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13699"
-							>
-							<a href="service/consumer-markets/index.html"
-								>Consumer Markets</a
-							>
-							</li>
-							<li
-							id="menu-item-13700"
-							class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13700"
-							>
-							<a href="service/corporate-finance/index.html"
-								>Corporate Finance</a
-							>
-							</li>
-							<li
-							id="menu-item-13702"
-							class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13702"
-							>
-							<a href="service/market-research/index.html"
-								>Market Research</a
-							>
-							</li>
-						</ul>
+					@if(@$footer_nav_data1 !== null)
+
+						<div class="footer-middle-sidebar">
+						<section id="nav_menu-2" class="widget widget_nav_menu">
+							<h3 class="widget-title">@if(@$footer_nav_title1 !== null) {{@$footer_nav_title1}} @else Quick Links @endif</h3>
+							<div class="menu-services-menu-container">
+							<ul id="menu-services-menu" class="menu">
+							
+								@if(!empty($footer_nav_data1))
+									@foreach($footer_nav_data1 as $nav)
+										@if(!empty($nav->children[0]))
+										@else
+											@if($nav->type == 'custom')
+											<li class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-9670">
+												@if(str_contains(@$nav->slug,'http'))
+													<a href="{{$nav->slug}}"  @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>  @if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+												@else
+													<a href="/{{$nav->slug}}"  @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>  @if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+												@endif
+												
+											@elseif($nav->type == 'service')
+											<li class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-9670">
+												<a href="{{url('service')}}/{{$nav->slug}}" @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+											@elseif($nav->type == 'post')
+											<li class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-9670">
+												<a href="{{url('blog')}}/{{$nav->slug}}" @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+											@else
+											<li class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-9670">
+												<a href="{{url('/')}}/{{$nav->slug}}" @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif> @if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+											@endif
+										@endif
+									@endforeach
+								@endif
+							</ul>
+							</div>
+						</section>
 						</div>
-					</section>
-					</div>
+					@endif
+
 				</div>
 				<div class="col-lg-3">
 					<div class="footer-middle-sidebar">
@@ -163,56 +153,43 @@
 					</div>
 				</div>
 				<div class="col-lg-3">
-					
-					<div class="footer-middle-sidebar">
-						<section id="nav_menu-2" class="widget widget_nav_menu">
-							<h3 class="widget-title">Quick Links</h3>
-							<div class="menu-services-menu-container">
-							<ul id="menu-services-menu" class="menu">
-								<li
-								id="menu-item-13703"
-								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13703"
-								>
-								<a href="service/strategy-and-planning/index.html"
-									>Strategy and Planning</a
-								>
-								</li>
-								<li
-								id="menu-item-13698"
-								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13698"
-								>
-								<a href="service/business-analysis/index.html"
-									>Business Analysis</a
-								>
-								</li>
-								<li
-								id="menu-item-13699"
-								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13699"
-								>
-								<a href="service/consumer-markets/index.html"
-									>Consumer Markets</a
-								>
-								</li>
-								<li
-								id="menu-item-13700"
-								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13700"
-								>
-								<a href="service/corporate-finance/index.html"
-									>Corporate Finance</a
-								>
-								</li>
-								<li
-								id="menu-item-13702"
-								class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13702"
-								>
-								<a href="service/market-research/index.html"
-									>Market Research</a
-								>
-								</li>
-							</ul>
-							</div>
-						</section>
-					</div>
+					@if(@$footer_nav_data2 !== null)
+						
+						<div class="footer-middle-sidebar">
+							<section id="nav_menu-2" class="widget widget_nav_menu">
+								<h3 class="widget-title">@if(@$footer_nav_title2 !== null) {{@$footer_nav_title2}} @else Useful Links @endif</h3>
+								<div class="menu-services-menu-container">
+								<ul id="menu-services-menu" class="menu">
+									
+									@if(!empty($footer_nav_data2))
+										@foreach($footer_nav_data2 as $nav)
+											@if(!empty($nav->children[0]))
+											@else
+												@if($nav->type == 'custom')
+												<li class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-9670">
+													@if(str_contains(@$nav->slug,'http'))
+														<a href="{{$nav->slug}}"  @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>  @if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+													@else
+														<a href="/{{$nav->slug}}"  @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>  @if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+													@endif
+												@elseif($nav->type == 'service')
+													<li class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-9670">
+														<a href="{{url('service')}}/{{$nav->slug}}" @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+												@elseif($nav->type == 'post')
+												<li class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-9670">
+													<a href="{{url('blog')}}/{{$nav->slug}}" @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+												@else
+												<li class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-9670">
+													<a href="{{url('/')}}/{{$nav->slug}}" @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif> @if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+												@endif
+											@endif
+										@endforeach
+									@endif
+								</ul>
+								</div>
+							</section>
+						</div>
+					@endif
 
 				</div>
 				</div>

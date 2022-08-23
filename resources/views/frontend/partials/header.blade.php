@@ -152,7 +152,7 @@
                   </div>
                 </li>
               </ul>
-              <ul class="mobile-header-items nav pull-center">
+              <ul class="mobile-header-items nav pull-right">
                 <li class="nav-item">
                   <div class="nav-item-inner">
                     <div class="mobile-logo">
@@ -167,15 +167,7 @@
                   </div>
                 </li>
               </ul>
-              <ul class="mobile-header-items nav pull-right">
-                <li class="nav-item">
-                  <div class="nav-item-inner">
-                    <a class="full-search-toggle" href="#"
-                      ><i class="ti-search"></i
-                    ></a>
-                  </div>
-                </li>
-              </ul>
+            
             </div>
             <!-- container -->
           </div>
@@ -207,380 +199,152 @@
                 <div class="corpkit-mobile-main-menu">
                   <div class="menu-primary-menu-container">
                     <ul id="menu-primary-menu" class="corpkit-main-menu">
-                      <li
-                        id="menu-item-16417"
-                        class="cus-img-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-16417"
-                      >
-                        <a href="../index.html">Home</a>
-                        <ul class="sub-menu">
-                          <li
-                            id="menu-item-15454"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-15454"
-                          >
-                            <a href="../index.html">Home Default</a>
-                          </li>
-                          <li
-                            id="menu-item-16416"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16416"
-                          >
-                            <a href="../home-2/index.html">Home 2</a>
-                          </li>
-                          <li
-                            id="menu-item-16665"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16665"
-                          >
-                            <a href="../home-3/index.html">Home 3</a>
-                          </li>
-                          <li
-                            id="menu-item-16661"
-                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14666 current_page_item menu-item-16661"
-                          >
-                            <a href="index.html" aria-current="page">Home 4</a>
-                          </li>
-                          <li
-                            id="menu-item-16778"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16778"
-                          >
-                            <a href="../home-5/index.html">Home 5</a>
-                          </li>
-                          <li
-                            id="menu-item-17521"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17521"
-                          >
-                            <a href="../home-6/index.html">Home 6</a>
-                          </li>
-                          <li
-                            id="menu-item-17891"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17891"
-                          >
-                            <a href="../home-7/index.html">Home 7</a>
-                          </li>
-                          <li
-                            id="menu-item-18048"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18048"
-                          >
-                            <a href="../home-8/index.html">Home 8</a>
-                          </li>
-                          <li
-                            id="menu-item-16469"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16469"
-                          >
-                            <a href="../landing-page/index.html"
-                              >Landing Page</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-16830"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16830"
-                          >
-                            <a href="#">Coming Soon</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li
-                        id="menu-item-16075"
-                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16075"
-                      >
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                          <li
-                            id="menu-item-13963"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13963"
-                          >
-                            <a href="../about-us/index.html">About Us</a>
-                            <ul class="sub-menu">
-                              <li
-                                id="menu-item-13974"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13974"
-                              >
-                                <a href="../our-team/index.html">Our Team</a>
-                              </li>
-                              <li
-                                id="menu-item-16091"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16091"
-                              >
-                                <a href="../testimonials/index.html"
-                                  >Testimonials</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            id="menu-item-16241"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16241"
-                          >
-                            <a href="#">Services Grid Styles</a>
-                            <ul class="sub-menu">
-                              <li
-                                id="menu-item-16192"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16192"
-                              >
-                                <a href="../services-grid-style-2/index.html"
-                                  >Services Grid Style 2</a
-                                >
-                              </li>
-                              <li
-                                id="menu-item-16246"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16246"
-                              >
-                                <a href="../our-services/index.html"
-                                  >Services Grid Style 3</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            id="menu-item-16080"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-16080"
-                          >
-                            <a href="../shop/index.html">Shop</a>
-                            <ul class="sub-menu">
-                              <li
-                                id="menu-item-16076"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16076"
-                              >
-                                <a href="../cart/index.html">Cart</a>
-                              </li>
-                              <li
-                                id="menu-item-16077"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16077"
-                              >
-                                <a href="../checkout/index.html">Checkout</a>
-                              </li>
-                              <li
-                                id="menu-item-16079"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16079"
-                              >
-                                <a href="../my-account/index.html"
-                                  >My account</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            id="menu-item-16081"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16081"
-                          >
-                            <a href="../career/index.html">Career</a>
-                          </li>
-                          <li
-                            id="menu-item-13978"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13978"
-                          >
-                            <a href="../pricing/index.html">Pricing</a>
-                          </li>
-                          <li
-                            id="menu-item-16128"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16128"
-                          >
-                            <a href="../faq/index.html">Faq</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li
-                        id="menu-item-13973"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13973"
-                      >
-                        <a href="../our-services/index.html">Our Services</a>
-                        <ul class="sub-menu">
-                          <li
-                            id="menu-item-13982"
-                            class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13982"
-                          >
-                            <a href="../service/business-analysis/index.html"
-                              >Business Analysis</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-13983"
-                            class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13983"
-                          >
-                            <a href="../service/consumer-markets/index.html"
-                              >Consumer Markets</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-13984"
-                            class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13984"
-                          >
-                            <a href="../service/corporate-finance/index.html"
-                              >Corporate Finance</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-13985"
-                            class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13985"
-                          >
-                            <a href="../service/insurance/index.html"
-                              >Insurance</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-13986"
-                            class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13986"
-                          >
-                            <a href="../service/market-research/index.html"
-                              >Market Research</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-13987"
-                            class="menu-item menu-item-type-post_type menu-item-object-cea-service menu-item-13987"
-                          >
-                            <a
-                              href="../service/strategy-and-planning/index.html"
-                              >Strategy and Planning</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li
-                        id="menu-item-13975"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13975"
-                      >
-                        <a href="../our-portfolio/index.html">Portfolio</a>
-                        <ul class="sub-menu">
-                          <li
-                            id="menu-item-16115"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16115"
-                          >
-                            <a href="../portfolio-no-gutter/index.html"
-                              >Portfolio No Gutter</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-16191"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16191"
-                          >
-                            <a href="../our-portfolio/index.html"
-                              >Portfolio Grid 3</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-16190"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16190"
-                          >
-                            <a href="../portfolio-grid-4/index.html"
-                              >Portfolio Grid 4</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-16157"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16157"
-                          >
-                            <a href="../portfolio-slider/index.html"
-                              >Portfolio Slider</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-15627"
-                            class="menu-item menu-item-type-post_type menu-item-object-cea-portfolio menu-item-15627"
-                          >
-                            <a href="../portfolio/data-collection/index.html"
-                              >Portfolio Single</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li
-                        id="menu-item-13962"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13962"
-                      >
-                        <a href="../blog/index.html">Blog</a>
-                        <ul class="sub-menu">
-                          <li
-                            id="menu-item-16238"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16238"
-                          >
-                            <a href="../blog-grid-2-columns/index.html"
-                              >Blog Grid 2 Columns</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-16239"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16239"
-                          >
-                            <a href="../blog-grid-3-columns/index.html"
-                              >Blog Grid 3 Columns</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-16240"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16240"
-                          >
-                            <a href="../blog-grid-4-columns/index.html"
-                              >Blog Grid 4 Columns</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-15076"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15076"
-                          >
-                            <a href="../blog/index.html"
-                              >Blog Grid With Sidebar</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-16200"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16200"
-                          >
-                            <a href="../blog-list-with-sidebar/index.html"
-                              >Blog List With Sidebar</a
-                            >
-                          </li>
-                          <li
-                            id="menu-item-15066"
-                            class="menu-item menu-item-type-post_type menu-item-object-post menu-item-15066"
-                          >
-                            <a href="../going-to-start-business/index.html"
-                              >Blog Details</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li
-                        id="menu-item-13970"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13970"
-                      >
-                        <a href="../contact/index.html">Contact</a>
-                      </li>
+
+                        <li class="{{request()->is('/') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page  nav-item menu-item-13970 ">
+                                <a href="/" class="nav-link">Home</a></li>
+                        @if(!empty($top_nav_data))
+                            @foreach($top_nav_data as $nav)
+                                @if(!empty($nav->children[0]))
+
+                                    <li id="menu-item-176{{@$loop->index}}" class="{{request()->is(@$nav->slug)  ? 'current-menu-ancestor current_page_item current-menu-item current-menu-parent current_page_parent current_page_ancestor ' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829  menu-item-has-children nav-item menu-item-9390 dropdown">
+                                        <a href="#" class="nav-link dropdown-toggle">@if(@$nav->name == NULL) {{ucwords(@$nav->title)}} @else {{ucwords(@$nav->name)}} @endif </a>
+
+                                        <ul role="menu"  class="dropdown-menu">
+
+                                            @foreach($nav->children[0] as $childNav)
+                                                @if($childNav->type == 'custom')
+
+                                                    <li id="menu-item-743{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$childNav->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} @if(!empty($childNav->children[0])) menu-item-has-children dropdown @endif nav-item menu-item-11011">
+                                                        <a href="/{{@$childNav->slug}}" class="nav-link" @if(@$childNav->target !== NULL) target="_blank" @endif >@if($childNav->name == NULL) {{@$childNav->title}} @else {{@$childNav->name}} @endif</a>
+                                                        @if(!empty($childNav->children[0]))
+                                                            <ul role="menu" class="dropdown-menu">
+                                                                @foreach($childNav->children[0] as $key => $lastchild)
+                                                                    @if($lastchild->type == 'custom')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                            <a href="/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif >@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @elseif($lastchild->type == 'post')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                            <a href="{{url('blog')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @elseif($lastchild->type == 'service')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                            <a href="{{url('service')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @else
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                <a href="{{url('/')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a>
+                                                                            </li>
+                                                                    @endif
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </li>
+                                                @elseif($childNav->type == 'post')
+                                                    <li id="menu-item-743{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$childNav->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  @if(!empty($childNav->children[0])) menu-item-has-children dropdown @endif nav-item menu-item-11011">
+                                                        <a href="{{url('blog')}}/{{@$childNav->slug}}" class="nav-link" @if(@$childNav->target !== NULL) target="_blank" @endif>@if(@$childNav->name == NULL) {{@$childNav->title}} @else {{@$childNav->name}} @endif</a>
+                                                        @if(!empty($childNav->children[0]))
+                                                            <ul role="menu" class="dropdown-menu">
+                                                                @foreach($childNav->children[0] as $key => $lastchild)
+                                                                    @if($lastchild->type == 'custom')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                            <a href="/{{@$childNav->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif >@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @elseif($lastchild->type == 'service')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                            <a href="{{url('service')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @elseif($lastchild->type == 'post')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                            <a href="{{url('blog')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @else
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                <a href="{{url('/')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a>
+                                                                            </li>
+                                                                    @endif
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </li>
+                                                @elseif($childNav->type == 'service')
+                                                    <li id="menu-item-743{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$childNav->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  @if(!empty($childNav->children[0])) menu-item-has-children dropdown @endif nav-item menu-item-11011">
+                                                        <a href="{{url('service')}}/{{@$childNav->slug}}" class="nav-link" @if(@$childNav->target !== NULL) target="_blank" @endif>@if(@$childNav->name == NULL) {{@$childNav->title}} @else {{@$childNav->name}} @endif</a>
+                                                        @if(!empty($childNav->children[0]))
+                                                            <ul role="menu" class="dropdown-menu">
+                                                                @foreach($childNav->children[0] as $key => $lastchild)
+                                                                    @if($lastchild->type == 'custom')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                            <a href="/{{@$childNav->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif >@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @elseif($lastchild->type == 'service')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                            <a href="{{url('service')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @elseif($lastchild->type == 'post')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                            <a href="{{url('blog')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @else
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                <a href="{{url('/')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a>
+                                                                            </li>
+                                                                    @endif
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+                                                    </li>
+                                                @else
+                                                    <li id="menu-item-743{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$childNav->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  @if(!empty($childNav->children[0])) menu-item-has-children dropdown @endif nav-item menu-item-11011">
+                                                        <a href="{{url('/')}}/{{@$childNav->slug}}" class="nav-link" @if(@$childNav->target !== NULL) target="_blank" @endif>@if($childNav->name == NULL) {{@$childNav->title}} @else {{@$childNav->name}} @endif</a>
+                                                        @if(!empty($childNav->children[0]))
+                                                            <ul role="menu" class="dropdown-menu">
+                                                                @foreach($childNav->children[0] as $key => $lastchild)
+                                                                    @if($lastchild->type == 'custom')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                            <a href="/{{@$childNav->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif >@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @elseif($lastchild->type == 'service')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                            <a href="{{url('service')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @elseif($lastchild->type == 'post')
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                            <a href="{{url('blog')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                    @else
+                                                                        <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                <a href="{{url('/')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a>
+                                                                            </li>
+                                                                    @endif
+                                                                @endforeach
+                                                            </ul>
+                                                        @endif
+
+                                                    </li>
+                                                @endif
+                                            @endforeach
+
+                                        </ul>
+                                    </li>
+
+                                @else
+                                    @if($nav->type == 'custom')
+                                        <li id="menu-item-176{{@$loop->index}}"  class="{{request()->is(@$nav->slug.'*') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829   nav-item menu-item-9390 ">
+                                            <a href="/{{$nav->slug}}" class="nav-link" @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+                                    @elseif($nav->type == 'service')
+                                        <li id="menu-item-176{{@$loop->index}}"  class="{{request()->is('service/'.@$nav->slug.'*') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829   nav-item menu-item-9390">
+                                            <a href="{{url('service')}}/{{$nav->slug}}" class="nav-link">@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+                                    @elseif($nav->type == 'post')
+                                        <li id="menu-item-176{{@$loop->index}}"  class="{{request()->is('blog/'.@$nav->slug.'*') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829   nav-item menu-item-9390">
+                                            <a href="{{url('blog')}}/{{$nav->slug}}" class="nav-link">@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+                                    @else
+                                        <li id="menu-item-176{{@$loop->index}}"  class="{{request()->is(@$nav->slug.'*') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829   nav-item menu-item-9390">
+                                            <a href="{{url('/')}}/{{$nav->slug}}" class="nav-link">@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+                                    @endif
+                                @endif
+                            @endforeach
+                        @endif
+
                     </ul>
                   </div>
                 </div>
               </div>
             </li>
           </ul>
-          <ul class="mobile-bar-items nav flex-column mobile-bar-bottom">
-            <li class="nav-item">
-              <div class="nav-item-inner">
-                <form
-                  method="get"
-                  class="search-form"
-                  action=""
-                >
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="s"
-                      value=""
-                      placeholder="Search for..."
-                    />
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="submit">
-                        <i class="ti-arrow-right"></i>
-                      </button>
-                    </span>
-                  </div>
-                </form>
-              </div>
-            </li>
-          </ul>
+         
         </div>
         <!-- container -->
       </div>
     </div>
-  
 
     <div id="page" class="corpkit-wrapper">
       <header class="corpkit-header header-absolute">
@@ -596,7 +360,7 @@
                           <a href="/" title="Sunred"
                             ><img
                               class="custom-logo img-responsive"
-                              src="<?php if(@$setting_data->logo){?>{{asset('/images/settings/'.@$setting_data->logo)}}<?php }?>"
+                              src="<?php if(@$setting_data->logo_white){?>{{asset('/images/settings/'.@$setting_data->logo_white)}}<?php }?>"
                               alt="Sunred"
                               title="Sunred"
                           /></a>
@@ -620,687 +384,151 @@
                           id="corpkit-main-menu"
                           class="nav corpkit-main-menu"
                         >
-                          <li
-                            class="cus-img-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children nav-item menu-item-16417 dropdown mega-dropdown"
-                          >
-                            <a
-                              href="../index.html"
-                              class="nav-link dropdown-toggle"
-                              >Home</a
-                            >
-                            <ul
-                              role="menu"
-                              class="dropdown-menu mega-dropdown-menu container"
-                            >
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item menu-item-15454 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-15"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure
-                                      class="wp-block-image size-full is-resized"
-                                    >
-                                      <a href="../index.html"
-                                        ><img
-                                          loading="lazy"
-                                          src="../wp-content/uploads/sites/45/2022/06/home-1-3.jpg"
-                                          alt=""
-                                          class="wp-image-16804"
-                                          width="400"
-                                          height="500"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-25"
-                                    class="widget widget_block"
-                                  >
-                                    <a
-                                      href="../index.html"
-                                      class="mega-menu-title"
-                                      >Home Default</a
-                                    >
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16416 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-16"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure
-                                      class="wp-block-image size-full is-resized"
-                                    >
-                                      <a href="../home-2/index.html"
-                                        ><img
-                                          loading="lazy"
-                                          src="../wp-content/uploads/sites/45/2022/06/home-2.jpg"
-                                          alt=""
-                                          class="wp-image-16793"
-                                          width="300"
-                                          height="375"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-26"
-                                    class="widget widget_block"
-                                  >
-                                    <a
-                                      href="../home-2/index.html"
-                                      class="mega-menu-title"
-                                      >Home 2</a
-                                    >
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16665 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-17"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure
-                                      class="wp-block-image size-full is-resized"
-                                    >
-                                      <a href="../home-3/index.html"
-                                        ><img
-                                          loading="lazy"
-                                          src="../wp-content/uploads/sites/45/2022/06/home-3.jpg"
-                                          alt=""
-                                          class="wp-image-16794"
-                                          width="300"
-                                          height="375"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-27"
-                                    class="widget widget_block"
-                                  >
-                                    <a
-                                      href="../home-3/index.html"
-                                      class="mega-menu-title"
-                                      >Home 3</a
-                                    >
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-14666 current_page_item nav-item menu-item-16661 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-18"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure
-                                      class="wp-block-image size-full is-resized"
-                                    >
-                                      <a href="index.html"
-                                        ><img
-                                          loading="lazy"
-                                          src="../wp-content/uploads/sites/45/2022/06/home-4.jpg"
-                                          alt=""
-                                          class="wp-image-16795"
-                                          width="300"
-                                          height="375"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-28"
-                                    class="widget widget_block"
-                                  >
-                                    <a href="index.html" class="mega-menu-title"
-                                      >Home 4</a
-                                    >
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16778 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-30"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure
-                                      class="wp-block-image size-full is-resized"
-                                    >
-                                      <a href="../home-5/index.html"
-                                        ><img
-                                          loading="lazy"
-                                          src="../wp-content/uploads/sites/45/2022/06/home-5-1.jpg"
-                                          alt=""
-                                          class="wp-image-16801"
-                                          width="300"
-                                          height="375"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-29"
-                                    class="widget widget_block"
-                                  >
-                                    <a
-                                      href="../home-5/index.html"
-                                      class="mega-menu-title"
-                                      >Home 5</a
-                                    >
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-17521 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-23"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure class="wp-block-image size-full">
-                                      <a href="../home-6/index.html"
-                                        ><img
-                                          loading="lazy"
-                                          width="400"
-                                          height="500"
-                                          src="../wp-content/uploads/sites/45/2022/08/home-6.jpg"
-                                          alt=""
-                                          class="wp-image-17522"
-                                          title="Coming Soon"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-33"
-                                    class="widget widget_block"
-                                  >
-                                    <p>
-                                      <a
-                                        href="../home-6/index.html"
-                                        class="mega-menu-title"
-                                        >Home 6</a
-                                      ><span class="new-tag">New</span>
-                                    </p>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-17891 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-24"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure class="wp-block-image size-full">
-                                      <a href="../home-7/index.html"
-                                        ><img
-                                          loading="lazy"
-                                          width="400"
-                                          height="500"
-                                          src="../wp-content/uploads/sites/45/2022/08/home-7.jpg"
-                                          alt=""
-                                          class="wp-image-17890"
-                                          title="Coming Soon"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-36"
-                                    class="widget widget_block"
-                                  >
-                                    <p>
-                                      <a
-                                        href="../home-7/index.html"
-                                        class="mega-menu-title"
-                                        >Home 7</a
-                                      ><span class="new-tag">New</span>
-                                    </p>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-18048 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-34"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure class="wp-block-image size-full">
-                                      <a href="../home-8/index.html"
-                                        ><img
-                                          loading="lazy"
-                                          width="400"
-                                          height="500"
-                                          src="../wp-content/uploads/sites/45/2022/08/home-8.jpg"
-                                          alt=""
-                                          class="wp-image-18047"
-                                          title="Coming Soon"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-37"
-                                    class="widget widget_block"
-                                  >
-                                    <p>
-                                      <a
-                                        href="../home-8/index.html"
-                                        class="mega-menu-title"
-                                        >Home 8</a
-                                      ><span class="new-tag">New</span>
-                                    </p>
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16469 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-31"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure
-                                      class="wp-block-image size-full is-resized"
-                                    >
-                                      <a href="../landing/index.html"
-                                        ><img
-                                          loading="lazy"
-                                          src="../wp-content/uploads/sites/45/2022/06/home-1-2.jpg"
-                                          alt="Coming Soon"
-                                          class="wp-image-16803"
-                                          width="300"
-                                          height="375"
-                                          title="Coming Soon"
-                                      /></a>
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-32"
-                                    class="widget widget_block"
-                                  >
-                                    <a
-                                      href="../landing/index.html"
-                                      class="mega-menu-title"
-                                      >Landing</a
-                                    >
-                                  </div>
-                                </div>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom nav-item menu-item-16830 col-sm-3"
-                              >
-                                <div class="mega-child-widget">
-                                  <div
-                                    id="block-35"
-                                    class="widget widget_block widget_media_image"
-                                  >
-                                    <figure class="wp-block-image size-full">
-                                      <img
-                                        loading="lazy"
-                                        width="400"
-                                        height="500"
-                                        src="../wp-content/uploads/sites/45/2022/06/coming-soon-2-2.jpg"
-                                        alt=""
-                                        class="wp-image-16833"
-                                        title="Coming Soon"
-                                      />
-                                    </figure>
-                                  </div>
-                                  <div
-                                    id="block-38"
-                                    class="widget widget_block"
-                                  >
-                                    <p>Coming Soon</p>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-16075 dropdown"
-                          >
-                            <a href="#" class="nav-link dropdown-toggle"
-                              >Pages</a
-                            >
-                            <ul role="menu" class="dropdown-menu">
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-13963 dropdown"
-                              >
-                                <a
-                                  href="../about-us/index.html"
-                                  class="nav-link"
-                                  >About Us</a
-                                >
-                                <ul role="menu" class="dropdown-menu">
-                                  <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-13974"
-                                  >
-                                    <a
-                                      href="../our-team/index.html"
-                                      class="nav-link"
-                                      >Our Team</a
-                                    >
-                                  </li>
-                                  <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16091"
-                                  >
-                                    <a
-                                      href="../testimonials/index.html"
-                                      class="nav-link"
-                                      >Testimonials</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-16241 dropdown"
-                              >
-                                <a href="#" class="nav-link"
-                                  >Services Grid Styles</a
-                                >
-                                <ul role="menu" class="dropdown-menu">
-                                  <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16192"
-                                  >
-                                    <a
-                                      href="../services-grid-style-2/index.html"
-                                      class="nav-link"
-                                      >Services Grid Style 2</a
-                                    >
-                                  </li>
-                                  <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16246"
-                                  >
-                                    <a
-                                      href="../our-services/index.html"
-                                      class="nav-link"
-                                      >Services Grid Style 3</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-16080 dropdown"
-                              >
-                                <a href="../shop/index.html" class="nav-link"
-                                  >Shop</a
-                                >
-                                <ul role="menu" class="dropdown-menu">
-                                  <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16076"
-                                  >
-                                    <a
-                                      href="../cart/index.html"
-                                      class="nav-link"
-                                      >Cart</a
-                                    >
-                                  </li>
-                                  <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16077"
-                                  >
-                                    <a
-                                      href="../checkout/index.html"
-                                      class="nav-link"
-                                      >Checkout</a
-                                    >
-                                  </li>
-                                  <li
-                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16079"
-                                  >
-                                    <a
-                                      href="../my-account/index.html"
-                                      class="nav-link"
-                                      >My account</a
-                                    >
-                                  </li>
-                                </ul>
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16081"
-                              >
-                                <a href="../career/index.html" class="nav-link"
-                                  >Career</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-13978"
-                              >
-                                <a href="../pricing/index.html" class="nav-link"
-                                  >Pricing</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16128"
-                              >
-                                <a href="../faq/index.html" class="nav-link"
-                                  >Faq</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-13973 dropdown"
-                          >
-                            <a
-                              href="../our-services/index.html"
-                              class="nav-link dropdown-toggle"
-                              >Our Services</a
-                            >
-                            <ul role="menu" class="dropdown-menu">
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-cea-service nav-item menu-item-13982"
-                              >
-                                <a
-                                  href="../service/business-analysis/index.html"
-                                  class="nav-link"
-                                  >Business Analysis</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-cea-service nav-item menu-item-13983"
-                              >
-                                <a
-                                  href="../service/consumer-markets/index.html"
-                                  class="nav-link"
-                                  >Consumer Markets</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-cea-service nav-item menu-item-13984"
-                              >
-                                <a
-                                  href="../service/corporate-finance/index.html"
-                                  class="nav-link"
-                                  >Corporate Finance</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-cea-service nav-item menu-item-13985"
-                              >
-                                <a
-                                  href="../service/insurance/index.html"
-                                  class="nav-link"
-                                  >Insurance</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-cea-service nav-item menu-item-13986"
-                              >
-                                <a
-                                  href="../service/market-research/index.html"
-                                  class="nav-link"
-                                  >Market Research</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-cea-service nav-item menu-item-13987"
-                              >
-                                <a
-                                  href="../service/strategy-and-planning/index.html"
-                                  class="nav-link"
-                                  >Strategy and Planning</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-13975 dropdown"
-                          >
-                            <a
-                              href="../our-portfolio/index.html"
-                              class="nav-link dropdown-toggle"
-                              >Portfolio</a
-                            >
-                            <ul role="menu" class="dropdown-menu">
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16115"
-                              >
-                                <a
-                                  href="../portfolio-no-gutter/index.html"
-                                  class="nav-link"
-                                  >Portfolio No Gutter</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16191"
-                              >
-                                <a
-                                  href="../our-portfolio/index.html"
-                                  class="nav-link"
-                                  >Portfolio Grid 3</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16190"
-                              >
-                                <a
-                                  href="../portfolio-grid-4/index.html"
-                                  class="nav-link"
-                                  >Portfolio Grid 4</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16157"
-                              >
-                                <a
-                                  href="../portfolio-slider/index.html"
-                                  class="nav-link"
-                                  >Portfolio Slider</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-cea-portfolio nav-item menu-item-15627"
-                              >
-                                <a
-                                  href="../portfolio/data-collection/index.html"
-                                  class="nav-link"
-                                  >Portfolio Single</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-13962 dropdown"
-                          >
-                            <a
-                              href="../blog/index.html"
-                              class="nav-link dropdown-toggle"
-                              >Blog</a
-                            >
-                            <ul role="menu" class="dropdown-menu">
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16238"
-                              >
-                                <a
-                                  href="../blog-grid-2-columns/index.html"
-                                  class="nav-link"
-                                  >Blog Grid 2 Columns</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16239"
-                              >
-                                <a
-                                  href="../blog-grid-3-columns/index.html"
-                                  class="nav-link"
-                                  >Blog Grid 3 Columns</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16240"
-                              >
-                                <a
-                                  href="../blog-grid-4-columns/index.html"
-                                  class="nav-link"
-                                  >Blog Grid 4 Columns</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-15076"
-                              >
-                                <a href="../blog/index.html" class="nav-link"
-                                  >Blog Grid With Sidebar</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-16200"
-                              >
-                                <a
-                                  href="../blog-list-with-sidebar/index.html"
-                                  class="nav-link"
-                                  >Blog List With Sidebar</a
-                                >
-                              </li>
-                              <li
-                                class="menu-item menu-item-type-post_type menu-item-object-post nav-item menu-item-15066"
-                              >
-                                <a
-                                  href="../going-to-start-business/index.html"
-                                  class="nav-link"
-                                  >Blog Details</a
-                                >
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-13970"
-                          >
-                            <a href="../contact/index.html" class="nav-link"
-                              >Contact</a
-                            >
-                          </li>
+                     
+                            <li class="{{request()->is('/') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page  nav-item menu-item-13970 ">
+                                <a href="/" class="nav-link">Home</a></li>
+                                @if(!empty($top_nav_data))
+                                    @foreach($top_nav_data as $nav)
+                                        @if(!empty($nav->children[0]))
+
+                                            <li id="menu-item-176{{@$loop->index}}" class="{{request()->is(@$nav->slug)  ? 'current-menu-ancestor current_page_item current-menu-item current-menu-parent current_page_parent current_page_ancestor ' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829  menu-item-has-children nav-item menu-item-9390 dropdown">
+                                                <a href="#" class="nav-link dropdown-toggle">@if(@$nav->name == NULL) {{ucwords(@$nav->title)}} @else {{ucwords(@$nav->name)}} @endif </a>
+
+                                                <ul role="menu"  class="dropdown-menu">
+
+                                                    @foreach($nav->children[0] as $childNav)
+                                                        @if($childNav->type == 'custom')
+
+                                                            <li id="menu-item-743{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$childNav->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} @if(!empty($childNav->children[0])) menu-item-has-children dropdown @endif nav-item menu-item-11011">
+                                                                <a href="/{{@$childNav->slug}}" class="nav-link" @if(@$childNav->target !== NULL) target="_blank" @endif >@if($childNav->name == NULL) {{@$childNav->title}} @else {{@$childNav->name}} @endif</a>
+                                                                @if(!empty($childNav->children[0]))
+                                                                    <ul role="menu" class="dropdown-menu">
+                                                                        @foreach($childNav->children[0] as $key => $lastchild)
+                                                                            @if($lastchild->type == 'custom')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                    <a href="/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif >@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @elseif($lastchild->type == 'post')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                                    <a href="{{url('blog')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @elseif($lastchild->type == 'service')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                                    <a href="{{url('service')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @else
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                        <a href="{{url('/')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a>
+                                                                                    </li>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </ul>
+                                                                @endif
+                                                            </li>
+                                                        @elseif($childNav->type == 'post')
+                                                            <li id="menu-item-743{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$childNav->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  @if(!empty($childNav->children[0])) menu-item-has-children dropdown @endif nav-item menu-item-11011">
+                                                                <a href="{{url('blog')}}/{{@$childNav->slug}}" class="nav-link" @if(@$childNav->target !== NULL) target="_blank" @endif>@if(@$childNav->name == NULL) {{@$childNav->title}} @else {{@$childNav->name}} @endif</a>
+                                                                @if(!empty($childNav->children[0]))
+                                                                    <ul role="menu" class="dropdown-menu">
+                                                                        @foreach($childNav->children[0] as $key => $lastchild)
+                                                                            @if($lastchild->type == 'custom')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                    <a href="/{{@$childNav->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif >@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @elseif($lastchild->type == 'service')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                                    <a href="{{url('service')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @elseif($lastchild->type == 'post')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                                    <a href="{{url('blog')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @else
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                        <a href="{{url('/')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a>
+                                                                                    </li>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </ul>
+                                                                @endif
+                                                            </li>
+                                                        @elseif($childNav->type == 'service')
+                                                            <li id="menu-item-743{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$childNav->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  @if(!empty($childNav->children[0])) menu-item-has-children dropdown @endif nav-item menu-item-11011">
+                                                                <a href="{{url('service')}}/{{@$childNav->slug}}" class="nav-link" @if(@$childNav->target !== NULL) target="_blank" @endif>@if(@$childNav->name == NULL) {{@$childNav->title}} @else {{@$childNav->name}} @endif</a>
+                                                                @if(!empty($childNav->children[0]))
+                                                                    <ul role="menu" class="dropdown-menu">
+                                                                        @foreach($childNav->children[0] as $key => $lastchild)
+                                                                            @if($lastchild->type == 'custom')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                    <a href="/{{@$childNav->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif >@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @elseif($lastchild->type == 'service')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                                    <a href="{{url('service')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @elseif($lastchild->type == 'post')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                                    <a href="{{url('blog')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @else
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                        <a href="{{url('/')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a>
+                                                                                    </li>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </ul>
+                                                                @endif
+                                                            </li>
+                                                        @else
+                                                            <li id="menu-item-743{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$childNav->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  @if(!empty($childNav->children[0])) menu-item-has-children dropdown @endif nav-item menu-item-11011">
+                                                                <a href="{{url('/')}}/{{@$childNav->slug}}" class="nav-link" @if(@$childNav->target !== NULL) target="_blank" @endif>@if($childNav->name == NULL) {{@$childNav->title}} @else {{@$childNav->name}} @endif</a>
+                                                                @if(!empty($childNav->children[0]))
+                                                                    <ul role="menu" class="dropdown-menu">
+                                                                        @foreach($childNav->children[0] as $key => $lastchild)
+                                                                            @if($lastchild->type == 'custom')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                    <a href="/{{@$childNav->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif >@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @elseif($lastchild->type == 'service')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('service/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                                    <a href="{{url('service')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @elseif($lastchild->type == 'post')
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is('blog/'.@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}}  nav-item menu-item-11011">
+                                                                                    <a href="{{url('blog')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if(@$lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a></li>
+                                                                            @else
+                                                                                <li id="menu-item-74{{@$loop->index}}" class="menu-item menu-item-type-post_type menu-item-object-page {{request()->is(@$lastchild->slug) ? 'current-menu-item page_item page-item-10053 current_page_item' : ''}} nav-item menu-item-11011">
+                                                                                        <a href="{{url('/')}}/{{@$lastchild->slug}}" class="nav-link" @if(@$lastchild->target !== NULL) target="_blank" @endif>@if($lastchild->name == NULL) {{@$lastchild->title}} @else {{@$lastchild->name}} @endif</a>
+                                                                                    </li>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </ul>
+                                                                @endif
+
+                                                            </li>
+                                                        @endif
+                                                    @endforeach
+
+                                                </ul>
+                                            </li>
+
+                                        @else
+                                            @if($nav->type == 'custom')
+                                                <li id="menu-item-176{{@$loop->index}}"  class="{{request()->is(@$nav->slug.'*') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829   nav-item menu-item-9390 ">
+                                                    <a href="/{{$nav->slug}}" class="nav-link" @if($nav->target == NULL)  @else target="{{$nav->target}}" @endif>@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+                                            @elseif($nav->type == 'service')
+                                                <li id="menu-item-176{{@$loop->index}}"  class="{{request()->is('service/'.@$nav->slug.'*') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829   nav-item menu-item-9390">
+                                                    <a href="{{url('service')}}/{{$nav->slug}}" class="nav-link">@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+                                            @elseif($nav->type == 'post')
+                                                <li id="menu-item-176{{@$loop->index}}"  class="{{request()->is('blog/'.@$nav->slug.'*') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829   nav-item menu-item-9390">
+                                                    <a href="{{url('blog')}}/{{$nav->slug}}" class="nav-link">@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+                                            @else
+                                                <li id="menu-item-176{{@$loop->index}}"  class="{{request()->is(@$nav->slug.'*') ? 'current_page_item current-menu-item' : ''}} menu-item menu-item-type-post_type menu-item-object-page menu-item-home  page_item page-item-6829   nav-item menu-item-9390">
+                                                    <a href="{{url('/')}}/{{$nav->slug}}" class="nav-link">@if($nav->name == NULL) {{$nav->title}} @else {{$nav->name}} @endif</a></li>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                @endif
+
                         </ul>
                       </div>
                     </li>
-                    <li class="nav-item">
-                      <div class="nav-item-inner">
-                        <div class="search-toggle-wrap">
-                          <a class="full-bar-search-toggle" href="#"
-                            ><i class="ti-search"></i
-                          ></a>
-                        </div>
-                      </div>
-                    </li>
+                 
                     <li class="nav-item">
                       <div class="nav-item-inner">
                         <div class="header-navbar-text-2">
                           <div class="header-button sticky-btn">
                             <a
-                              href="../contact/index.html"
+                              href="{{route('contact')}}"
                               class="btn btn-default"
                               >Get In Touch</a
                             >
@@ -1311,24 +539,6 @@
                   </ul>
                 </div>
 
-                <div class="full-bar-search-wrap">
-                  <form
-                    method="get"
-                    class="search-form"
-                    action="https://elementor.zozothemes.com/corpkit/"
-                  >
-                    <div class="input-group">
-                      <input
-                        name="s"
-                        type="text"
-                        class="form-control"
-                        value=""
-                        placeholder="Search and hit enter.."
-                      />
-                    </div>
-                  </form>
-                  <a href="#" class="close full-bar-search-toggle"></a>
-                </div>
               </nav>
             </div>
             <!--stikcy outer-->
