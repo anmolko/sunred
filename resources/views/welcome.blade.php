@@ -6,235 +6,103 @@
         padding-top: 0;
         padding-bottom: 0;
     }
+    .calltoaction{
+        margin-top:5px !important
+    }
 </style>
 @endsection
 @section('content')
 
     <div class="corpkit-content-wrapper">
         <div class="corpkit-content corpkit-page">
+            @if(count($sliders) > 0)
        
-            <div class="header-slider-wrapper">
-                <!-- START Corpkithomefour REVOLUTION SLIDER 6.5.25 -->
-                <p class="rs-p-wp-fix"></p>
-                <rs-module-wrap
-                    id="rev_slider_7_1_wrapper"
-                    data-source="gallery"
-                    style="
-                    visibility: hidden;
-                    background: #000000;
-                    padding: 0;
-                    margin: 0px auto;
-                    margin-top: 0;
-                    margin-bottom: 0;
-                    "
-                >
-                    <rs-module id="rev_slider_7_1" style="" data-version="6.5.25">
-                        <rs-slides>
-                            <rs-slide
-                                style="position: absolute"
-                                data-key="rs-22"
-                                data-title="Web Show"
-                                data-thumb="//elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2022/06/slide-22-100x100.jpg"
-                                data-anim="f:center;"
-                                data-in="o:0;x:cyc(-10|10);y:cyc(-10|10);r:cyc(-10|10);sx:0.1;sy:0.1;row:8;col:8;"
-                                data-out="a:false;"
-                                >
-                                <img
-                                    src="../wp-content/plugins/revslider/public/assets/assets/dummy.png"
-                                    alt=""
-                                    title="slide-22"
-                                    width="1920"
-                                    height="1080"
-                                    class="rev-slidebg tp-rs-img rs-lazyload"
-                                    data-lazyload="//elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2022/06/slide-22.jpg"
-                                    data-parallax="5"
-                                    data-no-retina
-                                />
-                                    
-                                <rs-layer
-                                        id="slider-7-slide-22-layer-1"
-                                        data-type="image"
-                                        data-rsp_ch="on"
-                                        data-xy="xo:702px,358px,271px,126px;yo:-10px,-1px,0,217px;"
-                                        data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
-                                        data-dim="w:1848px,1526px,1159px,715px;h:967.984px,798px,606px,373px;"
-                                        data-frame_999="o:0;st:w;sR:8700;"
-                                        style="z-index: 11"
-                                        ><img
-                                        src="../wp-content/plugins/revslider/public/assets/assets/dummy.png"
-                                        alt=""
-                                        class="tp-rs-img rs-lazyload"
-                                        width="1090"
-                                        height="571"
-                                        data-lazyload="//elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2022/06/arrow-curve1.png"
-                                        data-no-retina
-                                        /> </rs-layer
-                                    >
+                <div class="header-slider-wrapper">
+                    <!-- START Corpkithomefour REVOLUTION SLIDER 6.5.25 -->
+                    <p class="rs-p-wp-fix"></p>
+                    <rs-module-wrap
+                        id="rev_slider_7_1_wrapper"
+                        data-source="gallery"
+                        style="
+                        visibility: hidden;
+                        background: #000000;
+                        padding: 0;
+                        margin: 0px auto;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        "
+                    >
+                        <rs-module id="rev_slider_7_1" style="" data-version="6.5.25">
+                            <rs-slides>
+                                @foreach(@$sliders as $slider)
 
-                                
-                                    <h1
-                                        id="slider-7-slide-22-layer-2"
-                                        class="rs-layer Concept-Title"
-                                        data-type="text"
-                                        data-color="#ffffff||rgba(255, 255, 255, 1)||rgba(255, 255, 255, 1)||rgba(255, 255, 255, 1)"
-                                        data-rsp_ch="on"
-                                        data-xy="x:l,l,l,c;xo:45px,28px,22px,0;y:m;yo:-37px,-48px,-29px,-61px;"
-                                        data-text="w:normal,nowrap,nowrap,nowrap;s:80,50,45,30;l:90,56,53,38;ls:1px;fw:700;a:left,left,left,center;"
-                                        data-dim="w:898.992px,555.993px,auto,322px;h:208.98399999999998px,auto,auto,80px;"
-                                        data-padding="b:10;"
-                                        data-frame_0="sX:2;sY:2;"
-                                        data-frame_0_mask="u:t;"
-                                        data-frame_1="e:power2.out;sp:1270;"
-                                        data-frame_1_mask="u:t;"
-                                        data-frame_999="o:1;st:w;sR:7730;"
-                                        style="z-index: 10; font-family: 'Quicksand'"
-                                    >
-                                        The Right Candidate<br />
-                                        for your <span class="theme-color"> Business.</span><br />
-                                        <br />
-                                    </h1>
-                                    
+                                    <rs-slide
+                                        style="position: absolute"
+                                        data-key="rs-2{{@$loop->iteration}}"
+                                        data-title="Web Show"
+                                        data-thumb="{{ asset('/images/sliders/thumb/thumb_'.$slider->image) }}"
+                                        data-anim="f:center;"
+                                        data-in="o:0;x:cyc(-10|10);y:cyc(-10|10);r:cyc(-10|10);sx:0.1;sy:0.1;row:8;col:8;"
+                                        data-out="a:false;"
+                                        >
+                                        <img
+                                            src="{{asset('assets/frontend/wp-content/plugins/revslider/public/assets/assets/dummy.png')}}"
+                                            alt=""
+                                            title="slide-2{{@$loop->iteration}}"
+                                            width="1920"
+                                            height="1080"
+                                            class="rev-slidebg tp-rs-img rs-lazyload"
+                                            data-lazyload="{{ asset('/images/sliders/'.$slider->image) }}"
+                                            data-parallax="5"
+                                            data-no-retina
+                                        />
+                                            
+                                        <rs-layer
+                                                id="slider-7-slide-2{{@$loop->iteration}}-layer-1"
+                                                data-type="image"
+                                                data-rsp_ch="on"
+                                                data-xy="xo:702px,358px,271px,126px;yo:-10px,-1px,0,217px;"
+                                                data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                                                data-dim="w:1848px,1526px,1159px,715px;h:967.984px,798px,606px,373px;"
+                                                data-frame_999="o:0;st:w;sR:8700;"
+                                                style="z-index: 11"
+                                                ><img
+                                                src="{{asset('assets/frontend/wp-content/plugins/revslider/public/assets/assets/dummy.png')}}"
+                                                alt=""
+                                                class="tp-rs-img rs-lazyload"
+                                                width="1090"
+                                                height="571"
+                                                data-lazyload="{{asset('assets/frontend/wp-content/uploads/sites/45/2022/06/arrow-curve1.png')}}"
+                                                data-no-retina
+                                                /> </rs-layer
+                                            >
 
-                                <rs-layer
-                                        id="slider-7-slide-22-layer-3"
-                                        data-type="text"
-                                        data-rsp_ch="on"
-                                        data-xy="x:l,l,l,c;xo:48px,28px,23px,0;yo:282px,119px,127px,102px;"
-                                        data-text="w:normal;s:21,17,16,16;l:33,27,28,24;fw:500;a:left,left,left,center;"
-                                        data-frame_999="o:0;st:w;sR:8700;"
-                                        style="
-                                        z-index: 12;
-                                        font-family: 'Roboto';
-                                        text-transform: uppercase;
-                                        "
-                                        >Welcome To Our Corpkit </rs-layer
-                                    >
+                                        
+                                            <h1
+                                                id="slider-7-slide-2{{@$loop->iteration}}-layer-2"
+                                                class="rs-layer Concept-Title"
+                                                data-type="text"
+                                                data-color="#ffffff||rgba(255, 255, 255, 1)||rgba(255, 255, 255, 1)||rgba(255, 255, 255, 1)"
+                                                data-rsp_ch="on"
+                                                data-xy="x:l,l,l,c;xo:45px,28px,22px,0;y:m;yo:-37px,-48px,-29px,-61px;"
+                                                data-text="w:normal,nowrap,nowrap,nowrap;s:80,50,45,30;l:90,56,53,38;ls:1px;fw:700;a:left,left,left,center;"
+                                                data-dim="w:898.992px,555.993px,auto,322px;h:208.98399999999998px,auto,auto,80px;"
+                                                data-padding="b:10;"
+                                                data-frame_0="sX:2;sY:2;"
+                                                data-frame_0_mask="u:t;"
+                                                data-frame_1="e:power2.out;sp:1270;"
+                                                data-frame_1_mask="u:t;"
+                                                data-frame_999="o:1;st:w;sR:7730;"
+                                                style="z-index: 10; font-family: 'Quicksand'"
+                                            >
+                                                {{@$slider->heading}}
+                                               <br />
+                                                <br />
+                                            </h1>
+                                            
 
-                                <a
-                                        id="slider-7-slide-22-layer-4"
-                                        class="rs-layer res-slide-btn pop rev-btn"
-                                        href="../contact/index.html"
-                                        target="_self"
-                                        data-type="button"
-                                        data-color="rgba(255,255,255,1)"
-                                        data-xy="x:l,l,l,c;xo:280px,-242px,-241px,-435px;y:m;yo:130px,104px,74px,98px;"
-                                        data-text="s:18,18,14,14;l:17;ls:1px;fw:700;a:center,left,left,center;"
-                                        data-rsp_bd="off"
-                                        data-padding="t:21,21,10,10;r:37,37,25,25;b:21,21,10,12;l:37,37,25,25;"
-                                        data-border="bos:solid;boc:#ffffff;bow:2px,2px,2px,2px;bor:3px,3px,3px,3px;"
-                                        data-frame_0="rX:-70deg;oZ:-50;"
-                                        data-frame_1="oZ:-50;e:power4.inOut;st:1580;sp:1280;sR:1580;"
-                                        data-frame_999="o:0;st:w;sR:6140;"
-                                        data-frame_hover="bgc:#ff3e55;boc:#ff3e55;bor:3px,3px,3px,3px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;"
-                                        style="
-                                        z-index: 9;
-                                        background-color: rgba(255, 255, 255, 0.09);
-                                        font-family: 'Roboto';
-                                        text-transform: uppercase;
-                                        cursor: pointer;
-                                        outline: none;
-                                        box-shadow: none;
-                                        box-sizing: border-box;
-                                        -moz-box-sizing: border-box;
-                                        -webkit-box-sizing: border-box;
-                                        "
-                                        >Contact us </a
-                                    >
-
-                                <rs-layer
-                                        id="slider-7-slide-22-layer-16"
-                                        class="res-slide-btn pop rev-btn"
-                                        data-type="button"
-                                        data-color="rgba(255,255,255,1)"
-                                        data-xy="x:l,l,l,c;xo:48px,28px,22px,0;y:m;yo:130px,71px,72px,27px;"
-                                        data-text="s:18,16,14,14;l:17;ls:1px;fw:700;a:center,left,left,center;"
-                                        data-rsp_bd="off"
-                                        data-padding="t:21,13,10,10;r:37,30,25,25;b:21,13,10,12;l:37,30,25,25;"
-                                        data-border="bos:solid;boc:#ff3e55;bow:2px,2px,2px,2px;bor:3px,3px,3px,3px;"
-                                        data-frame_0="rX:-70deg;oZ:-50;"
-                                        data-frame_1="oZ:-50;e:power4.inOut;st:1060;sp:1280;sR:1060;"
-                                        data-frame_999="o:0;st:w;sR:6660;"
-                                        data-frame_hover="bgc:#0d1e50;boc:#0d1e50;bor:3px,3px,3px,3px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;"
-                                        style="
-                                        z-index: 8;
-                                        background-color: #ff3e55;
-                                        font-family: 'Roboto';
-                                        text-transform: uppercase;
-                                        cursor: pointer;
-                                        outline: none;
-                                        box-shadow: none;
-                                        box-sizing: border-box;
-                                        -moz-box-sizing: border-box;
-                                        -webkit-box-sizing: border-box;
-                                        "
-                                        >Learn More </rs-layer
-                                >
-                            </rs-slide>
-
-                            <rs-slide
-                                style="position: absolute"
-                                data-key="rs-23"
-                                data-title="Web Show"
-                                data-thumb="//elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/revslider/berater-home-five/slider-five-1-100x100.jpg"
-                                data-anim="f:center;"
-                                data-in="o:0;x:cyc(-10|10);y:cyc(-10|10);r:cyc(-10|10);sx:0.1;sy:0.1;row:8;col:8;"
-                                data-out="a:false;"
-                                >
-                                <img
-                                    src="../wp-content/plugins/revslider/public/assets/assets/dummy.png"
-                                    alt=""
-                                    title="slider-five-1.jpg"
-                                    width="1920"
-                                    height="1080"
-                                    class="rev-slidebg tp-rs-img rs-lazyload"
-                                    data-lazyload="//elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/revslider/berater-home-five/slider-five-1.jpg"
-                                    data-parallax="5"
-                                    data-no-retina
-                                />
-                                <rs-layer
-                                        id="slider-7-slide-23-layer-1"
-                                        data-type="image"
-                                        data-rsp_ch="on"
-                                        data-xy="xo:702px,358px,271px,126px;yo:-10px,-1px,0,217px;"
-                                        data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
-                                        data-dim="w:1848px,1526px,1159px,715px;h:968px,799px,607px,374px;"
-                                        data-frame_999="o:0;st:w;sR:8700;"
-                                        style="z-index: 11"
-                                        ><img
-                                        src="../wp-content/plugins/revslider/public/assets/assets/dummy.png"
-                                        alt=""
-                                        class="tp-rs-img rs-lazyload"
-                                        width="1090"
-                                        height="571"
-                                        data-lazyload="//elementor.zozothemes.com/corpkit/wp-content/uploads/sites/45/2022/06/arrow-curve1.png"
-                                        data-no-retina
-                                        /> </rs-layer
-                                    >
-
-                                    <h1
-                                        id="slider-7-slide-23-layer-2"
-                                        class="rs-layer Concept-Title"
-                                        data-type="text"
-                                        data-color="#ffffff||rgba(255, 255, 255, 1)||rgba(255, 255, 255, 1)||rgba(255, 255, 255, 1)"
-                                        data-rsp_ch="on"
-                                        data-xy="x:l,l,l,c;xo:44px,28px,22px,0;y:m;yo:-39px,-48px,-29px,-61px;"
-                                        data-text="w:normal;s:80,50,45,30;l:90,56,52,38;ls:1px;fw:700;a:left,left,left,center;"
-                                        data-dim="w:898.992px,555.993px,555px,323px;h:208.98399999999998px,auto,104px,80px;"
-                                        data-padding="b:10;"
-                                        data-frame_0="sX:2;sY:2;"
-                                        data-frame_0_mask="u:t;"
-                                        data-frame_1="e:power2.out;sp:1270;"
-                                        data-frame_1_mask="u:t;"
-                                        data-frame_999="o:1;st:w;sR:7730;"
-                                        style="z-index: 10; font-family: 'Quicksand'"
-                                    >
-                                        Fastest Way To Gain Business
-                                        <span class="theme-color">Success.</span>
-                                    </h1>
-                        
-
-                                    <rs-layer
-                                                id="slider-7-slide-23-layer-3"
+                                        <rs-layer
+                                                id="slider-7-slide-2{{@$loop->iteration}}-layer-3"
                                                 data-type="text"
                                                 data-rsp_ch="on"
                                                 data-xy="x:l,l,l,c;xo:48px,28px,23px,0;yo:282px,119px,127px,102px;"
@@ -245,101 +113,76 @@
                                                 font-family: 'Roboto';
                                                 text-transform: uppercase;
                                                 "
-                                                >Best services provide </rs-layer
+                                                >{{@$slider->subheading}} </rs-layer
                                             >
 
-                                    <a
-                                            id="slider-7-slide-23-layer-4"
-                                            class="rs-layer res-slide-btn pop rev-btn"
-                                            href="../contact/index.html"
-                                            target="_self"
-                                            data-type="button"
-                                            data-color="rgba(255,255,255,1)"
-                                            data-xy="x:l,l,l,c;xo:280px,-242px,-241px,-435px;y:m;yo:133px,104px,74px,98px;"
-                                            data-text="s:18,18,14,14;l:17;ls:1px;fw:700;a:center,left,left,center;"
-                                            data-rsp_bd="off"
-                                            data-padding="t:21,21,10,10;r:37,37,25,25;b:21,21,10,12;l:37,37,25,25;"
-                                            data-border="bos:solid;boc:#ffffff;bow:2px,2px,2px,2px;bor:3px,3px,3px,3px;"
-                                            data-frame_0="rX:-70deg;oZ:-50;"
-                                            data-frame_1="oZ:-50;e:power4.inOut;st:1530;sp:1280;sR:1530;"
-                                            data-frame_999="o:0;st:w;sR:6190;"
-                                            data-frame_hover="bgc:#ff3e55;boc:#ff3e55;bor:3px,3px,3px,3px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;"
-                                            style="
-                                            z-index: 9;
-                                            background-color: rgba(255, 255, 255, 0.09);
-                                            font-family: 'Roboto';
-                                            text-transform: uppercase;
-                                            cursor: pointer;
-                                            outline: none;
-                                            box-shadow: none;
-                                            box-sizing: border-box;
-                                            -moz-box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            "
-                                            >Contact us </a
-                                        >
+                                        
+                                            <rs-layer
+                                                id="slider-7-slide-23-layer-16"
+                                                class="res-slide-btn pop rev-btn"
+                                                data-actions='o:click;a:simplelink;target:_self;url:{{@$slider->link}};'
+                                                data-type="button"
+                                                data-color="rgba(255,255,255,1)"
+                                                data-xy="x:l,l,l,c;xo:48px,28px,22px,0;y:m;yo:133px,71px,72px,27px;"
+                                                data-text="s:18,16,14,14;l:17;ls:1px;fw:700;a:center,left,left,center;"
+                                                data-rsp_bd="off"
+                                                data-padding="t:21,13,10,10;r:37,30,25,25;b:21,13,10,12;l:37,30,25,25;"
+                                                data-border="bos:solid;boc:#ff3e55;bow:2px,2px,2px,2px;bor:3px,3px,3px,3px;"
+                                                data-frame_0="rX:-70deg;oZ:-50;"
+                                                data-frame_1="oZ:-50;e:power4.inOut;st:1000;sp:1280;sR:1000;"
+                                                data-frame_999="o:0;st:w;sR:6720;"
+                                                data-frame_hover="bgc:#0d1e50;boc:#0d1e50;bor:3px,3px,3px,3px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;"
+                                                style="
+                                                    z-index: 8;
+                                                    background-color: #ff3e55;
+                                                    font-family: 'Roboto';
+                                                    text-transform: uppercase;
+                                                    cursor: pointer;
+                                                    outline: none;
+                                                    box-shadow: none;
+                                                    box-sizing: border-box;
+                                                    -moz-box-sizing: border-box;
+                                                    -webkit-box-sizing: border-box;
+                                                "
+                                                >{{@$slider->button}} </rs-layer
+                                            >
+                                       
+                                    </rs-slide>
 
-                                    <rs-layer
-                                            id="slider-7-slide-23-layer-16"
-                                            class="res-slide-btn pop rev-btn"
-                                            data-type="button"
-                                            data-color="rgba(255,255,255,1)"
-                                            data-xy="x:l,l,l,c;xo:48px,28px,22px,0;y:m;yo:133px,71px,72px,27px;"
-                                            data-text="s:18,16,14,14;l:17;ls:1px;fw:700;a:center,left,left,center;"
-                                            data-rsp_bd="off"
-                                            data-padding="t:21,13,10,10;r:37,30,25,25;b:21,13,10,12;l:37,30,25,25;"
-                                            data-border="bos:solid;boc:#ff3e55;bow:2px,2px,2px,2px;bor:3px,3px,3px,3px;"
-                                            data-frame_0="rX:-70deg;oZ:-50;"
-                                            data-frame_1="oZ:-50;e:power4.inOut;st:1000;sp:1280;sR:1000;"
-                                            data-frame_999="o:0;st:w;sR:6720;"
-                                            data-frame_hover="bgc:#0d1e50;boc:#0d1e50;bor:3px,3px,3px,3px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;"
-                                            style="
-                                            z-index: 8;
-                                            background-color: #ff3e55;
-                                            font-family: 'Roboto';
-                                            text-transform: uppercase;
-                                            cursor: pointer;
-                                            outline: none;
-                                            box-shadow: none;
-                                            box-sizing: border-box;
-                                            -moz-box-sizing: border-box;
-                                            -webkit-box-sizing: border-box;
-                                            "
-                                            >Learn More </rs-layer
-                                        >
-                            </rs-slide>
+                                @endforeach
 
-                        </rs-slides>
-                        <rs-static-layers
-                            ></rs-static-layers
-                        >
-                    </rs-module>
-                    <script>
-                    setREVStartSize({
-                        c: "rev_slider_7_1",
-                        rl: [1240, 1024, 778, 480],
-                        el: [950, 550, 500, 480],
-                        gw: [1240, 1024, 778, 480],
-                        gh: [950, 550, 500, 480],
-                        type: "standard",
-                        justify: "",
-                        layout: "fullwidth",
-                        mh: "0",
-                    });
-                    if (
-                        window.RS_MODULES !== undefined &&
-                        window.RS_MODULES.modules !== undefined &&
-                        window.RS_MODULES.modules["revslider71"] !== undefined
-                    ) {
-                        window.RS_MODULES.modules["revslider71"].once = false;
-                        window.revapi7 = undefined;
-                        if (window.RS_MODULES.checkMinimal !== undefined)
-                        window.RS_MODULES.checkMinimal();
-                    }
-                    </script>
-                </rs-module-wrap>
-                <!-- END REVOLUTION SLIDER -->
-            </div>
+                            </rs-slides>
+                            <rs-static-layers
+                                ></rs-static-layers
+                            >
+                        </rs-module>
+                        <script>
+                        setREVStartSize({
+                            c: "rev_slider_7_1",
+                            rl: [1240, 1024, 778, 480],
+                            el: [950, 550, 500, 480],
+                            gw: [1240, 1024, 778, 480],
+                            gh: [950, 550, 500, 480],
+                            type: "standard",
+                            justify: "",
+                            layout: "fullwidth",
+                            mh: "0",
+                        });
+                        if (
+                            window.RS_MODULES !== undefined &&
+                            window.RS_MODULES.modules !== undefined &&
+                            window.RS_MODULES.modules["revslider71"] !== undefined
+                        ) {
+                            window.RS_MODULES.modules["revslider71"].once = false;
+                            window.revapi7 = undefined;
+                            if (window.RS_MODULES.checkMinimal !== undefined)
+                            window.RS_MODULES.checkMinimal();
+                        }
+                        </script>
+                    </rs-module-wrap>
+                    <!-- END REVOLUTION SLIDER -->
+                </div>
+            @endif
 
           <div class="corpkit-content-inner">
             <div class="container">
@@ -856,6 +699,85 @@
                                     </div>
                                     </div>
                                 </section>
+                            @endif
+
+                            @if(!empty($homepage_info->action_heading))
+                            <section
+                                class="elementor-section elementor-top-section calltoaction elementor-element elementor-element-191d8331 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                data-id="191d8331"
+                                data-element_type="section"
+                                data-settings='{"background_background":"classic"}'
+                                >
+                                <div class="elementor-background-overlay"></div>
+                                <div
+                                    class="elementor-container elementor-column-gap-default"
+                                >
+                                    <div
+                                    class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-ce9cb5a"
+                                    data-id="ce9cb5a"
+                                    data-element_type="column"
+                                    >
+                                    <div
+                                        class="elementor-widget-wrap elementor-element-populated"
+                                    >
+                                        <div
+                                        class="elementor-element elementor-element-93344cf elementor-widget elementor-widget-heading"
+                                        data-id="93344cf"
+                                        data-element_type="widget"
+                                        data-widget_type="heading.default"
+                                        >
+                                        <div class="elementor-widget-container">
+                                            <h2
+                                            class="elementor-heading-title elementor-size-default"
+                                            >
+                                            “{{@$homepage_info->action_heading}}”
+                                            </h2>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div
+                                    class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-54e55264"
+                                    data-id="54e55264"
+                                    data-element_type="column"
+                                    data-settings='{"background_background":"classic"}'
+                                    >
+                                    <div
+                                        class="elementor-widget-wrap elementor-element-populated"
+                                    >
+                                        <div
+                                        class="elementor-element elementor-element-b8d676e cea-btn-align-right cea-btn-tablet-align-left elementor-widget elementor-widget-ceabutton"
+                                        data-id="b8d676e"
+                                        data-element_type="widget"
+                                        data-widget_type="ceabutton.default"
+                                        >
+                                        <div
+                                            class="elementor-widget-container cea-button-wrapper"
+                                        >
+                                            <div class="cea-button-wrapper">
+                                            <a
+                                                href="{{@$homepage_info->action_link}}"
+                                                class="cea-button-link elementor-button cea-button elementor-size-sm"
+                                            >
+                                                <span
+                                                class="cea-button-content-wrapper"
+                                                >
+                                                <span
+                                                    class="cea-button-icon cea-align-icon-"
+                                                >
+                                                </span>
+                                                <span class="cea-button-text"
+                                                    >{{@$homepage_info->action_button}}</span
+                                                >
+                                                </span>
+                                            </a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </section>
                             @endif
                             
                             @if(count($latestServices) > 0)

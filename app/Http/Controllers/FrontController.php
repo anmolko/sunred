@@ -9,6 +9,7 @@ use App\Models\Setting;
 use App\Models\Service;
 use App\Mail\ContactDetail;
 use App\Models\HomePage;
+use App\Models\Slider;
 
 use App\Models\User;
 use App\Models\SectionElement;
@@ -44,9 +45,10 @@ class FrontController extends Controller
     protected $page = null;
     protected $pagesection = null;
     protected $client = null;
+    protected $slider = null;
 
 
-    public function __construct(HomePage $home_page,Client $client,PageSection $pagesection,Page $page,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
+    public function __construct(Slider $slider,HomePage $home_page,Client $client,PageSection $pagesection,Page $page,Service $service,Setting $setting,BlogCategory $bcategory,Blog $blog)
     {
         $this->setting = $setting;
         $this->bcategory = $bcategory;
@@ -55,6 +57,7 @@ class FrontController extends Controller
         $this->page = $page;
         $this->pagesection = $pagesection;
         $this->client = $client;
+        $this->slider = $slider;
         $this->home_page = $home_page;
     }
 
@@ -65,9 +68,10 @@ class FrontController extends Controller
         $clients =$this->client->orderBy('created_at', 'asc')->get();
         $latestServices = $this->service->orderBy('created_at', 'DESC')->take(5)->get();
         $countries  = CountryState::getCountries();
+        $sliders =$this->slider->where('status','active')->orderBy('created_at', 'asc')->get();
         $homepage_info = $this->home_page->first();
 
-        return view('welcome',compact('clients','latestServices','countries','homepage_info'));
+        return view('welcome',compact('clients','latestServices','countries','homepage_info','sliders'));
     }
 
 
