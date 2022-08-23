@@ -15,7 +15,7 @@
   	
 		<!-- FAVICON AND TOUCH ICONS -->
 
-		<link rel="shortcut icon" type="image/x-icon" href="<?php if(@$setting_data->favicon){?>{{asset('/images/uploads/settings/'.@$setting_data->favicon)}}<?php }?>">
+		<link rel="shortcut icon" type="image/x-icon" href="<?php if(@$setting_data->favicon){?>{{asset('/images/settings/'.@$setting_data->favicon)}}<?php }?>">
 
 		<link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/apple-touch-icon.png')}}">
 		<link rel="manifest" href="{{asset('images/site.webmanifest')}}">
