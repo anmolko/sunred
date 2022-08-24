@@ -177,7 +177,7 @@ class ServiceController extends Controller
             $status = 'Warning';
             return response()->json(['status'=>$status,'message'=>'This service is attached to menu(s). Please remove menu item first to delete this page.','name'=>$menuname]);
         }
-        
+
         if (!empty($banner) && file_exists(public_path().'/images/service/'.$banner)){
             @unlink(public_path().'/images/service/'.$banner);
         }

@@ -297,7 +297,7 @@
                                         </div><!-- end card-header -->
 
                                         <div class="card-body">
-                                            @if(count($feeds)>0))
+                                            @if(count($feeds)>0)
                                                 @foreach($feeds as $feed)
                                                         <div class="d-flex {{($loop->first) ? "":"mt-4"}} align-middle">
                                                         <div class="flex-shrink-0">
