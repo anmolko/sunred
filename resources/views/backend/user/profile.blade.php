@@ -272,21 +272,6 @@
                                                                                 </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="d-flex mt-4">
-                                                                        <div class="flex-grow-1">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-2">
-                                                                                <div>
-                                                                                    <h5
-                                                                                        class="fs-12 text-muted mb-0">
-                                                                                        Call Action :</h5>
-                                                                                </div>
-                                                                                <div class="avatar-group">
-                                                                                 {{$service->callAction->name}}
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
                                                                 </div>
                                                                 <!-- end card body -->
                                                             </div>
